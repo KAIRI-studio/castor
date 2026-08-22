@@ -3,39 +3,339 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>CASTOR | PLAY. CREATE. REPEAT.</title>
+<title>CASTOR</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Noto+Sans+JP:wght@400;700;900&display=swap');
-:root{--y:#ffe000;--b:#087cff;--c:#20d9ff;--p:#ff3f8f;--d:#03070d;--n:#06152b;--m:#aebdce}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--d);color:#fff;font-family:"Noto Sans JP",sans-serif}a{text-decoration:none;color:inherit}.wrap{width:min(1160px,calc(100% - 28px));margin:auto}
-header{position:fixed;top:0;left:0;right:0;z-index:20;background:#03070de8;border-bottom:3px solid var(--b)}.nav{height:70px;display:flex;align-items:center;justify-content:space-between}.logo{font:22px "Press Start 2P";color:var(--y);text-shadow:3px 3px #000}.logo b{color:#fff}nav{display:flex;gap:22px;font-size:11px;font-weight:900}nav a:hover{color:var(--y)}.play{border:2px solid var(--y);padding:9px 12px;color:var(--y);font:9px "Press Start 2P"}
-.hero{padding-top:70px;background:linear-gradient(#06152b,#03070d)}.banner{width:100%;height:auto;display:block;object-fit:contain;border-bottom:3px solid var(--c)}.hero-copy{text-align:center;padding:40px 0 48px;background:radial-gradient(circle at 50% 0,#0c3764,transparent 45%)}.hero h1{font:clamp(30px,6vw,62px) "Press Start 2P";color:var(--y);text-shadow:4px 4px #083a8c;margin:0 0 18px}.tag{display:inline-block;background:var(--p);padding:10px 17px;border:3px solid #111;box-shadow:5px 5px #0a4a8d;font:11px "Press Start 2P"}.jp{font-size:18px;font-weight:900;margin:22px 0 6px}.sub{color:var(--m);line-height:1.8}.quick{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;max-width:760px;margin:24px auto 0}.quick a{padding:13px 5px;background:#09254a;border:2px solid var(--b);font:8px "Press Start 2P"}.quick a:hover{border-color:var(--y);color:var(--y)}
-section{padding:75px 0}.dark{background:var(--d)}.blue{background:#061b35}.head{text-align:center;margin-bottom:30px}.eyebrow{font:9px "Press Start 2P";color:var(--c)}h2{font:22px "Press Start 2P";color:var(--y);line-height:1.6;margin:12px 0}.desc{max-width:700px;margin:auto;color:var(--m);line-height:1.9;font-size:13px}
-.about{display:grid;grid-template-columns:.72fr 1.28fr;gap:46px;align-items:center}.about img{width:min(300px,100%);display:block;margin:auto;border:3px solid var(--b);box-shadow:8px 8px #000}.about h3{font:20px "Press Start 2P";line-height:1.8}.about p{color:#b8c8d8;line-height:2}.list{padding:0;list-style:none;font-weight:700}.list li{margin:10px 0}.list li:before{content:"★";color:var(--y);margin-right:9px}
-.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.card{border:3px solid var(--b);background:#061a34;box-shadow:7px 7px #000;overflow:hidden}.media{height:215px;display:flex;align-items:center;justify-content:center;padding:24px}.media img{max-width:92%;max-height:175px;object-fit:contain}.hbk{background:linear-gradient(135deg,#052a65,#0b61d2)}.kairi{background:linear-gradient(135deg,#ffe000,#e9a800)}.kanji{background:linear-gradient(135deg,#76123c,#e53b75)}.body{padding:18px}.label{font:8px "Press Start 2P";color:#7de9ff}.body h3{font:14px "Press Start 2P";line-height:1.7}.body p{color:#b7c8da;font-size:12px;line-height:1.8;min-height:68px}.btn{display:inline-block;padding:10px 12px;border:2px solid var(--y);color:var(--y);font-weight:900;font-size:11px}.btn:hover{background:var(--y);color:#07111d}
-.quest{display:grid;grid-template-columns:1.15fr .85fr;gap:38px;align-items:center}.shot{border:3px solid var(--p);box-shadow:9px 9px #000}.shot img{width:100%;display:block}.quest h3{font:22px "Press Start 2P";line-height:1.7}.quest p{color:#b9c7d6;line-height:2}.badges{display:flex;gap:7px;flex-wrap:wrap;margin:18px 0}.badge{border:2px solid #3b78b8;padding:7px 9px;font:7px "Press Start 2P";color:#d8edff}.playgame{display:block;background:var(--p);padding:14px;text-align:center;font-weight:900;border:3px solid #180611;box-shadow:5px 5px #0b315e}.playgame:hover{background:#ff5aa0}
-.band{padding:25px 0;background:#04101f;border-top:2px dashed #1a72bb;border-bottom:2px dashed #1a72bb}.bandin{display:flex;justify-content:space-between;align-items:center;gap:15px}.band strong{font:11px "Press Start 2P"}.social{display:flex;gap:8px}.social a{border:2px solid #315b85;padding:9px 11px;font:7px "Press Start 2P"}.social a:hover{border-color:var(--y);color:var(--y)}
-footer{padding:45px 0;background:#020407;border-top:3px solid var(--b)}.foot{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:25px}.foot h4{font:9px "Press Start 2P";color:var(--c)}.foot p,.foot a{color:#8798aa;font-size:11px;line-height:2}.foot .brand{font:17px "Press Start 2P";color:var(--y)}.copy{margin-top:30px;padding-top:18px;border-top:1px solid #16202b;color:#5d6b78;font-size:10px}
-@media(max-width:800px){nav{display:none}.quick{grid-template-columns:repeat(2,1fr)}.about,.quest{grid-template-columns:1fr}.projects{grid-template-columns:1fr}.foot{grid-template-columns:1fr 1fr}.banner{height:auto}.about img{width:min(260px,80vw)}}
-@media(max-width:520px){.foot{grid-template-columns:1fr}.hero-copy{padding:30px 0}.jp{font-size:15px}h2{font-size:17px}}
+:root{--bg:#263d60;--bg2:#172b49;--text:#fff;--muted:rgba(255,255,255,.68);--line:rgba(255,255,255,.18);--accent:#b9d2f4}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg2);color:#fff;font-family:Arial,"Helvetica Neue",sans-serif}
+a{text-decoration:none;color:inherit}
+.wrap{width:calc(100% - 140px);margin:auto}
+
+/* Header */
+.header{position:fixed;top:0;left:0;right:0;z-index:50;height:86px;display:flex;align-items:center;background:transparent;backdrop-filter:none}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.home-logo{display:block;width:150px;transition:opacity .25s,transform .25s}
+.home-logo:hover{opacity:.78;transform:translateY(-1px)}
+.home-logo img{display:block;width:100%;height:auto;filter:brightness(0) invert(1)}
+.nav{display:flex;align-items:center;gap:42px;font-size:13px;letter-spacing:.14em;font-weight:700}
+.nav a{position:relative;padding:10px 0;color:rgba(255,255,255,.82)}
+.nav a:after{content:"";position:absolute;left:0;right:0;bottom:2px;height:1px;background:#fff;transform:scaleX(0);transform-origin:right;transition:transform .3s}
+.nav a:hover:after{transform:scaleX(1);transform-origin:left}
+
+/* HERO */
+.hero{
+  position:relative;
+  min-height:100svh;
+  margin-top:0;
+  overflow:hidden;
+  display:grid;
+  place-items:center;
+  background:#263d60 url("assets/hero-bg.png") center/cover no-repeat;
+}
+.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 38%,rgba(210,227,249,.18),transparent 35%)}
+.hero-mark{position:absolute;width:min(72vw,900px);opacity:.2;animation:markIn 2.2s ease-out .2s both}
+.hero-logo{position:relative;width:min(60vw,700px);filter:drop-shadow(0 0 20px rgba(255,255,255,.24));animation:logoIn 2s ease-out 1s both;clip-path:inset(0 100% 0 0)}
+.hero-copy{position:absolute;left:0;right:0;bottom:12%;text-align:center;letter-spacing:.18em;font-size:14px;color:rgba(255,255,255,.8);animation:copyIn 1.2s ease-out 2.2s both}
+.hero-copy strong{display:block;font-size:clamp(20px,3vw,34px);letter-spacing:.28em;margin-bottom:10px;color:#fff}
+.hero-copy span{font-size:11px;letter-spacing:.24em}
+
+@keyframes markIn{
+  0%{opacity:0;transform:scale(.94);filter:blur(12px)}
+  100%{opacity:.2;transform:scale(1);filter:blur(.2px)}
+}
+@keyframes logoIn{
+  0%{clip-path:inset(0 100% 0 0);filter:blur(8px) drop-shadow(0 0 0 rgba(255,255,255,0))}
+  100%{clip-path:inset(0 0 0 0);filter:blur(0) drop-shadow(0 0 20px rgba(255,255,255,.24))}
+}
+
+.shooting-star{
+  position:absolute;
+  width:clamp(110px,14vw,190px);
+  height:1px;
+  left:50%;
+  top:39%;
+  transform:translateX(-155px);
+  opacity:0;
+  filter:drop-shadow(0 0 4px rgba(255,255,255,.22));
+  animation:starPass 2.4s ease-in-out 1.0s forwards;
+  z-index:2;
+  pointer-events:none;
+}
+.shooting-star:before{
+  content:"";
+  position:absolute;
+  right:-4px;
+  top:50%;
+  width:5px;
+  height:5px;
+  transform:translateY(-50%) rotate(45deg);
+  background:rgba(255,255,255,.82);
+  box-shadow:0 0 7px rgba(255,255,255,.42);
+}
+.shooting-star:after{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:1px;
+  background:linear-gradient(
+    to left,
+    rgba(255,255,255,.58),
+    rgba(255,255,255,.22) 45%,
+    transparent
+  );
+}
+@keyframes starPass{
+  0%{
+    opacity:0;
+    transform:translateX(-155px);
+  }
+  18%{
+    opacity:.48;
+  }
+  58%{
+    opacity:.38;
+    transform:translateX(45px);
+  }
+  100%{
+    opacity:0;
+    transform:translateX(85px);
+  }
+}
+
+@keyframes copyIn{
+  0%{opacity:0;transform:translateY(12px)}
+  100%{opacity:1;transform:none}
+}
+
+/* SITE SKELETON */
+.section{min-height:72vh;padding:120px 0;display:flex;align-items:center;border-top:1px solid var(--line)}
+.section.play{background:#1b304f}
+.section.create{background:#223958}
+.section-inner{width:100%}
+.section-label{font-size:11px;letter-spacing:.28em;color:var(--accent);margin-bottom:22px}
+.section h2{font-size:clamp(48px,9vw,120px);font-weight:300;letter-spacing:.06em;margin:0 0 28px}
+.section p{max-width:620px;color:var(--muted);line-height:2;font-size:15px}
+.placeholder{margin-top:55px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:28px 0;display:flex;justify-content:space-between;align-items:center;color:rgba(255,255,255,.55);font-size:12px;letter-spacing:.18em}
+.placeholder b{color:#fff;font-size:13px}
+
+
+/* PLAY / HBK GAMING */
+.play{
+  min-height:100vh;
+  background:
+    radial-gradient(circle at 78% 20%,rgba(184,208,244,.10),transparent 28%),
+    #1b304f;
+}
+.play-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:60px;
+  margin-bottom:52px;
+}
+.play h2{margin-bottom:18px}
+.play-intro{
+  margin:0;
+  max-width:520px;
+  color:rgba(255,255,255,.68);
+  line-height:1.9;
+  font-size:14px;
+}
+.hbk-logo{
+  width:clamp(110px,13vw,170px);
+  height:auto;
+  object-fit:contain;
+  opacity:.94;
+  filter:drop-shadow(0 8px 22px rgba(0,0,0,.22));
+}
+.team-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+}
+.team-card{
+  min-width:0;
+}
+.team-photo{
+  height:clamp(300px,34vw,470px);
+  overflow:hidden;
+  position:relative;
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.12);
+}
+.team-photo:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top,rgba(10,24,43,.26),transparent 35%);
+  pointer-events:none;
+}
+.team-photo img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center bottom;
+  display:block;
+  transition:transform .5s ease;
+}
+.team-card:hover .team-photo img{transform:scale(1.025)}
+.team-meta{
+  padding:11px 0 0;
+  border-bottom:1px solid rgba(255,255,255,.16);
+  padding-bottom:14px;
+}
+.team-meta span{
+  display:block;
+  width:max-content;
+  max-width:100%;
+  padding:4px 8px;
+  background:rgba(255,255,255,.12);
+  color:rgba(255,255,255,.72);
+  font-size:9px;
+  letter-spacing:.16em;
+  margin-bottom:7px;
+}
+.team-meta strong{
+  display:block;
+  font-size:14px;
+  letter-spacing:.06em;
+  font-weight:600;
+}
+.play-footer{
+  margin-top:28px;
+  padding-top:16px;
+  border-top:1px solid rgba(255,255,255,.14);
+  display:flex;
+  justify-content:space-between;
+  color:rgba(255,255,255,.42);
+  font-size:10px;
+  letter-spacing:.18em;
+}
+
+/* FOOTER */
+.footer{padding:55px 0;background:#13253e;border-top:1px solid var(--line)}
+.footer-inner{display:flex;justify-content:space-between;gap:30px;color:rgba(255,255,255,.5);font-size:11px;letter-spacing:.12em}
+.footer-logo{width:120px}
+.footer-logo img{width:100%;filter:brightness(0) invert(1)}
+
+
+@media(max-width:700px){
+  .play-head{
+    align-items:flex-start;
+    flex-direction:column;
+    gap:25px;
+    margin-bottom:34px;
+  }
+  .hbk-logo{width:105px}
+  .team-grid{grid-template-columns:1fr;gap:24px}
+  .team-photo{height:430px}
+  .play-footer{font-size:9px}
+
+  .wrap{width:calc(100% - 34px)}
+  .header{height:72px}
+  .home-logo{width:118px}
+  .nav{gap:20px;font-size:11px}
+  .hero-logo{width:82vw}
+  .hero-mark{width:72vw}
+  .hero-copy{bottom:10%;padding:0 20px}
+  .section{min-height:65vh;padding:90px 0}
+  .section h2{font-size:54px}
+  .placeholder{display:block}
+  .placeholder b{display:block;margin-bottom:8px}
+  .footer-inner{display:block}
+  .footer-logo{margin-bottom:24px}
+}
 </style>
 </head>
 <body>
-<header><div class="wrap nav"><a class="logo" href="#top">Cast<b>★</b>r</a><nav><a href="#about">ABOUT</a><a href="#projects">PROJECTS</a><a href="#quest">KANJI QUEST</a><a href="#links">LINKS</a></nav><a class="play" href="https://kairi-studio.github.io/kanji-quest/" target="_blank">PLAY ▶</a></div></header>
+
+<header class="header">
+  <div class="wrap header-inner">
+    <a class="home-logo" href="#top" aria-label="CASTOR Home">
+      <img src="assets/castor-logo-official-1.png" alt="CASTOR">
+    </a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#play">PLAY</a>
+      <a href="#create">CREATE</a>
+    </nav>
+  </div>
+</header>
+
 <main id="top">
-<div class="hero"><img class="banner" src="assets/castor-concept-banner.png" alt="CASTOR concept"><div class="hero-copy"><h1>CASTOR</h1><div class="tag">BUILD WHAT YOU LOVE.</div><div class="jp">遊ぶ。つくる。つながる。</div><div class="sub">ゲーム、動画、学び、コード。<br>好きなものを、好きなように、少しずつ形にしていく。</div><div class="quick"><a href="#projects">GAME</a><a href="#projects">CODE</a><a href="#projects">CREATE</a><a href="#links">COMMUNITY</a></div></div></div>
+  <section class="hero" aria-label="CASTOR hero">
+    <div class="shooting-star" aria-hidden="true"></div>
+    <img class="hero-mark" src="assets/castor-mark.png" alt="">
+    <img class="hero-logo" src="assets/castor-logo-official-1.png" alt="CASTOR">
+</section>
 
-<section class="dark" id="about"><div class="wrap"><div class="head"><div class="eyebrow">01 / ABOUT CASTOR</div><h2>PLAY. CREATE. REPEAT.</h2><div class="desc">CASTORは、遊びと学びをつなぐクリエイティブレーベル。親子でゲームを楽しみ、つくり、そして発信しています。</div></div><div class="about"><img src="assets/castor-pixel-family.jpg" alt="CASTOR pixel family"><div><h3>好きだから、<br>つくってみる。</h3><p>ゲームを遊ぶ。動画を撮る。思いついたら、今度は自分たちでも作ってみる。</p><p>CASTORは、そんな「やってみたい」を集めていく場所です。</p><ul class="list"><li>遊ぶ / PLAY</li><li>つくる / CREATE</li><li>学ぶ / LEARN</li><li>つながる / CONNECT</li></ul></div></div></div></section>
+  <section class="section play" id="play">
+  <div class="wrap section-inner">
+    <div class="play-head">
+      <div>
+        <div class="section-label">01 / PLAY</div>
+        <h2>PLAY</h2>
+        <p class="play-intro">CASTORのPLAY。<br>ゲームを中心に、遊ぶことから生まれるものを。</p>
+      </div>
+      <img class="hbk-logo" src="assets/hbk-gaming-logo.png" alt="HBK GAMING">
+    </div>
 
-<section class="blue" id="projects"><div class="wrap"><div class="head"><div class="eyebrow">02 / PROJECTS</div><h2>WHAT WE'RE BUILDING</h2><div class="desc">CASTORの中で動いているプロジェクト。</div></div><div class="projects">
-<article class="card"><div class="media hbk"><img src="assets/hbk-logo.png" alt="HBK_Gaming"></div><div class="body"><div class="label">PLAY / YOUTUBE</div><h3>HBK_GAMING</h3><p>親子でApex Legendsを楽しむYouTubeチャンネル。プレイも成長も家族の時間も発信。</p><a class="btn" href="#" title="YouTube URLを設定してください">YouTubeを見る ▶</a></div></article>
-<article class="card"><div class="media kairi"><img src="assets/kairi-logo.png" alt="KAIRI_studio"></div><div class="body"><div class="label">CODE / CREATE</div><h3>KAIRI_STUDIO</h3><p>ゲームやWebサービスを企画・開発する、小さなクリエイティブスタジオ。</p><a class="btn" href="#quest">作品を見る ▶</a></div></article>
-<article class="card"><div class="media kanji"><img src="assets/kanji-quest.png" alt="CASTOR KANJI QUEST"></div><div class="body"><div class="label">GAME / LEARN</div><h3>CASTOR KANJI QUEST</h3><p>小学1年生向け。モンスターと戦いながら、漢字の「読み」を楽しく練習するゲーム。</p><a class="btn" href="https://kairi-studio.github.io/kanji-quest/" target="_blank">ゲームで遊ぶ ▶</a></div></article>
-</div></div></section>
+    <div class="team-grid">
+      <article class="team-card">
+        <div class="team-photo"><img src="assets/hbk-kairi.png" alt="kairi"></div>
+        <div class="team-meta">
+          <span>HBK GAMING</span>
+          <strong>kairi</strong>
+        </div>
+      </article>
 
-<section class="dark" id="quest"><div class="wrap"><div class="head"><div class="eyebrow">03 / FIRST RELEASE</div><h2>CASTOR KANJI QUEST</h2><div class="desc">CASTORから生まれた最初のゲーム。まずはここから。</div></div><div class="quest"><div class="shot"><img src="assets/kanji-quest.png" alt="CASTOR KANJI QUEST game screen"></div><div><h3>ゲームで、<br>漢字を覚える。</h3><p>小学1年生の漢字の「読み」を、RPG風のバトルで練習。3択から答えを選び、モンスターを倒しながら進みます。</p><div class="badges"><span class="badge">小学1年生</span><span class="badge">3択</span><span class="badge">RPG風</span><span class="badge">WEB GAME</span></div><a class="playgame" href="https://kairi-studio.github.io/kanji-quest/" target="_blank">▶ CASTOR KANJI QUESTをプレイ</a></div></div></div></section>
+      <article class="team-card">
+        <div class="team-photo"><img src="assets/hbk-kappa.png" alt="kappa"></div>
+        <div class="team-meta">
+          <span>HBK GAMING</span>
+          <strong>kappa</strong>
+        </div>
+      </article>
 
-<div class="band" id="links"><div class="wrap bandin"><div><strong>CASTOR SYSTEM ONLINE</strong><br><span style="color:#aebdce;font-size:12px">PLAY. CREATE. REPEAT.</span></div><div class="social"><a href="#" title="XのURLを設定してください">X</a><a href="#" title="YouTube URLを設定してください">YOUTUBE</a><a href="#" title="GitHub URLを設定してください">GITHUB</a></div></div></div>
+      <article class="team-card">
+        <div class="team-photo"><img src="assets/hbk-sota.png" alt="sota"></div>
+        <div class="team-meta">
+          <span>HBK GAMING</span>
+          <strong>sota</strong>
+        </div>
+      </article>
+    </div>
+
+    <div class="play-footer">
+      <span>HBK GAMING</span>
+      <span>PLAY / GAMING</span>
+    </div>
+  </div>
+</section>
+
+  <section class="section create" id="create">
+    <div class="wrap section-inner">
+      <div class="section-label">02 / CREATE</div>
+      <h2>CREATE</h2>
+      <p>ここにCASTORの「CREATE」を入れていきます。ゲーム制作、Web、映像など、つくったものをまとめる場所。</p>
+      <div class="placeholder">
+        <b>PROJECTS / CREATE</b>
+        <span>CONTENTS WILL BE ADDED</span>
+      </div>
+    </div>
+  </section>
 </main>
-<footer><div class="wrap"><div class="foot"><div><div class="brand">Cast★r</div><p>遊びと学びをつなぐ<br>クリエイティブレーベル</p></div><div><h4>NAVIGATION</h4><a href="#about">ABOUT</a><br><a href="#projects">PROJECTS</a><br><a href="#quest">KANJI QUEST</a></div><div><h4>PROJECTS</h4><a href="#projects">HBK_Gaming</a><br><a href="#projects">KAIRI_studio</a><br><a href="#quest">CASTOR KANJI QUEST</a></div><div><h4>SYSTEM</h4><p>BUILD<br>CODE<br>PLAY<br>CREATE<br>CONNECT</p></div></div><div class="copy">© CASTOR. All Rights Reserved. / PLAY. CREATE. REPEAT.</div></div></footer>
-</body></html>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div class="footer-logo">
+      <img src="assets/castor-logo-official-1.png" alt="CASTOR">
+    </div>
+    <div>© CASTOR</div>
+  </div>
+</footer>
+
+</body>
+</html>
