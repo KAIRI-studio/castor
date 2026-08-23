@@ -223,6 +223,25 @@ a{text-decoration:none;color:inherit}
     will-change:opacity,transform,filter;
   }
 }
+
+/* CASTOR ambient motion — CSS only */
+.section.play,.section.create{position:relative;overflow:hidden}
+.section.play>.wrap,.section.create>.wrap{position:relative;z-index:2}
+.section.play::before{content:"";position:absolute;width:55vw;height:55vw;max-width:850px;max-height:850px;left:-18vw;top:8%;border-radius:50%;background:radial-gradient(circle,rgba(190,216,248,.12),rgba(190,216,248,.055) 24%,transparent 68%);filter:blur(10px);animation:playLight 18s ease-in-out infinite alternate;pointer-events:none}
+.section.play::after{content:"";position:absolute;width:42vw;height:42vw;max-width:650px;max-height:650px;right:-15vw;bottom:-18%;border-radius:50%;background:radial-gradient(circle,rgba(160,198,241,.07),transparent 68%);filter:blur(12px);animation:playLight2 22s ease-in-out infinite alternate;pointer-events:none}
+@keyframes playLight{from{transform:translate3d(0,0,0) scale(.92)}to{transform:translate3d(30vw,8vh,0) scale(1.12)}}
+@keyframes playLight2{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(-18vw,-8vh,0) scale(1.16)}}
+.team-card-link::after{content:"";position:absolute;z-index:3;top:0;left:-55%;width:35%;height:100%;pointer-events:none;background:linear-gradient(90deg,transparent,rgba(255,255,255,.045),transparent);transform:skewX(-14deg);animation:cardSweep 11s ease-in-out infinite}
+.team-card:nth-child(2) .team-card-link::after{animation-delay:3.5s}.team-card:nth-child(3) .team-card-link::after{animation-delay:7s}
+@keyframes cardSweep{0%,62%{left:-55%;opacity:0}70%{opacity:1}88%,100%{left:120%;opacity:0}}
+.section.create::before,.section.create::after{content:"";position:absolute;left:68%;top:48%;width:18vw;height:18vw;max-width:300px;max-height:300px;border:1px solid rgba(190,216,248,.055);border-radius:50%;transform:translate(-50%,-50%) scale(.35);opacity:0;pointer-events:none;animation:createRipple 9s ease-out infinite}
+.section.create::after{animation-delay:4.5s}
+@keyframes createRipple{0%{transform:translate(-50%,-50%) scale(.35);opacity:0}12%{opacity:.8}75%{opacity:.18}100%{transform:translate(-50%,-50%) scale(3.2);opacity:0}}
+.create-content::after{content:"";position:absolute;width:32vw;height:32vw;max-width:480px;max-height:480px;right:-8vw;top:-12vw;border-radius:50%;background:radial-gradient(circle,rgba(190,216,248,.055),transparent 68%);filter:blur(8px);animation:createAmbient 16s ease-in-out infinite alternate;pointer-events:none}
+@keyframes createAmbient{from{transform:translate3d(0,0,0) scale(.94)}to{transform:translate3d(-12vw,10vh,0) scale(1.1)}}
+@media(prefers-reduced-motion:reduce){.section.play::before,.section.play::after,.team-card-link::after,.section.create::before,.section.create::after,.create-content::after{animation:none!important}}
+@media(max-width:700px){.section.play::before{width:85vw;height:85vw;left:-35vw}.section.play::after{width:70vw;height:70vw;right:-28vw}.section.create::before,.section.create::after{left:72%;top:42%;width:30vw;height:30vw}.create-content::after{width:55vw;height:55vw;right:-18vw;top:-8vw}.team-card-link::after{animation-duration:14s}}
+
 </style>
 </head>
 <body>
