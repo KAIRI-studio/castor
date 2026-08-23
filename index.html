@@ -215,12 +215,12 @@ a{text-decoration:none;color:inherit}
 @media (max-width:520px){
   .hero-logo{
     clip-path:none!important;
-    animation:none!important;
-    opacity:1!important;
-    transform:none!important;
-    filter:drop-shadow(0 0 20px rgba(255,255,255,.24))!important;
     -webkit-clip-path:none!important;
-    will-change:auto!important;
+    animation:logoIn 2s ease-out 1s both!important;
+    opacity:0;
+    transform:translateY(4px);
+    filter:drop-shadow(0 0 20px rgba(255,255,255,.24))!important;
+    will-change:opacity,transform,filter;
   }
 }
 </style>
