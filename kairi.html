@@ -1,66 +1,54 @@
-<!doctype html>
-<html lang="ja">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>kairi | CASTOR</title>
-<link rel="stylesheet" href="member.css">
-</head>
-<body>
-<header class="header">
-  <div class="wrap header-inner">
-    <a class="home-logo" href="index.html#top" aria-label="CASTOR Home">
-      <img src="assets/castor-logo-official-1.png" alt="CASTOR">
-    </a>
-    <nav class="nav" aria-label="Main navigation">
-      <a href="index.html#play">PLAY</a>
-      <a href="index.html#create">CREATE</a>
-    </nav>
-  </div>
-</header>
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>kairi | CASTOR</title><style>
+:root{--bg:#263d60;--bg2:#172b49;--muted:rgba(255,255,255,.68);--line:rgba(255,255,255,.18);--accent:#b9d2f4}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:var(--bg2);color:#fff}
+body{font-family:Arial,"Helvetica Neue",sans-serif;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+.wrap{width:calc(100% - 140px);max-width:1500px;margin:auto}
+.header{position:fixed;top:0;left:0;right:0;z-index:50;height:86px;display:flex;align-items:center}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.home-logo{display:block;width:150px}
+.home-logo:hover{opacity:.78}
+.home-logo img{display:block;width:100%;height:auto;filter:brightness(0) invert(1)}
+.nav{display:flex;align-items:center;gap:42px;font-size:13px;letter-spacing:.14em;font-weight:700}
+.nav a{position:relative;padding:10px 0;color:rgba(255,255,255,.82)}
+.nav a:after{content:"";position:absolute;left:0;right:0;bottom:2px;height:1px;background:#fff;transform:scaleX(0);transform-origin:right;transition:transform .3s}
+.nav a:hover:after{transform:scaleX(1);transform-origin:left}
 
-<main class="member-hero">
-  <div class="wrap member-content">
-    <div class="member-copy">
-      <p class="eyebrow">CASTOR / PLAY / HBK GAMING</p>
-      <h1 class="member-name">kairi</h1>
-      <p class="member-team">HBK GAMING / MEMBER</p>
-
-      <div class="profile-inline">
-        <h2>PROFILE</h2>
-        <p>HBK GAMINGのメンバー。Apex Legendsを中心に、ゲームを楽しみながら活動しています。</p>
-        <div class="profile-data">
-          <div class="data-item"><span>TEAM</span><b>HBK GAMING</b></div>
-          <div class="data-item"><span>CATEGORY</span><b>PLAY / GAMING</b></div>
-        </div>
-        <div class="social-links">
-        <a class="social-link" href="https://www.twitch.tv/namimati_kairi" target="_blank" rel="noopener noreferrer" aria-label="kairi Twitch">
-          <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 2h18v13l-5 5h-4l-3 3v-3H3V2zm3 3v10h4v3l3-3h5l3-3V5H6zm3 2h2v5H9V7zm5 0h2v5h-2V7z"/></svg>
-          <span>TWITCH</span>
-        </a>
-        <a class="social-link" href="https://x.com/beaver733" target="_blank" rel="noopener noreferrer" aria-label="kairi X">
-          <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.77 7.74L23.2 22h-6.24l-4.89-6.39L6.48 22H3.36l7.24-8.28L2.8 2h6.4l4.42 5.82L18.9 2zm-1.1 17.8h1.73L8.29 4.07H6.43L17.8 19.8z"/></svg>
-          <span>X</span>
-        </a></div>
-      </div>
-    </div>
-
-    <div class="member-art">
-      <div class="side-mark">HBK GAMING</div>
-      <img src="assets/hbk-kairi.png" alt="kairi">
-    </div>
-  </div>
-
-  <div class="bottom-nav">
-    <div class="wrap bottom-nav-inner">
-      <a class="back" href="index.html#play">← BACK TO HBK GAMING</a>
-      <nav class="member-links" aria-label="HBK GAMING members">
-        <a class="current" href="kairi.html">KAIRI</a>
-        <a class="" href="kappa.html">KAPPA</a>
-        <a class="" href="sota.html">SOTA</a>
-      </nav>
-    </div>
-  </div>
-</main>
-</body>
-</html>
+.member-hero{min-height:100svh;display:flex;align-items:center;position:relative;overflow:hidden;background:radial-gradient(circle at 76% 38%,rgba(184,208,244,.16),transparent 31%),linear-gradient(120deg,#1d3454 0%,#263d60 55%,#213858 100%)}
+.member-content{position:relative;z-index:1;min-height:100svh;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:7vw;padding-top:70px;padding-bottom:45px}
+.member-copy{align-self:center}
+.eyebrow{margin:0 0 18px;color:var(--accent);font-size:11px;letter-spacing:.28em;font-weight:700}
+.member-name{margin:0;font-size:clamp(70px,9vw,138px);line-height:.88;font-weight:300;letter-spacing:-.035em}
+.member-team{margin:28px 0 0;padding-top:18px;border-top:1px solid var(--line);color:rgba(255,255,255,.72);font-size:11px;letter-spacing:.22em;max-width:600px}
+.profile-inline{margin-top:28px;max-width:610px}
+.profile-inline h2{margin:0 0 12px;font-size:12px;letter-spacing:.24em;color:var(--accent)}
+.profile-inline p{margin:0;color:var(--muted);font-size:14px;line-height:1.85}
+.profile-data{display:flex;gap:28px;margin-top:20px;flex-wrap:wrap}
+.data-item span{display:block;font-size:9px;letter-spacing:.18em;color:rgba(255,255,255,.45);margin-bottom:6px}
+.data-item b{font-size:12px;letter-spacing:.08em}
+.social-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.social-link{display:inline-flex;align-items:center;gap:9px;min-width:116px;height:42px;padding:0 14px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.045);color:#fff;font-size:10px;font-weight:700;letter-spacing:.14em;transition:.25s ease}
+.social-link:hover{border-color:rgba(255,255,255,.72);background:rgba(255,255,255,.11);transform:translateY(-2px)}
+.social-icon{width:17px!important;height:17px!important;max-width:17px!important;max-height:17px!important;display:block!important;flex:0 0 17px!important;fill:currentColor}
+.member-art{width:min(100%,620px);height:min(72vh,620px);justify-self:end;display:flex;align-items:center;justify-content:center;position:relative;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.055)}
+.member-art:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,24,43,.20),transparent 45%);pointer-events:none}
+.member-art img{position:relative;z-index:1;width:100%;height:100%;object-fit:contain;object-position:center bottom;display:block;padding:20px;filter:drop-shadow(0 18px 30px rgba(0,0,0,.18))}
+.side-mark{position:absolute;left:5%;bottom:5%;z-index:0;font-size:clamp(34px,5vw,72px);font-weight:700;font-style:italic;letter-spacing:.03em;color:rgba(255,255,255,.055);pointer-events:none}
+.bottom-nav{position:absolute;left:0;right:0;bottom:20px;z-index:5}
+.bottom-nav-inner{display:flex;justify-content:space-between;align-items:center;color:rgba(255,255,255,.48);font-size:10px;letter-spacing:.16em}
+.back:hover{color:#fff}
+.member-links{display:flex;gap:18px}
+.member-links a:hover,.member-links .current{color:#fff}
+@media(max-width:900px){
+ .wrap{width:calc(100% - 40px)} .header{height:72px}.home-logo{width:118px}.nav{gap:20px;font-size:11px}
+ .member-content{grid-template-columns:1fr;gap:25px;padding-top:90px;padding-bottom:75px}
+ .member-copy{order:2}.member-art{order:1;width:100%;height:52vh;max-height:520px}
+ .member-name{font-size:clamp(58px,15vw,100px)}
+}
+@media(max-width:520px){
+ .profile-inline p{font-size:13px}.member-art{height:46vh}.social-link{min-width:105px}.bottom-nav-inner{font-size:8px}.member-links{gap:10px}
+}
+</style></head><body>
+<header class="header"><div class="wrap header-inner"><a class="home-logo" href="index.html#top" aria-label="CASTOR Home"><img src="assets/castor-logo-official-1.png" alt="CASTOR"></a><nav class="nav"><a href="index.html#play">PLAY</a><a href="index.html#create">CREATE</a></nav></div></header>
+<main class="member-hero"><div class="wrap member-content"><div class="member-copy"><p class="eyebrow">CASTOR / PLAY / HBK GAMING</p><h1 class="member-name">kairi</h1><p class="member-team">HBK GAMING / MEMBER</p><div class="profile-inline"><h2>PROFILE</h2><p>HBK GAMINGのメンバー。Apex Legendsを中心に、ゲームを楽しみながら活動しています.</p><div class="profile-data"><div class="data-item"><span>TEAM</span><b>HBK GAMING</b></div><div class="data-item"><span>CATEGORY</span><b>PLAY / GAMING</b></div></div><div class="social-links"><a class="social-link" href="https://www.twitch.tv/namimati_kairi" target="_blank" rel="noopener noreferrer"><svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 2h18v13l-5 5h-4l-3 3v-3H3V2zm3 3v10h4v3l3-3h5l3-3V5H6zm3 2h2v5H9V7zm5 0h2v5h-2V7z"/></svg><span>TWITCH</span></a><a class="social-link" href="https://x.com/beaver733" target="_blank" rel="noopener noreferrer"><svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.77 7.74L23.2 22h-6.24l-4.89-6.39L6.48 22H3.36l7.24-8.28L2.8 2h6.4l4.42 5.82L18.9 2zm-1.1 17.8h1.73L8.29 4.07H6.43L17.8 19.8z"/></svg><span>X</span></a></div></div></div><div class="member-art"><div class="side-mark">HBK GAMING</div><img src="assets/hbk-kairi.png" alt="kairi"></div></div><div class="bottom-nav"><div class="wrap bottom-nav-inner"><a class="back" href="index.html#play">← BACK TO HBK GAMING</a><nav class="member-links"><a class="current" href="kairi.html">KAIRI</a><a class="" href="kappa.html">KAPPA</a><a class="" href="sota.html">SOTA</a></nav></div></div></main></body></html>
