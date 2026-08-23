@@ -35,15 +35,15 @@ a{text-decoration:none;color:inherit}
 }
 .hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 38%,rgba(210,227,249,.18),transparent 35%)}
 .hero-mark{position:absolute;width:min(72vw,900px);opacity:.2;animation:markIn 2.2s ease-out .2s both}
-.hero-logo{position:relative;width:min(60vw,700px);filter:drop-shadow(0 0 20px rgba(255,255,255,.24));animation:logoIn 2s ease-out 1s both;clip-path:inset(0 100% 0 0)}
+.hero-logo{position:relative;width:min(60vw,700px);filter:drop-shadow(0 0 20px rgba(255,255,255,.24));animation:logoIn 2s ease-out 1s both;}
 
 @keyframes markIn{
   0%{opacity:0;transform:scale(.94);filter:blur(12px)}
   100%{opacity:.2;transform:scale(1);filter:blur(.2px)}
 }
 @keyframes logoIn{
-  0%{clip-path:inset(0 100% 0 0);filter:blur(8px) drop-shadow(0 0 0 rgba(255,255,255,0))}
-  100%{clip-path:inset(0 0 0 0);filter:blur(0) drop-shadow(0 0 20px rgba(255,255,255,.24))}
+  0%{opacity:0;transform:translateY(4px);filter:blur(8px) drop-shadow(0 0 0 rgba(255,255,255,0))}
+  100%{opacity:1;transform:translateY(0);filter:blur(0) drop-shadow(0 0 20px rgba(255,255,255,.24))}
 }
 
 .shooting-star{
@@ -210,6 +210,18 @@ a{text-decoration:none;color:inherit}
   .studio-card img{width:min(100%,300px)}
   .footer-inner{display:block}
   .footer-logo{margin-bottom:24px}
+}
+
+@media (max-width:520px){
+  .hero-logo{
+    clip-path:none!important;
+    animation:none!important;
+    opacity:1!important;
+    transform:none!important;
+    filter:drop-shadow(0 0 20px rgba(255,255,255,.24))!important;
+    -webkit-clip-path:none!important;
+    will-change:auto!important;
+  }
 }
 </style>
 </head>
