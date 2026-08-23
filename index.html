@@ -159,6 +159,36 @@ a{text-decoration:none;color:inherit}
 .team-card{
   min-width:0;
 }
+.team-card-link{
+  position:relative;
+  display:block;
+  color:inherit;
+  outline:none;
+}
+.card-trace{
+  position:absolute;
+  inset:-1px;
+  z-index:4;
+  overflow:visible;
+  pointer-events:none;
+}
+.card-trace svg{display:block;width:100%;height:100%;overflow:visible}
+.card-trace rect{
+  fill:none;
+  stroke:#fff;
+  stroke-width:1;
+  vector-effect:non-scaling-stroke;
+  stroke-dasharray:24 76;
+  stroke-dashoffset:100;
+  opacity:0;
+}
+.team-card-link:hover .card-trace rect,
+.team-card-link:focus-visible .card-trace rect{
+  opacity:.95;
+  animation:cardTrace 1.55s linear infinite;
+}
+.team-card-link:focus-visible{outline:1px solid rgba(255,255,255,.65);outline-offset:5px}
+@keyframes cardTrace{to{stroke-dashoffset:0}}
 .team-photo{
   height:clamp(300px,34vw,470px);
   overflow:hidden;
@@ -284,27 +314,36 @@ a{text-decoration:none;color:inherit}
 
     <div class="team-grid">
       <article class="team-card">
-        <div class="team-photo"><img src="assets/hbk-kairi.png" alt="kairi"></div>
-        <div class="team-meta">
-          <span>HBK GAMING</span>
-          <strong>kairi</strong>
-        </div>
+        <a class="team-card-link" href="kairi.html" aria-label="kairiのページを見る">
+          <span class="card-trace" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><rect x=".5" y=".5" width="99" height="99" pathLength="100"/></svg></span>
+          <div class="team-photo"><img src="assets/hbk-kairi.png" alt="kairi"></div>
+          <div class="team-meta">
+            <span>HBK GAMING</span>
+            <strong>kairi</strong>
+          </div>
+        </a>
       </article>
 
       <article class="team-card">
-        <div class="team-photo"><img src="assets/hbk-kappa.png" alt="kappa"></div>
-        <div class="team-meta">
-          <span>HBK GAMING</span>
-          <strong>kappa</strong>
-        </div>
+        <a class="team-card-link" href="kappa.html" aria-label="kappaのページを見る">
+          <span class="card-trace" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><rect x=".5" y=".5" width="99" height="99" pathLength="100"/></svg></span>
+          <div class="team-photo"><img src="assets/hbk-kappa.png" alt="kappa"></div>
+          <div class="team-meta">
+            <span>HBK GAMING</span>
+            <strong>kappa</strong>
+          </div>
+        </a>
       </article>
 
       <article class="team-card">
-        <div class="team-photo"><img src="assets/hbk-sota.png" alt="sota"></div>
-        <div class="team-meta">
-          <span>HBK GAMING</span>
-          <strong>sota</strong>
-        </div>
+        <a class="team-card-link" href="sota.html" aria-label="sotaのページを見る">
+          <span class="card-trace" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><rect x=".5" y=".5" width="99" height="99" pathLength="100"/></svg></span>
+          <div class="team-photo"><img src="assets/hbk-sota.png" alt="sota"></div>
+          <div class="team-meta">
+            <span>HBK GAMING</span>
+            <strong>sota</strong>
+          </div>
+        </a>
       </article>
     </div>
 
