@@ -39,6 +39,21 @@
 @media(max-width:700px){
   .member-hero::after{left:72%;top:42%;width:30vw;height:30vw}
 }
+
+/* CASTOR member-name motion: right -> left, once on page load */
+.member-name{
+  opacity:0;
+  transform:translate3d(70px,0,0);
+  animation:memberNameIn .9s cubic-bezier(.2,.7,.2,1) 1.05s forwards;
+}
+@keyframes memberNameIn{
+  from{opacity:0;transform:translate3d(70px,0,0)}
+  to{opacity:1;transform:translate3d(0,0,0)}
+}
+@media(prefers-reduced-motion:reduce){
+  .member-name{opacity:1;transform:none;animation:none}
+}
+
 </style></head><body>
 <header class="header"><div class="wrap header-inner"><a class="home-logo" href="index.html#top"><img src="assets/castor-logo-official-1.png" alt="CASTOR"></a><nav class="nav"><a href="index.html#play">PLAY</a><a href="index.html#create">CREATE</a></nav></div></header>
 <main class="member-hero"><div class="shooting-star" aria-hidden="true"></div><div class="hero-mark" aria-hidden="true"><img src="assets/castor-mark.png" alt=""></div><div class="wrap member-content">
