@@ -40,7 +40,35 @@
   .project-shots{gap:6px;}
   .project{padding:14px;}
 }
-.logo-card img,.project-shots img{background:transparent!important;} .logo-card{background-color:rgba(255,255,255,.045)!important;} @media (prefers-reduced-motion:reduce){.hero-mark img,.shooting-star{animation:none!important}.hero-mark img{opacity:.105!important;transform:scale(1)!important}.shooting-star{opacity:0!important}} </style></head>
+.logo-card img,.project-shots img{background:transparent!important;} .logo-card{background-color:rgba(255,255,255,.045)!important;} @media (prefers-reduced-motion:reduce){.hero-mark img,.shooting-star{animation:none!important}.hero-mark img{opacity:.105!important;transform:scale(1)!important}.shooting-star{opacity:0!important}} 
+/* Shared CASTOR ambient ripple */
+.studio-hero::after{
+  content:"";
+  position:absolute;
+  left:68%;
+  top:48%;
+  width:18vw;
+  height:18vw;
+  max-width:300px;
+  max-height:300px;
+  border:1px solid rgba(190,216,248,.055);
+  border-radius:50%;
+  transform:translate(-50%,-50%) scale(.35);
+  opacity:0;
+  pointer-events:none;
+  animation:studioRipple 9s ease-out 2.6s infinite;
+  z-index:1;
+}
+@keyframes studioRipple{
+  0%{transform:translate(-50%,-50%) scale(.35);opacity:0}
+  12%{opacity:.8}
+  75%{opacity:.18}
+  100%{transform:translate(-50%,-50%) scale(3.2);opacity:0}
+}
+@media(max-width:700px){
+  .studio-hero::after{left:72%;top:42%;width:30vw;height:30vw}
+}
+</style></head>
 <body><header class="header"><div class="wrap header-inner"><a class="home-logo" href="index.html#top"><img src="assets/castor-logo-official-1.png" alt="CASTOR"></a><nav class="nav"><a href="index.html#play">PLAY</a><a href="index.html#create">CREATE</a></nav></div></header>
 <main class="studio-hero"><div class="shooting-star" aria-hidden="true"></div><div class="hero-mark" aria-hidden="true"><img src="assets/castor-mark.png" alt=""></div>
 <div class="wrap content"><div class="copy"><p class="eyebrow">CASTOR / CREATE</p><h1>KAIRI_studio</h1><p class="team">GAME / WEB / CREATE</p><p class="intro">ゲームやWebなど、「つくってみたい」を形にしていく小さなスタジオ。</p><div class="logo-card"><img src="assets/kairi-studio-logo.png" alt="KAIRI_studio"></div></div>
