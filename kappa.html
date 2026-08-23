@@ -49,6 +49,43 @@ a{text-decoration:none;color:inherit}
 @media(max-width:520px){
  .profile-inline p{font-size:13px}.member-art{height:46vh}.social-link{min-width:105px}.bottom-nav-inner{font-size:8px}.member-links{gap:10px}
 }
+
+.hero-mark{
+  position:absolute;
+  z-index:0;
+  left:50%;
+  top:50%;
+  width:min(58vw,760px);
+  height:min(58vw,760px);
+  transform:translate(-42%,-48%) scale(.94);
+  opacity:0;
+  pointer-events:none;
+  animation:heroMarkReveal 1.8s cubic-bezier(.2,.7,.2,1) .15s forwards;
+}
+.hero-mark img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+  opacity:.105;
+  filter:brightness(0) invert(1);
+}
+@keyframes heroMarkReveal{
+  from{opacity:0;transform:translate(-42%,-48%) scale(.94)}
+  to{opacity:1;transform:translate(-42%,-48%) scale(1)}
+}
+.member-content,.bottom-nav{z-index:2}
+@media(max-width:900px){
+  .hero-mark{
+    width:82vw;
+    height:82vw;
+    transform:translate(-42%,-46%) scale(.94);
+  }
+  @keyframes heroMarkReveal{
+    from{opacity:0;transform:translate(-42%,-46%) scale(.94)}
+    to{opacity:1;transform:translate(-42%,-46%) scale(1)}
+  }
+}
 </style></head><body>
 <header class="header"><div class="wrap header-inner"><a class="home-logo" href="index.html#top" aria-label="CASTOR Home"><img src="assets/castor-logo-official-1.png" alt="CASTOR"></a><nav class="nav"><a href="index.html#play">PLAY</a><a href="index.html#create">CREATE</a></nav></div></header>
-<main class="member-hero"><div class="wrap member-content"><div class="member-copy"><p class="eyebrow">CASTOR / PLAY / HBK GAMING</p><h1 class="member-name">kappa</h1><p class="member-team">HBK GAMING / MEMBER</p><div class="profile-inline"><h2>PROFILE</h2><p>HBK GAMINGのメンバー。プロフィールや活動内容は、今後少しずつ追加していきます.</p><div class="profile-data"><div class="data-item"><span>TEAM</span><b>HBK GAMING</b></div><div class="data-item"><span>CATEGORY</span><b>PLAY / GAMING</b></div></div><div class="social-links"></div></div></div><div class="member-art"><div class="side-mark">HBK GAMING</div><img src="assets/hbk-kappa.png" alt="kappa"></div></div><div class="bottom-nav"><div class="wrap bottom-nav-inner"><a class="back" href="index.html#play">← BACK TO HBK GAMING</a><nav class="member-links"><a class="" href="kairi.html">KAIRI</a><a class="current" href="kappa.html">KAPPA</a><a class="" href="sota.html">SOTA</a></nav></div></div></main></body></html>
+<main class="member-hero"><div class="hero-mark" aria-hidden="true"><img src="assets/castor-mark.png" alt=""></div><div class="wrap member-content"><div class="member-copy"><p class="eyebrow">CASTOR / PLAY / HBK GAMING</p><h1 class="member-name">kappa</h1><p class="member-team">HBK GAMING / MEMBER</p><div class="profile-inline"><h2>PROFILE</h2><p>HBK GAMINGのメンバー。プロフィールや活動内容は、今後少しずつ追加していきます.</p><div class="profile-data"><div class="data-item"><span>TEAM</span><b>HBK GAMING</b></div><div class="data-item"><span>CATEGORY</span><b>PLAY / GAMING</b></div></div><div class="social-links"></div></div></div><div class="member-art"><div class="side-mark">HBK GAMING</div><img src="assets/hbk-kappa.png" alt="kappa"></div></div><div class="bottom-nav"><div class="wrap bottom-nav-inner"><a class="back" href="index.html#play">← BACK TO HBK GAMING</a><nav class="member-links"><a class="" href="kairi.html">KAIRI</a><a class="current" href="kappa.html">KAPPA</a><a class="" href="sota.html">SOTA</a></nav></div></div></main></body></html>
