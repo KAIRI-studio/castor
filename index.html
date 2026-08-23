@@ -36,9 +36,6 @@ a{text-decoration:none;color:inherit}
 .hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 38%,rgba(210,227,249,.18),transparent 35%)}
 .hero-mark{position:absolute;width:min(72vw,900px);opacity:.2;animation:markIn 2.2s ease-out .2s both}
 .hero-logo{position:relative;width:min(60vw,700px);filter:drop-shadow(0 0 20px rgba(255,255,255,.24));animation:logoIn 2s ease-out 1s both;clip-path:inset(0 100% 0 0)}
-.hero-copy{position:absolute;left:0;right:0;bottom:12%;text-align:center;letter-spacing:.18em;font-size:14px;color:rgba(255,255,255,.8);animation:copyIn 1.2s ease-out 2.2s both}
-.hero-copy strong{display:block;font-size:clamp(20px,3vw,34px);letter-spacing:.28em;margin-bottom:10px;color:#fff}
-.hero-copy span{font-size:11px;letter-spacing:.24em}
 
 @keyframes markIn{
   0%{opacity:0;transform:scale(.94);filter:blur(12px)}
@@ -80,34 +77,13 @@ a{text-decoration:none;color:inherit}
   top:0;
   width:100%;
   height:1px;
-  background:linear-gradient(
-    to left,
-    rgba(255,255,255,.58),
-    rgba(255,255,255,.22) 45%,
-    transparent
-  );
+  background:linear-gradient(to left,rgba(255,255,255,.58),rgba(255,255,255,.22) 45%,transparent);
 }
 @keyframes starPass{
-  0%{
-    opacity:0;
-    transform:translateX(-155px);
-  }
-  18%{
-    opacity:.48;
-  }
-  58%{
-    opacity:.38;
-    transform:translateX(45px);
-  }
-  100%{
-    opacity:0;
-    transform:translateX(85px);
-  }
-}
-
-@keyframes copyIn{
-  0%{opacity:0;transform:translateY(12px)}
-  100%{opacity:1;transform:none}
+  0%{opacity:0;transform:translateX(-155px)}
+  18%{opacity:.48}
+  58%{opacity:.38;transform:translateX(45px)}
+  100%{opacity:0;transform:translateX(85px)}
 }
 
 /* SITE SKELETON */
@@ -118,9 +94,6 @@ a{text-decoration:none;color:inherit}
 .section-label{font-size:11px;letter-spacing:.28em;color:var(--accent);margin-bottom:22px}
 .section h2{font-size:clamp(48px,9vw,120px);font-weight:300;letter-spacing:.06em;margin:0 0 28px}
 .section p{max-width:620px;color:var(--muted);line-height:2;font-size:15px}
-.placeholder{margin-top:55px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:28px 0;display:flex;justify-content:space-between;align-items:center;color:rgba(255,255,255,.55);font-size:12px;letter-spacing:.18em}
-.placeholder b{color:#fff;font-size:13px}
-
 
 /* PLAY / HBK GAMING */
 .play{
@@ -129,121 +102,85 @@ a{text-decoration:none;color:inherit}
     radial-gradient(circle at 78% 20%,rgba(184,208,244,.10),transparent 28%),
     #1b304f;
 }
-.play-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-end;
-  gap:60px;
-  margin-bottom:52px;
-}
+.play-head{display:flex;justify-content:space-between;align-items:flex-end;gap:60px;margin-bottom:52px}
 .play h2{margin-bottom:18px}
-.play-intro{
-  margin:0;
-  max-width:520px;
-  color:rgba(255,255,255,.68);
-  line-height:1.9;
-  font-size:14px;
-}
-.hbk-logo{
-  width:clamp(110px,13vw,170px);
-  height:auto;
-  object-fit:contain;
-  opacity:.94;
-  filter:drop-shadow(0 8px 22px rgba(0,0,0,.22));
-}
-.team-grid{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:14px;
-}
-.team-card{
-  min-width:0;
-}
-.team-card-link{
-  position:relative;
-  display:block;
-  color:inherit;
-  outline:none;
-}
-.card-trace{
-  position:absolute;
-  inset:-1px;
-  z-index:4;
-  overflow:visible;
-  pointer-events:none;
-}
+.play-intro{margin:0;max-width:520px;color:rgba(255,255,255,.68);line-height:1.9;font-size:14px}
+.hbk-logo{width:clamp(110px,13vw,170px);height:auto;object-fit:contain;opacity:.94;filter:drop-shadow(0 8px 22px rgba(0,0,0,.22))}
+.team-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.team-card{min-width:0}
+.team-card-link{position:relative;display:block;color:inherit;outline:none}
+.card-trace{position:absolute;inset:-1px;z-index:4;overflow:visible;pointer-events:none}
 .card-trace svg{display:block;width:100%;height:100%;overflow:visible}
-.card-trace rect{
-  fill:none;
-  stroke:#fff;
-  stroke-width:1;
-  vector-effect:non-scaling-stroke;
-  stroke-dasharray:24 76;
-  stroke-dashoffset:100;
-  opacity:0;
-}
+.card-trace rect{fill:none;stroke:#fff;stroke-width:1;vector-effect:non-scaling-stroke;stroke-dasharray:24 76;stroke-dashoffset:100;opacity:0}
 .team-card-link:hover .card-trace rect,
-.team-card-link:focus-visible .card-trace rect{
-  opacity:.95;
-  animation:cardTrace 1.55s linear infinite;
-}
+.team-card-link:focus-visible .card-trace rect{opacity:.95;animation:cardTrace 1.55s linear infinite}
 .team-card-link:focus-visible{outline:1px solid rgba(255,255,255,.65);outline-offset:5px}
 @keyframes cardTrace{to{stroke-dashoffset:0}}
-.team-photo{
-  height:clamp(300px,34vw,470px);
-  overflow:hidden;
-  position:relative;
-  background:rgba(255,255,255,.07);
-  border:1px solid rgba(255,255,255,.12);
+.team-photo{height:clamp(300px,34vw,470px);overflow:hidden;position:relative;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12)}
+.team-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,24,43,.26),transparent 35%);pointer-events:none}
+.team-photo img{width:100%;height:100%;object-fit:contain;object-position:center bottom;display:block;transition:transform .5s ease}
+.team-card:hover .team-photo img{transform:scale(1.025)}
+.team-meta{padding:11px 0 0;border-bottom:1px solid rgba(255,255,255,.16);padding-bottom:14px}
+.team-meta span{display:block;width:max-content;max-width:100%;padding:4px 8px;background:rgba(255,255,255,.12);color:rgba(255,255,255,.72);font-size:9px;letter-spacing:.16em;margin-bottom:7px}
+.team-meta strong{display:block;font-size:14px;letter-spacing:.06em;font-weight:600}
+.play-footer{margin-top:28px;padding-top:16px;border-top:1px solid rgba(255,255,255,.14);display:flex;justify-content:space-between;color:rgba(255,255,255,.42);font-size:10px;letter-spacing:.18em}
+
+/* CREATE */
+.create{
+  min-height:78vh;
+  background:
+    radial-gradient(circle at 78% 28%,rgba(184,208,244,.09),transparent 30%),
+    #223958;
 }
-.team-photo:after{
+.create-content{display:grid;grid-template-columns:1fr 1.1fr;gap:70px;align-items:center}
+.create-copy p{margin-top:0}
+.studio-card{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+  min-height:280px;
+  padding:36px 42px;
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.045);
+  transition:transform .35s ease,border-color .35s ease,background .35s ease;
+  overflow:hidden;
+}
+.studio-card:before{
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(to top,rgba(10,24,43,.26),transparent 35%);
-  pointer-events:none;
+  background:linear-gradient(120deg,transparent 20%,rgba(255,255,255,.07) 50%,transparent 80%);
+  transform:translateX(-110%);
+  transition:transform .8s ease;
 }
-.team-photo img{
-  width:100%;
-  height:100%;
+.studio-card:hover{
+  transform:translateY(-3px);
+  border-color:rgba(255,255,255,.52);
+  background:rgba(255,255,255,.07);
+}
+.studio-card:hover:before{transform:translateX(110%)}
+.studio-card img{
+  position:relative;
+  z-index:1;
+  width:min(100%,360px);
+  max-height:105px;
   object-fit:contain;
-  object-position:center bottom;
+  object-position:left center;
   display:block;
-  transition:transform .5s ease;
+  filter:brightness(0) invert(1);
 }
-.team-card:hover .team-photo img{transform:scale(1.025)}
-.team-meta{
-  padding:11px 0 0;
-  border-bottom:1px solid rgba(255,255,255,.16);
-  padding-bottom:14px;
-}
-.team-meta span{
-  display:block;
-  width:max-content;
-  max-width:100%;
-  padding:4px 8px;
-  background:rgba(255,255,255,.12);
-  color:rgba(255,255,255,.72);
-  font-size:9px;
-  letter-spacing:.16em;
-  margin-bottom:7px;
-}
-.team-meta strong{
-  display:block;
-  font-size:14px;
-  letter-spacing:.06em;
-  font-weight:600;
-}
-.play-footer{
-  margin-top:28px;
-  padding-top:16px;
-  border-top:1px solid rgba(255,255,255,.14);
-  display:flex;
-  justify-content:space-between;
-  color:rgba(255,255,255,.42);
+.studio-card span{
+  position:relative;
+  z-index:1;
+  margin-top:30px;
   font-size:10px;
-  letter-spacing:.18em;
+  font-weight:700;
+  letter-spacing:.2em;
+  color:rgba(255,255,255,.68);
 }
+.studio-card:hover span{color:#fff}
 
 /* FOOTER */
 .footer{padding:55px 0;background:#13253e;border-top:1px solid var(--line)}
@@ -251,30 +188,26 @@ a{text-decoration:none;color:inherit}
 .footer-logo{width:120px}
 .footer-logo img{width:100%;filter:brightness(0) invert(1)}
 
-
+@media(max-width:900px){
+  .create-content{grid-template-columns:1fr;gap:40px}
+  .studio-card{min-height:220px}
+}
 @media(max-width:700px){
-  .play-head{
-    align-items:flex-start;
-    flex-direction:column;
-    gap:25px;
-    margin-bottom:34px;
-  }
+  .play-head{align-items:flex-start;flex-direction:column;gap:25px;margin-bottom:34px}
   .hbk-logo{width:105px}
   .team-grid{grid-template-columns:1fr;gap:24px}
   .team-photo{height:430px}
   .play-footer{font-size:9px}
-
   .wrap{width:calc(100% - 34px)}
   .header{height:72px}
   .home-logo{width:118px}
   .nav{gap:20px;font-size:11px}
   .hero-logo{width:82vw}
   .hero-mark{width:72vw}
-  .hero-copy{bottom:10%;padding:0 20px}
   .section{min-height:65vh;padding:90px 0}
   .section h2{font-size:54px}
-  .placeholder{display:block}
-  .placeholder b{display:block;margin-bottom:8px}
+  .studio-card{padding:28px}
+  .studio-card img{width:min(100%,300px)}
   .footer-inner{display:block}
   .footer-logo{margin-bottom:24px}
 }
@@ -299,69 +232,65 @@ a{text-decoration:none;color:inherit}
     <div class="shooting-star" aria-hidden="true"></div>
     <img class="hero-mark" src="assets/castor-mark.png" alt="">
     <img class="hero-logo" src="assets/castor-logo-official-1.png" alt="CASTOR">
-</section>
+  </section>
 
   <section class="section play" id="play">
-  <div class="wrap section-inner">
-    <div class="play-head">
-      <div>
-        <div class="section-label">01 / PLAY</div>
-        <h2>PLAY</h2>
-        <p class="play-intro">CASTORのPLAY。<br>ゲームを中心に、遊ぶことから生まれるものを。</p>
+    <div class="wrap section-inner">
+      <div class="play-head">
+        <div>
+          <div class="section-label">01 / PLAY</div>
+          <h2>PLAY</h2>
+          <p class="play-intro">CASTORのPLAY。<br>ゲームを中心に、遊ぶことから生まれるものを。</p>
+        </div>
+        <img class="hbk-logo" src="assets/hbk-gaming-logo.png" alt="HBK GAMING">
       </div>
-      <img class="hbk-logo" src="assets/hbk-gaming-logo.png" alt="HBK GAMING">
+
+      <div class="team-grid">
+        <article class="team-card">
+          <a class="team-card-link" href="kairi.html" aria-label="kairiのページを見る">
+            <span class="card-trace" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><rect x=".5" y=".5" width="99" height="99" pathLength="100"/></svg></span>
+            <div class="team-photo"><img src="assets/hbk-kairi.png" alt="kairi"></div>
+            <div class="team-meta"><span>HBK GAMING</span><strong>kairi</strong></div>
+          </a>
+        </article>
+
+        <article class="team-card">
+          <a class="team-card-link" href="kappa.html" aria-label="kappaのページを見る">
+            <span class="card-trace" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><rect x=".5" y=".5" width="99" height="99" pathLength="100"/></svg></span>
+            <div class="team-photo"><img src="assets/hbk-kappa.png" alt="kappa"></div>
+            <div class="team-meta"><span>HBK GAMING</span><strong>kappa</strong></div>
+          </a>
+        </article>
+
+        <article class="team-card">
+          <a class="team-card-link" href="sota.html" aria-label="sotaのページを見る">
+            <span class="card-trace" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><rect x=".5" y=".5" width="99" height="99" pathLength="100"/></svg></span>
+            <div class="team-photo"><img src="assets/hbk-sota.png" alt="sota"></div>
+            <div class="team-meta"><span>HBK GAMING</span><strong>sota</strong></div>
+          </a>
+        </article>
+      </div>
+
+      <div class="play-footer">
+        <span>HBK GAMING</span>
+        <span>PLAY / GAMING</span>
+      </div>
     </div>
-
-    <div class="team-grid">
-      <article class="team-card">
-        <a class="team-card-link" href="kairi.html" aria-label="kairiのページを見る">
-          <span class="card-trace" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><rect x=".5" y=".5" width="99" height="99" pathLength="100"/></svg></span>
-          <div class="team-photo"><img src="assets/hbk-kairi.png" alt="kairi"></div>
-          <div class="team-meta">
-            <span>HBK GAMING</span>
-            <strong>kairi</strong>
-          </div>
-        </a>
-      </article>
-
-      <article class="team-card">
-        <a class="team-card-link" href="kappa.html" aria-label="kappaのページを見る">
-          <span class="card-trace" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><rect x=".5" y=".5" width="99" height="99" pathLength="100"/></svg></span>
-          <div class="team-photo"><img src="assets/hbk-kappa.png" alt="kappa"></div>
-          <div class="team-meta">
-            <span>HBK GAMING</span>
-            <strong>kappa</strong>
-          </div>
-        </a>
-      </article>
-
-      <article class="team-card">
-        <a class="team-card-link" href="sota.html" aria-label="sotaのページを見る">
-          <span class="card-trace" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><rect x=".5" y=".5" width="99" height="99" pathLength="100"/></svg></span>
-          <div class="team-photo"><img src="assets/hbk-sota.png" alt="sota"></div>
-          <div class="team-meta">
-            <span>HBK GAMING</span>
-            <strong>sota</strong>
-          </div>
-        </a>
-      </article>
-    </div>
-
-    <div class="play-footer">
-      <span>HBK GAMING</span>
-      <span>PLAY / GAMING</span>
-    </div>
-  </div>
-</section>
+  </section>
 
   <section class="section create" id="create">
     <div class="wrap section-inner">
-      <div class="section-label">02 / CREATE</div>
-      <h2>CREATE</h2>
-      <p>ここにCASTORの「CREATE」を入れていきます。ゲーム制作、Web、映像など、つくったものをまとめる場所。</p>
-      <div class="placeholder">
-        <b>PROJECTS / CREATE</b>
-        <span>CONTENTS WILL BE ADDED</span>
+      <div class="create-content">
+        <div class="create-copy">
+          <div class="section-label">02 / CREATE</div>
+          <h2>CREATE</h2>
+          <p>CASTORの「CREATE」。<br>ゲームやWebなど、つくってみたいものを形にしていく場所。</p>
+        </div>
+
+        <a class="studio-card" href="kairi-studio.html" aria-label="KAIRI_studioのページを見る">
+          <img src="assets/kairi-studio-logo.png" alt="KAIRI_studio">
+          <span>VIEW KAIRI_STUDIO →</span>
+        </a>
       </div>
     </div>
   </section>
