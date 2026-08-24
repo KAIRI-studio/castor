@@ -1,17 +1,12 @@
-CASTOR site skeleton
-===================
+CASTOR integrated STORE update
+
+This update keeps STORE inside the main CASTOR homepage as section 03 / STORE.
+It does not use a separate store.html page.
 
 Files:
-- index.html
-- assets/castor-logo-official-1.png
-- assets/castor-background.png
-- assets/castor-mark.png
+- index.html — completed homepage with integrated STORE section and HERO message animation
+- assets/official-store.png — supplied store photo, unchanged
+- assets/castor-hero-message.png — supplied HERO logo/message image, unchanged
 
-Structure:
-1. HERO
-2. PLAY
-3. CREATE
-4. Footer
-
-The logo in the top-left is a Home button.
-The PLAY / CREATE navigation scrolls to each section.
+Upload/replace index.html and add both assets under the existing assets/ folder.
+No generated illustrations are included.

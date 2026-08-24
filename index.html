@@ -15,17 +15,236 @@
 .create{min-height:78vh;background:radial-gradient(circle at 78% 28%,rgba(184,208,244,.09),transparent 30%),#223958}.create-content{display:grid;grid-template-columns:1fr 1.1fr;gap:70px;align-items:center}.create-copy p{margin-top:0}.studio-card{position:relative;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;min-height:280px;padding:36px 42px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.045);transition:transform .35s ease,border-color .35s ease,background .35s ease;overflow:hidden}.studio-card:before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 20%,rgba(255,255,255,.07) 50%,transparent 80%);transform:translateX(-110%);transition:transform .8s ease}.studio-card:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.52);background:rgba(255,255,255,.07)}.studio-card:hover:before{transform:translateX(110%)}.studio-card img{position:relative;z-index:1;width:min(100%,360px);max-height:105px;object-fit:contain;object-position:left center;display:block;filter:brightness(0) invert(1)}.studio-card span{position:relative;z-index:1;margin-top:30px;font-size:10px;font-weight:700;letter-spacing:.2em;color:rgba(255,255,255,.68)}.studio-card:hover span{color:#fff}
 .footer{padding:55px 0;background:#13253e;border-top:1px solid var(--line)}.footer-inner{display:flex;justify-content:space-between;gap:30px;color:rgba(255,255,255,.5);font-size:11px;letter-spacing:.12em}.footer-logo{width:120px}.footer-logo img{width:100%;filter:brightness(0) invert(1)}
 .section.play::before,.section.play::after,.section.create::before,.section.create::after{content:"";position:absolute;left:68%;top:48%;width:18vw;height:18vw;max-width:300px;max-height:300px;border:1.5px solid rgba(190,216,248,.085);border-radius:50%;transform:translate(-50%,-50%) scale(.35);opacity:0;pointer-events:none;animation:contentRipple 9s ease-out infinite}.section.play::after,.section.create::after{animation-delay:4.5s}@keyframes contentRipple{0%{transform:translate(-50%,-50%) scale(.35);opacity:0}12%{opacity:.8}75%{opacity:.18}100%{transform:translate(-50%,-50%) scale(3.2);opacity:0}}.hero::after{content:"";position:absolute;left:50%;top:48%;width:18vw;height:18vw;max-width:300px;max-height:300px;border:1.5px solid rgba(255,255,255,.09);border-radius:50%;transform:translate(-50%,-50%) scale(.35);opacity:0;pointer-events:none;animation:heroRipple 7s ease-out 2.9s infinite;z-index:1}@keyframes heroRipple{0%{transform:translate(-50%,-50%) scale(.35);opacity:0}12%{opacity:.8}75%{opacity:.18}100%{transform:translate(-50%,-50%) scale(3.2);opacity:0}}
-.section h2{opacity:0;transform:translate3d(70px,0,0);transition:opacity 1.15s cubic-bezier(.2,.7,.2,1),transform 1.15s cubic-bezier(.2,.7,.2,1)}.section.is-visible h2{opacity:1;transform:translate3d(0,0,0)}
+.section h2{opacity:0;transform:translate3d(70px,0,0);transition:opacity 1.15s cubic-bezier(.2,.7,.2,1),transform 1.15s cubic-bezier(.2,.7,.2,1)}.section.is-visible h2,.store-section.is-visible h2{opacity:1;transform:translate3d(0,0,0)}
 @media(max-width:900px){.create-content{grid-template-columns:1fr;gap:40px}.studio-card{min-height:220px}}@media(max-width:700px){.play-head{align-items:flex-start;flex-direction:column;gap:25px;margin-bottom:34px}.hbk-logo{width:105px}.team-grid{grid-template-columns:1fr;gap:24px}.team-photo{height:360px}.play-footer{font-size:9px}.wrap{width:calc(100% - 34px)}.header{height:72px}.home-logo{width:118px}.nav{gap:20px;font-size:11px}.hero-logo{width:82vw}.hero-mark{width:72vw}.section{min-height:65vh;padding:90px 0}.section h2{font-size:54px}.studio-card{padding:28px}.studio-card img{width:min(100%,300px)}.footer-inner{display:block}.footer-logo{margin-bottom:24px}.section.play::before,.section.play::after,.section.create::before,.section.create::after{left:72%;top:42%;width:30vw;height:30vw}.hero::after{width:30vw;height:30vw;left:50%;top:48%}}@media(max-width:520px){.hero-logo{clip-path:none!important;-webkit-clip-path:none!important;animation:logoIn 2s ease-out 1s both!important;opacity:0;transform:translateY(4px);filter:drop-shadow(0 0 20px rgba(255,255,255,.24))!important;will-change:opacity,transform,filter}}@media(prefers-reduced-motion:reduce){.section h2{opacity:1;transform:none;transition:none}.section.play::before,.section.play::after,.section.create::before,.section.create::after,.hero::after{animation:none!important}}
+
+/* HERO message mark */
+.hero-message{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:min(82vw,1180px);
+  transform:translate(-50%,-50%) scale(.96);
+  opacity:0;
+  z-index:0;
+  pointer-events:none;
+  filter:blur(8px);
+  animation:heroMessageIn 2.4s ease-out 1.25s forwards, heroMessageFloat 10s ease-in-out 3.65s infinite alternate;
+}
+@keyframes heroMessageIn{
+  0%{opacity:0;transform:translate(-50%,-50%) scale(.96);filter:blur(8px)}
+  100%{opacity:.105;transform:translate(-50%,-50%) scale(1);filter:blur(.2px)}
+}
+@keyframes heroMessageFloat{
+  0%{transform:translate(-50%,-50%) scale(1)}
+  100%{transform:translate(-50%,-50%) scale(1.025)}
+}
+
+/* OFFICIAL STORE content section */
+.store-section{
+  position:relative;
+  min-height:82vh;
+  padding:110px 0;
+  display:flex;
+  align-items:center;
+  background:#172b49;
+  border-top:1px solid var(--line);
+  overflow:hidden;
+}
+.store-section-inner{width:100%;position:relative;z-index:2}
+.store-head{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:40px;
+  margin-bottom:28px;
+}
+.store-head h2{margin:0}
+.store-intro{
+  margin:0;
+  color:rgba(255,255,255,.66);
+  font-size:13px;
+  line-height:1.9;
+}
+.store-visual{
+  position:relative;
+  width:100%;
+  height:min(62vh,680px);
+  min-height:380px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.18);
+  cursor:pointer;
+}
+.store-visual img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  transition:transform .9s cubic-bezier(.2,.7,.2,1),filter .55s ease;
+}
+.store-visual::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(8,18,32,0);
+  transition:background .55s ease;
+  pointer-events:none;
+}
+.store-caption{
+  position:absolute;
+  left:28px;
+  right:28px;
+  bottom:24px;
+  z-index:3;
+  display:flex;
+  align-items:center;
+  gap:20px;
+  opacity:0;
+  transform:translateX(-28px);
+  transition:opacity .55s ease,transform .65s cubic-bezier(.2,.7,.2,1);
+}
+.store-caption span{
+  font-size:clamp(24px,3vw,48px);
+  font-weight:300;
+  letter-spacing:.10em;
+  white-space:nowrap;
+}
+.store-caption i{
+  display:block;
+  height:1px;
+  flex:1;
+  max-width:520px;
+  background:rgba(255,255,255,.72);
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .65s ease .08s;
+}
+.store-visual:hover img,
+.store-visual:focus-visible img{
+  filter:grayscale(.55) brightness(.72);
+  transform:scale(1.018);
+}
+.store-visual:hover::after,
+.store-visual:focus-visible::after{
+  background:rgba(8,18,32,.16);
+}
+.store-visual:hover .store-caption,
+.store-visual:focus-visible .store-caption{
+  opacity:1;
+  transform:translateX(0);
+}
+.store-visual:hover .store-caption i,
+.store-visual:focus-visible .store-caption i{
+  transform:scaleX(1);
+}
+.store-label{
+  position:absolute;
+  top:20px;
+  left:24px;
+  z-index:3;
+  font-size:10px;
+  letter-spacing:.28em;
+  color:rgba(255,255,255,.72);
+}
+.store-section::before,
+.store-section::after{
+  content:"";
+  position:absolute;
+  left:68%;
+  top:48%;
+  width:18vw;
+  height:18vw;
+  max-width:300px;
+  max-height:300px;
+  border:1.5px solid rgba(190,216,248,.085);
+  border-radius:50%;
+  transform:translate(-50%,-50%) scale(.35);
+  opacity:0;
+  pointer-events:none;
+  animation:contentRipple 9s ease-out infinite;
+}
+.store-section::after{animation-delay:4.5s}
+
+@media(max-width:700px){
+  .hero-message{
+    width:92vw;
+    top:48%;
+    animation:heroMessageIn 2.2s ease-out 1.15s forwards, heroMessageFloat 10s ease-in-out 3.35s infinite alternate;
+  }
+  .store-section{
+    min-height:70vh;
+    padding:90px 0;
+  }
+  .store-head{
+    display:block;
+    margin-bottom:22px;
+  }
+  .store-intro{margin-top:10px}
+  .store-visual{
+    height:calc(100svh - 180px);
+    min-height:360px;
+  }
+  .store-caption{
+    left:18px;
+    right:18px;
+    bottom:18px;
+    gap:12px;
+  }
+  .store-caption span{
+    font-size:20px;
+    letter-spacing:.08em;
+  }
+  .store-label{
+    top:16px;
+    left:18px;
+    font-size:9px;
+  }
+  .store-section::before,
+  .store-section::after{
+    left:72%;
+    top:42%;
+    width:30vw;
+    height:30vw;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-message{animation:none;opacity:.105;transform:translate(-50%,-50%)}
+  .store-visual img,.store-visual::after,.store-caption,.store-caption i{transition:none}
+  .store-section::before,.store-section::after{animation:none}
+}
+
 </style>
 </head>
 <body>
-<header class="header"><div class="wrap header-inner"><a class="home-logo" href="#top" aria-label="CASTOR Home"><img src="assets/castor-logo-official-1.png" alt="CASTOR"></a><nav class="nav" aria-label="Main navigation"><a href="#play">PLAY</a><a href="#create">CREATE</a><a href="store.html">STORE</a></nav></div></header>
+<header class="header"><div class="wrap header-inner"><a class="home-logo" href="#top" aria-label="CASTOR Home"><img src="assets/castor-logo-official-1.png" alt="CASTOR"></a><nav class="nav" aria-label="Main navigation"><a href="#play">PLAY</a><a href="#create">CREATE</a><a href="#store">STORE</a></nav></div></header>
 <main id="top">
-<section class="hero" aria-label="CASTOR hero"><div class="shooting-star" aria-hidden="true"></div><img class="hero-mark" src="assets/castor-mark.png" alt=""><img class="hero-logo" src="assets/castor-logo-official-1.png" alt="CASTOR"></section>
+<section class="hero" aria-label="CASTOR hero"><div class="shooting-star" aria-hidden="true"></div><img class="hero-mark" src="assets/castor-mark.png" alt=""><img class="hero-message" src="assets/castor-hero-message.png" alt=""><img class="hero-logo" src="assets/castor-logo-official-1.png" alt="CASTOR"></section>
 <section class="section play" id="play"><div class="wrap section-inner"><div class="play-head"><div><div class="section-label">01 / PLAY</div><h2>PLAY</h2><p class="play-intro">CASTORのPLAY。<br>ゲームを中心に、遊ぶことから生まれるものを。</p></div><img class="hbk-logo" src="assets/hbk-gaming-logo.png" alt="HBK GAMING"></div><div class="team-grid"><article class="team-card"><a class="team-card-link" href="kairi.html" aria-label="kairiのページを見る"><span class="card-trace" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><rect x=".5" y=".5" width="99" height="99" pathLength="100"/></svg></span><div class="team-photo"><img src="assets/hbk-kairi.png" alt="kairi"></div><div class="team-meta"><span>HBK GAMING</span><strong>kairi</strong></div></a></article><article class="team-card"><a class="team-card-link" href="kappa.html" aria-label="kappaのページを見る"><span class="card-trace" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><rect x=".5" y=".5" width="99" height="99" pathLength="100"/></svg></span><div class="team-photo"><img src="assets/hbk-kappa.png" alt="kappa"></div><div class="team-meta"><span>HBK GAMING</span><strong>kappa</strong></div></a></article><article class="team-card"><a class="team-card-link" href="sota.html" aria-label="sotaのページを見る"><span class="card-trace" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><rect x=".5" y=".5" width="99" height="99" pathLength="100"/></svg></span><div class="team-photo"><img src="assets/hbk-sota.png" alt="sota"></div><div class="team-meta"><span>HBK GAMING</span><strong>sota</strong></div></a></article></div><div class="play-footer"><span>HBK GAMING</span><span>PLAY / GAMING</span></div></div></section>
 <section class="section create" id="create"><div class="wrap section-inner"><div class="create-content"><div class="create-copy"><div class="section-label">02 / CREATE</div><h2>CREATE</h2><p>CASTORの「CREATE」。<br>ゲームやWebなど、つくってみたいものを形にしていく場所。</p></div><a class="studio-card" href="kairi-studio.html" aria-label="KAIRI_studioのページを見る"><img src="assets/kairi-studio-logo.png" alt="KAIRI_studio"><span>VIEW KAIRI_STUDIO →</span></a></div></div></section>
+
+<section class="store-section" id="store" aria-label="CASTOR Official Store">
+  <div class="wrap store-section-inner">
+    <div class="store-head">
+      <div>
+        <div class="section-label">03 / STORE</div>
+        <h2>STORE</h2>
+      </div>
+      <p class="store-intro">CASTORのOFFICIAL STORE。<br>ここから、CASTORのアイテムへ。</p>
+    </div>
+
+    <div class="store-visual" tabindex="0" role="img" aria-label="CASTOR Official Store">
+      <span class="store-label">CASTOR / OFFICIAL STORE</span>
+      <img src="assets/official-store.png" alt="CASTOR Official Store">
+      <div class="store-caption" aria-hidden="true">
+        <span>OFFICIAL STORE</span>
+        <i></i>
+      </div>
+    </div>
+  </div>
+</section>
+
 </main>
 <footer class="footer"><div class="wrap footer-inner"><div class="footer-logo"><img src="assets/castor-logo-official-1.png" alt="CASTOR"></div><div>© CASTOR</div></div></footer>
-<script>(function(){const sections=document.querySelectorAll('.section');if(!('IntersectionObserver' in window)){sections.forEach(s=>s.classList.add('is-visible'));return}const observer=new IntersectionObserver((entries,obs)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');obs.unobserve(entry.target)}})},{threshold:.28});sections.forEach(s=>observer.observe(s))})();</script>
+<script>(function(){const sections=document.querySelectorAll('.section,.store-section');if(!('IntersectionObserver' in window)){sections.forEach(s=>s.classList.add('is-visible'));return}const observer=new IntersectionObserver((entries,obs)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');obs.unobserve(entry.target)}})},{threshold:.28});sections.forEach(s=>observer.observe(s))})();</script>
 </body></html>
