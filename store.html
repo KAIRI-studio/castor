@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>OFFICIAL STORE | CASTOR</title>
+<meta name="description" content="CASTOR OFFICIAL STORE。CASTORのオリジナルアイテムを紹介します。">
 <style>
 :root{
   --bg:#172b49;
@@ -29,8 +30,10 @@ a{text-decoration:none;color:inherit}
   height:86px;
   display:flex;
   align-items:center;
-  background:rgba(23,43,73,.08);
-  backdrop-filter:blur(3px);
+  background:rgba(19,37,62,.72);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
 }
 .header-inner{
   width:calc(100% - 140px);
@@ -102,6 +105,7 @@ a{text-decoration:none;color:inherit}
 .store-ripple:nth-child(2){animation-delay:4.7s}
 
 .store-hero{
+  display:block;
   position:relative;
   width:100%;
   height:min(78vh,780px);
@@ -110,6 +114,20 @@ a{text-decoration:none;color:inherit}
   border-top:1px solid rgba(255,255,255,.22);
   border-bottom:1px solid rgba(255,255,255,.22);
   cursor:pointer;
+}
+.store-enter{
+  position:absolute;
+  right:28px;
+  top:22px;
+  z-index:3;
+  padding:9px 12px;
+  border:1px solid rgba(255,255,255,.42);
+  background:rgba(10,24,43,.32);
+  color:rgba(255,255,255,.9);
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.18em;
+  backdrop-filter:blur(6px);
 }
 .store-hero img{
   display:block;
@@ -219,6 +237,7 @@ a{text-decoration:none;color:inherit}
     left:18px;
     font-size:9px;
   }
+  .store-enter{top:auto;right:18px;bottom:18px;font-size:9px;background:rgba(10,24,43,.58)}
   .store-ripple{
     width:30vw;
     height:30vw;
@@ -248,14 +267,15 @@ a{text-decoration:none;color:inherit}
   <div class="store-ripple" aria-hidden="true"></div>
   <div class="store-ripple" aria-hidden="true"></div>
 
-  <div class="store-hero" tabindex="0" role="img" aria-label="CASTOR Official Store">
+  <a class="store-hero" href="https://73matibeaver.base.shop/" target="_blank" rel="noopener noreferrer" aria-label="CASTOR Official Storeを開く">
     <span class="store-label">CASTOR / OFFICIAL STORE</span>
-    <img src="assets/official-store.png" alt="CASTOR Official Store">
+    <span class="store-enter">ENTER STORE →</span>
+    <img src="assets/official-store.webp" alt="海辺に置かれたCASTORのアイテム">
     <div class="store-caption" aria-hidden="true">
       <span>OFFICIAL STORE</span>
       <i></i>
     </div>
-  </div>
+  </a>
 </main>
 
 </body>
