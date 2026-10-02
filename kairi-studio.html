@@ -131,9 +131,14 @@ h1{font-size:clamp(48px,5.8vw,88px)}
 .project-body{flex:1;display:flex;flex-direction:column}
 .project h2{line-height:1.25}
 .project-actions{margin-top:auto;padding-top:15px}
-</style></head>
-<body><header class="header"><div class="wrap header-inner"><a class="home-logo" href="index.html#top"><img src="assets/castor-logo-official-1.png" alt="CASTOR"></a><nav class="nav"><a href="index.html#play">PLAY</a><a href="index.html#create">CREATE</a></nav></div></header>
-<main class="studio-hero"><div class="shooting-star" aria-hidden="true"></div><div class="hero-mark" aria-hidden="true"><img src="assets/castor-mark.webp" alt=""></div>
+
+/* Official CST identity, October 2026. */
+.home-logo,.header .logo{display:block;width:190px}.home-logo img,.header .logo img{height:auto}
+@media(max-width:900px){.home-logo,.header .logo{width:clamp(118px,36vw,144px)}}
+</style><link rel="icon" type="image/png" href="assets/castor-official-icon-v2.png">
+</head>
+<body><header class="header"><div class="wrap header-inner"><a class="home-logo" href="index.html#top"><img src="assets/castor-official-horizontal-white-v2.webp" alt="CASTOR"></a><nav class="nav"><a href="index.html#play">PLAY</a><a href="index.html#create">CREATE</a></nav></div></header>
+<main class="studio-hero"><div class="shooting-star" aria-hidden="true"></div><div class="hero-mark" aria-hidden="true"><img src="assets/castor-official-symbol-white-v2.webp" alt=""></div>
 <div class="wrap content"><div class="copy"><p class="eyebrow">CASTOR / CREATE</p><h1>KAIRI_studio</h1><p class="team">GAME / WEB / CREATE</p><p class="intro">ゲームやWebなど、「つくってみたい」を形にしていく小さなスタジオ。</p><div class="logo-card"><img src="assets/kairi-studio-logo.png" alt="KAIRI_studio"></div></div>
 <div class="projects"><article class="project" id="kanji-quest"><div class="project-head"><div class="project-label">PROJECT / GAME / LEARN</div><div class="project-status">RELEASED / v1.0</div></div><div class="project-showcase"><div class="project-key"><img src="assets/kanji-quest-keyvisual-card.webp" alt="CASTOR KANJI QUEST キービジュアル"></div><div class="project-side"><div class="project-thumb"><img src="assets/kanji-quest-play.webp" alt="CASTOR KANJI QUEST 戦闘画面"></div><div class="project-thumb"><img src="assets/kanji-quest-character.webp" alt="CASTOR KANJI QUEST キャラクター選択画面"></div></div></div><div class="project-body"><h2>CASTOR KANJI QUEST</h2><p class="project-lead">漢字を読んで、ぼうけんに出よう。小学校1〜6年生の漢字を、3択バトルで楽しく練習できるWebゲームです。</p><ul class="project-features" aria-label="ゲームの特徴"><li>小学1〜6年生</li><li>全216問</li><li>月間ランキング</li><li>スマホ・PC対応</li></ul><div class="project-actions"><a class="project-btn" href="https://kairi-studio.github.io/kanji-quest/" target="_blank" rel="noopener noreferrer">無料であそぶ →</a><span class="project-note">ブラウザですぐ遊べます<br>インストール不要</span></div></div></article>
 <article class="project project-cactus" id="cactus-factory">

@@ -282,12 +282,18 @@
 @media(prefers-reduced-motion:reduce){.hero-description{animation:none;opacity:1}}
 
 .studio-project strong+strong{margin-top:10px}.studio-project strong b{display:inline-block;margin-left:5px}
+
+/* Official CST identity, October 2026. */
+.home-logo{width:190px}.footer-logo{width:180px}
+.hero-logo{width:min(48vw,400px);height:auto;max-height:calc(100svh - 190px);object-fit:contain}
+@media(max-width:700px){.home-logo{width:clamp(118px,36vw,144px)}.hero-logo{width:min(72vw,320px)}}
 </style>
+<link rel="icon" type="image/png" href="assets/castor-official-icon-v2.png">
 </head>
 <body>
-<header class="header"><div class="wrap header-inner"><a class="home-logo" href="#top" aria-label="CASTOR Home"><img src="assets/castor-logo-official-1.png" alt="CASTOR"></a><nav class="nav" aria-label="Main navigation"><a href="#play">PLAY</a><a href="#create">CREATE</a><a href="#store">STORE</a></nav></div></header>
+<header class="header"><div class="wrap header-inner"><a class="home-logo" href="#top" aria-label="CASTOR Home"><img src="assets/castor-official-horizontal-white-v2.webp" alt="CASTOR"></a><nav class="nav" aria-label="Main navigation"><a href="#play">PLAY</a><a href="#create">CREATE</a><a href="#store">STORE</a></nav></div></header>
 <main id="top">
-<section class="hero" aria-label="CASTOR hero"><h1 class="visually-hidden">CASTOR</h1><div class="shooting-star" aria-hidden="true"></div><img class="hero-mark" src="assets/castor-mark.webp" alt=""><img class="hero-message" src="assets/castor-hero-message.png" alt=""><img class="hero-logo" src="assets/castor-logo-official-1.png" alt="CASTOR"><p class="hero-description">PLAY / CREATE / STORE — 由比ヶ浜から、遊びと創作を。</p></section>
+<section class="hero" aria-label="CASTOR hero"><h1 class="visually-hidden">CASTOR</h1><div class="shooting-star" aria-hidden="true"></div><img class="hero-mark" src="assets/castor-official-symbol-white-v2.webp" alt=""><img class="hero-message" src="assets/castor-hero-message.png" alt=""><img class="hero-logo" src="assets/castor-official-vertical-white-v2.webp" alt="CASTOR"><p class="hero-description">PLAY / CREATE / STORE — 由比ヶ浜から、遊びと創作を。</p></section>
 <section class="section play" id="play"><div class="wrap section-inner"><div class="play-head"><div><div class="section-label">01 / PLAY</div><h2>PLAY</h2><p class="play-intro">CASTORのPLAY。<br>ゲームを中心に、遊ぶことから生まれるものを。</p></div><img class="hbk-logo" src="assets/hbk-gaming-logo.png" alt="HBK GAMING"></div><div class="team-grid"><article class="team-card"><a class="team-card-link" href="kairi.html" aria-label="kairiのページを見る"><span class="card-trace" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><rect x=".5" y=".5" width="99" height="99" pathLength="100"/></svg></span><div class="team-photo"><img src="assets/hbk-kairi.webp" alt="kairi"></div><div class="team-meta"><span>HBK GAMING</span><strong>kairi</strong></div></a></article><article class="team-card"><a class="team-card-link" href="kappa.html" aria-label="kappaのページを見る"><span class="card-trace" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><rect x=".5" y=".5" width="99" height="99" pathLength="100"/></svg></span><div class="team-photo"><img src="assets/hbk-kappa.webp" alt="kappa"></div><div class="team-meta"><span>HBK GAMING</span><strong>kappa</strong></div></a></article><article class="team-card"><a class="team-card-link" href="sota.html" aria-label="sotaのページを見る"><span class="card-trace" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><rect x=".5" y=".5" width="99" height="99" pathLength="100"/></svg></span><div class="team-photo"><img src="assets/hbk-sota.webp" alt="sota"></div><div class="team-meta"><span>HBK GAMING</span><strong>sota</strong></div></a></article></div><div class="play-footer"><span>HBK GAMING</span><span>PLAY / GAMING</span></div></div></section>
 <section class="section create" id="create"><div class="wrap section-inner"><div class="create-content"><div class="create-copy"><div class="section-label">02 / CREATE</div><h2>CREATE</h2><p>CASTORの「CREATE」。<br>ゲームやWebなど、つくってみたいものを形にしていく場所。</p></div><a class="studio-card" href="kairi-studio.html" aria-label="KAIRI_studioのゲーム作品を見る"><img src="assets/kairi-studio-logo.png" alt="KAIRI_studio"><div class="studio-project"><small>NOW AVAILABLE / 2 GAMES</small><strong>CASTOR KANJI QUEST <b>v1.0</b></strong><strong>サボテン工場 <b>CACTUS FACTORY</b></strong></div><span>VIEW PROJECTS →</span></a></div></div></section>
 
@@ -313,6 +319,6 @@
 </section>
 
 </main>
-<footer class="footer"><div class="wrap footer-inner"><div class="footer-logo"><img src="assets/castor-logo-official-1.png" alt="CASTOR"></div><div class="footer-meta"><a href="privacy.html">PRIVACY / CONTACT</a><span>© CASTOR</span></div></div></footer>
+<footer class="footer"><div class="wrap footer-inner"><div class="footer-logo"><img src="assets/castor-official-horizontal-white-v2.webp" alt="CASTOR"></div><div class="footer-meta"><a href="privacy.html">PRIVACY / CONTACT</a><span>© CASTOR</span></div></div></footer>
 <script>(function(){const header=document.querySelector('.header');const updateHeader=()=>header.classList.toggle('is-scrolled',window.scrollY>24);updateHeader();addEventListener('scroll',updateHeader,{passive:true});const sections=document.querySelectorAll('.section,.store-section');if(!('IntersectionObserver' in window)){sections.forEach(s=>s.classList.add('is-visible'));return}const observer=new IntersectionObserver((entries,obs)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');obs.unobserve(entry.target)}})},{threshold:.28});sections.forEach(s=>observer.observe(s))})();</script>
 </body></html>
