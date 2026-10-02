@@ -1,0 +1,17 @@
+{
+  "name": "CASTOR",
+  "short_name": "CASTOR",
+  "start_url": "./",
+  "scope": "./",
+  "display": "browser",
+  "background_color": "#172b49",
+  "theme_color": "#172b49",
+  "icons": [
+    {
+      "src": "assets/hbk-gaming-logo.png",
+      "sizes": "1080x1080",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
