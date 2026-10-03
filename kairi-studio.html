@@ -140,6 +140,9 @@ h1{font-size:clamp(48px,5.8vw,88px)}
 .wrap{width:calc(100% - 48px);max-width:none;margin-inline:auto}
 @media(max-width:700px){.wrap{width:calc(100% - 32px)}}
 
+/* Keep game cards compact on wide displays without narrowing the page. */
+.projects{max-width:1280px;margin-inline:auto}
+
 /* Explicit mobile key-visual height also works in Safari grid layout. */
 @media(max-width:520px){
   .project-showcase{grid-template-rows:auto auto}
