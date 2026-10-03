@@ -314,6 +314,15 @@
 @media(min-width:901px) and (max-height:720px){.hero-updates{width:300px;padding:17px 20px;bottom:22px;right:24px}.updates-thumbnail{flex-basis:105px}.hero-description{width:auto;left:24px;bottom:28px;transform:none;text-align:left;font-size:9px}}
 @media(max-width:900px){.hero{padding:110px 16px 32px;grid-template-rows:minmax(280px,1fr) auto auto;gap:25px}.hero-logo{grid-row:1;align-self:center}.hero-updates{position:relative;right:auto;bottom:auto;grid-row:2;width:min(100%,360px);padding:20px 22px}.hero-description{position:relative;left:auto;bottom:auto;transform:none;grid-row:3;width:100%;font-size:9px;letter-spacing:.13em}.hero-mark,.hero-message{top:35%}.hero-mark{transform:translateY(-50%);animation:none;opacity:.16}.hero::after{top:35%}}
 @media(prefers-reduced-motion:reduce){.updates-thumbnail img{transition:none}.hero-logo{animation:none!important;opacity:1!important;transform:none!important}}
+
+/* Two seconds around the frame, followed by one quiet second. */
+.updates-trace{position:absolute;inset:-1px;pointer-events:none;overflow:visible}
+.updates-trace svg{display:block;width:100%;height:100%;overflow:visible}
+.updates-trace rect{fill:none;stroke:#d5eaff;stroke-width:1.25;vector-effect:non-scaling-stroke;stroke-dasharray:12 88;stroke-dashoffset:0;opacity:0;filter:drop-shadow(0 0 3px rgba(173,212,255,.55));animation:updatesFrameLight 3s linear infinite}
+@keyframes updatesFrameLight{0%{stroke-dashoffset:0;opacity:0}4%{opacity:.75}62%{opacity:.75}66.6667%{stroke-dashoffset:-100;opacity:0}100%{stroke-dashoffset:-100;opacity:0}}
+.hero-updates{transition:border-color .25s ease}
+.hero-updates:hover,.hero-updates:focus-within{border-color:rgba(225,237,255,.50)}
+@media(prefers-reduced-motion:reduce){.updates-trace{display:none}.hero-updates{transition:none}}
 </style>
 <link rel="icon" type="image/png" href="assets/hbk-gaming-logo.png">
 <link rel="apple-touch-icon" href="assets/hbk-gaming-logo.png">
@@ -324,6 +333,7 @@
 <main id="top">
 <section class="hero" aria-label="CASTOR hero"><h1 class="visually-hidden">CASTOR</h1><div class="shooting-star" aria-hidden="true"></div><img class="hero-mark" src="assets/castor-official-symbol-white-v2.webp" alt=""><img class="hero-message" src="assets/castor-hero-message.png" alt=""><img class="hero-logo" src="assets/castor-official-vertical-white-v2.webp" alt="CASTOR"><p class="hero-description">PLAY / CREATE / STORE — 由比ヶ浜から、遊びと創作を。</p>
   <aside class="hero-updates" aria-label="CASTORのお知らせとHBKの動画">
+    <span class="updates-trace" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><rect x=".5" y=".5" width="99" height="99" rx="1" pathLength="100"/></svg></span>
     <h2 class="updates-label">NEWS</h2>
     <a class="updates-news" href="kairi-studio.html"><time datetime="2026-10-03">2026.10.03</time><strong>サボテン工場をアップデート <span aria-hidden="true">→</span></strong></a>
     <div class="updates-video">
