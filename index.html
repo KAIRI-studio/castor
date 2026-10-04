@@ -297,24 +297,6 @@
   .section,.store-section{scroll-margin-top:72px}
 }
 @media(max-width:360px){.home-logo{width:112px}.nav{font-size:10px;gap:10px}}
-/* A quiet editorial corner; never competes with the central identity. */
-.hero-updates{position:absolute;z-index:4;right:32px;bottom:32px;width:340px;padding:22px 24px;background:rgba(16,32,55,.54);border:1px solid rgba(225,237,255,.30);border-radius:3px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
-.updates-label{margin:0 0 12px;color:rgba(255,255,255,.75);font-size:9px;font-weight:500;letter-spacing:.25em;line-height:1.5}
-.updates-news{display:block;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,.22)}
-.updates-news time{display:block;margin-bottom:6px;font-size:10px;letter-spacing:.12em;color:rgba(255,255,255,.66)}
-.updates-news strong{display:block;font-size:13px;font-weight:400;line-height:1.7}
-.updates-video{padding-top:17px}.updates-video-link{display:flex;align-items:center;gap:15px;min-width:0}
-.updates-thumbnail{position:relative;flex:0 0 128px;aspect-ratio:16/9;overflow:hidden;background:#192b45;border:1px solid rgba(255,255,255,.20)}
-.updates-thumbnail img{display:block;width:100%;height:100%;object-fit:cover;opacity:.8;transition:opacity .25s,transform .25s}
-.updates-thumbnail:after{content:"";position:absolute;left:50%;top:50%;transform:translate(-35%,-50%);border-top:9px solid transparent;border-bottom:9px solid transparent;border-left:14px solid #fff;filter:drop-shadow(0 1px 4px rgba(0,0,0,.6))}
-.updates-video-copy{min-width:0;font-size:12px;line-height:1.7}.updates-video-copy small{display:block;margin-top:5px;font-size:9px;color:rgba(255,255,255,.62);letter-spacing:.06em}
-.updates-latest{display:block;width:max-content;margin:12px 0 0 auto;font-size:10px;line-height:1.8;color:rgba(255,255,255,.74)}
-.hero-updates a:hover{color:#d5e6ff}.updates-video-link:hover img{opacity:1;transform:scale(1.04)}
-.hero-updates a:focus-visible{outline:2px solid #d5e6ff;outline-offset:5px}
-@media(min-width:901px) and (max-height:720px){.hero-updates{width:300px;padding:17px 20px;bottom:22px;right:24px}.updates-thumbnail{flex-basis:105px}.hero-description{width:auto;left:24px;bottom:28px;transform:none;text-align:left;font-size:9px}}
-@media(max-width:900px){.hero{padding:110px 16px 32px;grid-template-rows:minmax(280px,1fr) auto auto;gap:25px}.hero-logo{grid-row:1;align-self:center}.hero-updates{position:relative;right:auto;bottom:auto;grid-row:2;width:min(100%,360px);padding:20px 22px}.hero-description{position:relative;left:auto;bottom:auto;transform:none;grid-row:3;width:100%;font-size:9px;letter-spacing:.13em}.hero-mark,.hero-message{top:35%}.hero-mark{transform:translateY(-50%);animation:none;opacity:.16}.hero::after{top:35%}}
-@media(prefers-reduced-motion:reduce){.updates-thumbnail img{transition:none}.hero-logo{animation:none!important;opacity:1!important;transform:none!important}}
-
 /* Two seconds around the frame, followed by one quiet second. */
 .updates-trace{position:absolute;inset:-1px;pointer-events:none;overflow:visible}
 .updates-trace svg{display:block;width:100%;height:100%;overflow:visible}
@@ -323,6 +305,43 @@
 .hero-updates{transition:border-color .25s ease}
 .hero-updates:hover,.hero-updates:focus-within{border-color:rgba(225,237,255,.50)}
 @media(prefers-reduced-motion:reduce){.updates-trace{display:none}.hero-updates{transition:none}}
+
+/* Three visual topics, one readable card at a time. */
+.hero-updates{position:absolute;z-index:4;width:460px;padding:22px;right:32px;bottom:32px;background:rgba(16,32,55,.82);border:1px solid rgba(225,237,255,.30);border-radius:3px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.hero-updates a:focus-visible{outline:2px solid #d5e6ff;outline-offset:-2px}
+.hero-updates a:hover{color:#d5e6ff}
+.topics-heading{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.topics-heading h2{margin:0;font-size:11px;letter-spacing:.22em;font-weight:500}
+.topic-count{font-size:12px;color:#c4d6ef;letter-spacing:.1em}
+.topics-window{overflow:hidden}
+.topics-track{display:flex;transition:transform .65s cubic-bezier(.22,.68,.2,1)}
+.topic-slide{flex:0 0 100%;min-width:0}
+.topic-link{display:block}
+.topic-art{height:205px;position:relative;overflow:hidden;background:#10233c;border:1px solid #ffffff26}
+.topic-art>img{display:block;width:100%;height:100%;object-fit:cover}
+.topic-cactus{background:#466345 url('assets/cactus-factory-background.webp') center 57%/cover no-repeat}
+.topic-cactus .topic-cactus-logo{position:absolute;width:66%;height:auto;left:17%;top:7%;object-fit:contain}
+.topic-cast{position:absolute;left:22%;right:22%;bottom:5%;display:flex;justify-content:center}
+.topic-cast img{width:33.333%;height:72px;object-fit:contain}
+.topic-video{background:#070b10}.topic-video>img{object-fit:contain}
+.topic-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:48px;height:48px;background:#11253dcc;border:1px solid #ffffff99;border-radius:50%;font-size:20px}
+.topic-cap{background:#fff}.topic-cap>img{object-fit:contain}
+.topic-category{display:block;margin-top:16px;font-size:10px;letter-spacing:.17em;color:#c4d6ef}
+.topic-slide h3{font-size:20px;font-weight:500;line-height:1.45;margin:7px 0}
+.topic-slide p{font-size:13px;line-height:1.8;color:#d0dced;margin:0;min-height:47px}
+.topic-cta{display:block;margin-top:12px;font-size:12px;letter-spacing:.06em}
+.topics-controls{display:flex;justify-content:space-between;align-items:center;margin-top:16px;border-top:1px solid #ffffff26;padding-top:10px}
+.topic-dots{display:flex;gap:2px}.topic-dot{width:34px;height:34px;border:0;background:none;cursor:pointer;position:relative}
+.topic-dot:after{content:"";position:absolute;width:6px;height:6px;border-radius:50%;background:#ffffff50;left:14px;top:14px}
+.topic-dot[aria-current=true]:after{background:#e0edff;box-shadow:0 0 8px #c4d6ef70}
+.topic-pause{min-height:34px;background:none;border:0;color:#d0dced;font:inherit;font-size:11px;cursor:pointer;padding:0 8px}
+.hero-updates button:focus-visible{outline:2px solid #d5e6ff;outline-offset:2px}
+@media(min-width:901px) and (max-width:1250px){.hero-updates{width:360px;right:24px;bottom:24px}.topic-art{height:170px}.hero-description{left:24px;bottom:28px;transform:none;width:auto;text-align:left;font-size:9px;letter-spacing:.12em}}
+@media(min-width:901px) and (max-height:720px){.hero-updates{width:360px;padding:16px;right:24px;bottom:24px}.topic-art{height:145px}.topic-slide h3{font-size:18px}.topic-category{margin-top:10px}.topic-cast img{height:50px}.topics-controls{margin-top:10px}}
+@media(max-width:900px){.hero{padding:110px 16px 32px;grid-template-rows:minmax(280px,1fr) auto auto;gap:25px}.hero-logo{grid-row:1;align-self:center}.hero-description{position:relative;left:auto;bottom:auto;transform:none;grid-row:3;width:100%;font-size:9px;letter-spacing:.13em}.hero-mark,.hero-message{top:35%}.hero-mark{transform:translateY(-50%);animation:none;opacity:.16}.hero::after{top:35%}.hero-updates{grid-row:2;position:relative;right:auto;bottom:auto;width:min(100%,460px);padding:20px}.topic-art{height:200px}}
+@media(max-width:380px){.topic-art{height:175px}.topic-slide h3{font-size:18px}.topic-slide p{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.topics-track{transition:none}}
+
 </style>
 <link rel="icon" type="image/png" href="assets/hbk-gaming-logo.png">
 <link rel="apple-touch-icon" href="assets/hbk-gaming-logo.png">
@@ -332,19 +351,25 @@
 <header class="header"><div class="wrap header-inner"><a class="home-logo" href="#top" aria-label="CASTOR Home"><img src="assets/castor-official-horizontal-white-v2.webp" alt="CASTOR"></a><nav class="nav" aria-label="Main navigation"><a href="#play">PLAY</a><a href="#create">CREATE</a><a href="#store">STORE</a></nav></div></header>
 <main id="top">
 <section class="hero" aria-label="CASTOR hero"><h1 class="visually-hidden">CASTOR</h1><div class="shooting-star" aria-hidden="true"></div><img class="hero-mark" src="assets/castor-official-symbol-white-v2.webp" alt=""><img class="hero-message" src="assets/castor-hero-message.png" alt=""><img class="hero-logo" src="assets/castor-official-vertical-white-v2.webp" alt="CASTOR"><p class="hero-description">PLAY / CREATE / STORE — 由比ヶ浜から、遊びと創作を。</p>
-  <aside class="hero-updates" aria-label="CASTORのお知らせとHBKの動画">
-    <span class="updates-trace" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><rect x=".5" y=".5" width="99" height="99" rx="1" pathLength="100"/></svg></span>
-    <h2 class="updates-label">NEWS</h2>
-    <a class="updates-news" href="kairi-studio.html"><time datetime="2026-10-03">2026.10.03</time><strong>サボテン工場をアップデート <span aria-hidden="true">→</span></strong></a>
-    <div class="updates-video">
-      <h2 class="updates-label">HBK CHANNEL / VIDEO</h2>
-      <a class="updates-video-link" href="https://www.youtube.com/watch?v=ecJGNVz-mmo" target="_blank" rel="noopener noreferrer" aria-label="HBKの動画「息子 スパレジェ引いて歓喜」をYouTubeで見る（新しいタブ）">
-        <span class="updates-thumbnail"><img src="https://i.ytimg.com/vi/ecJGNVz-mmo/hqdefault.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='assets/hbk-gaming-logo.png';this.style.objectFit='contain';this.style.padding='6px'"></span>
-        <span class="updates-video-copy">息子 スパレジェ引いて歓喜<small>親子で楽しむ Apex Legends</small></span>
-      </a>
-      <a class="updates-latest" href="https://www.youtube.com/@hbk-gaming-jp/shorts" target="_blank" rel="noopener noreferrer">最新の投稿を見る <span aria-hidden="true">↗</span></a>
-    </div>
-  </aside>
+  <aside class="hero-updates" aria-label="CASTORのトピック" aria-roledescription="カルーセル">
+<span class="updates-trace" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><rect x=".5" y=".5" width="99" height="99" rx="1" pathLength="100"/></svg></span>
+<div class="topics-heading"><h2>TOPICS</h2><span class="topic-count" aria-hidden="true">01 / 03</span></div>
+<div class="topics-window"><div class="topics-track">
+<article class="topic-slide" role="group" aria-roledescription="スライド" aria-label="1 / 3">
+<a class="topic-link" href="https://kairi-studio.github.io/cactus-factory/" target="_blank" rel="noopener noreferrer">
+<div class="topic-art topic-cactus" role="img" aria-label="サボテン工場のキービジュアル"><img class="topic-cactus-logo" src="assets/cactus-factory-logo.webp" alt=""><div class="topic-cast" aria-hidden="true"><img src="assets/cactus-factory-punk.png" alt=""><img src="assets/cactus-factory-normal.png" alt=""><img src="assets/cactus-factory-moon.png" alt=""></div></div>
+<span class="topic-category">CREATE / GAME RELEASE</span><h3>サボテン工場 リリース</h3><p>のんびり育てて、気持ちよく収穫。<br>40種類のサボテンを集める放置育成ゲーム。</p><span class="topic-cta">無料であそぶ ↗</span></a></article>
+<article class="topic-slide" role="group" aria-roledescription="スライド" aria-label="2 / 3" aria-hidden="true" inert>
+<a class="topic-link" href="https://www.youtube.com/shorts/u7LuHC_wmCA" target="_blank" rel="noopener noreferrer">
+<div class="topic-art topic-video"><img src="https://i.ytimg.com/vi/u7LuHC_wmCA/hqdefault.jpg" alt="HBKチャンネル「父も がんばってます。」のサムネイル" referrerpolicy="no-referrer"><span class="topic-play" aria-hidden="true">▶</span></div>
+<span class="topic-category">PLAY / HBK CHANNEL</span><h3>父も がんばってます。</h3><p>HBKチャンネルの最新ショート。<br>親子で楽しむ Apex Legends のプレイ記録。</p><span class="topic-cta">YouTubeで見る ↗</span></a></article>
+<article class="topic-slide" role="group" aria-roledescription="スライド" aria-label="3 / 3" aria-hidden="true" inert>
+<a class="topic-link" href="https://73matibeaver.base.shop/items/160650396" target="_blank" rel="noopener noreferrer">
+<div class="topic-art topic-cap"><img src="https://baseec-img-mng.akamaized.net/images/item/origin/9cc8aa6cb570fce4705a0f351cdb049f.jpg?imformat=generic&amp;q=90&amp;im=Resize,width=1280,type=normal" alt="白いCSTロゴを刺繍したカーキのCASTORベースボールキャップ"></div>
+<span class="topic-category">STORE / PICK UP</span><h3>CASTOR ベースボールキャップ</h3><p>カーキに、白いCSTロゴの刺繍。<br>街でも海辺でも、いつものスタイルに。</p><span class="topic-cta">ストアで見る ↗</span></a></article>
+</div></div>
+<div class="topics-controls"><div class="topic-dots" role="group" aria-label="表示するトピック"><button class="topic-dot" type="button" aria-label="サボテン工場を表示" aria-current="true"></button><button class="topic-dot" type="button" aria-label="HBKの最新動画を表示" aria-current="false"></button><button class="topic-dot" type="button" aria-label="ベースボールキャップを表示" aria-current="false"></button></div><button class="topic-pause" type="button" aria-label="自動切り替えを一時停止">一時停止</button></div>
+</aside>
 </section>
 <section class="section play" id="play"><div class="wrap section-inner"><div class="play-head"><div><div class="section-label">01 / PLAY</div><h2>PLAY</h2><p class="play-intro">CASTORのPLAY。<br>ゲームを中心に、遊ぶことから生まれるものを。</p></div><img class="hbk-logo" src="assets/hbk-gaming-logo.png" alt="HBK GAMING"></div><div class="team-grid"><article class="team-card"><a class="team-card-link" href="kairi.html" aria-label="kairiのページを見る"><span class="card-trace" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><rect x=".5" y=".5" width="99" height="99" pathLength="100"/></svg></span><div class="team-photo"><img src="assets/hbk-kairi.webp" alt="kairi"></div><div class="team-meta"><span>HBK GAMING</span><strong>kairi</strong></div></a></article><article class="team-card"><a class="team-card-link" href="kappa.html" aria-label="kappaのページを見る"><span class="card-trace" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><rect x=".5" y=".5" width="99" height="99" pathLength="100"/></svg></span><div class="team-photo"><img src="assets/hbk-kappa.webp" alt="kappa"></div><div class="team-meta"><span>HBK GAMING</span><strong>kappa</strong></div></a></article><article class="team-card"><a class="team-card-link" href="sota.html" aria-label="sotaのページを見る"><span class="card-trace" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><rect x=".5" y=".5" width="99" height="99" pathLength="100"/></svg></span><div class="team-photo"><img src="assets/hbk-sota.webp" alt="sota"></div><div class="team-meta"><span>HBK GAMING</span><strong>sota</strong></div></a></article></div><div class="play-footer"><span>HBK GAMING</span><span>PLAY / GAMING</span></div></div></section>
 <section class="section create" id="create"><div class="wrap section-inner"><div class="create-content"><div class="create-copy"><div class="section-label">02 / CREATE</div><h2>CREATE</h2><p>CASTORの「CREATE」。<br>ゲームやWebなど、つくってみたいものを形にしていく場所。</p></div><a class="studio-card" href="kairi-studio.html" aria-label="KAIRI_studioのゲーム作品を見る"><img src="assets/kairi-studio-logo.png" alt="KAIRI_studio"><div class="studio-project"><small>NOW AVAILABLE / 2 GAMES</small><strong>CASTOR KANJI QUEST <b>v1.0</b></strong><strong>サボテン工場 <b>CACTUS FACTORY</b></strong></div><span>VIEW PROJECTS →</span></a></div></div></section>
@@ -373,4 +398,21 @@
 </main>
 <footer class="footer"><div class="wrap footer-inner"><div class="footer-logo"><img src="assets/castor-official-horizontal-white-v2.webp" alt="CASTOR"></div><div class="footer-meta"><a href="privacy.html">PRIVACY / CONTACT</a><span>© CASTOR</span></div></div></footer>
 <script>(function(){const header=document.querySelector('.header');const updateHeader=()=>header.classList.toggle('is-scrolled',window.scrollY>24);updateHeader();addEventListener('scroll',updateHeader,{passive:true});const sections=document.querySelectorAll('.section,.store-section');if(!('IntersectionObserver' in window)){sections.forEach(s=>s.classList.add('is-visible'));return}const observer=new IntersectionObserver((entries,obs)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');obs.unobserve(entry.target)}})},{threshold:.28});sections.forEach(s=>observer.observe(s))})();</script>
+<script>
+(function(){
+const card=document.querySelector('.hero-updates'),track=card.querySelector('.topics-track'),slides=[...card.querySelectorAll('.topic-slide')],dots=[...card.querySelectorAll('.topic-dot')],pause=card.querySelector('.topic-pause'),motion=matchMedia('(prefers-reduced-motion: reduce)');
+let index=0,timer=null,paused=motion.matches,hovered=false;
+function show(next){index=(next+slides.length)%slides.length;track.style.transform='translateX(-'+index*100+'%)';slides.forEach((slide,i)=>{slide.inert=i!==index;slide.setAttribute('aria-hidden',String(i!==index));dots[i].setAttribute('aria-current',String(i===index))});card.querySelector('.topic-count').textContent='0'+(index+1)+' / 03'}
+function schedule(){clearTimeout(timer);if(!paused&&!hovered&&!card.contains(document.activeElement)&&!document.hidden)timer=setTimeout(()=>{show(index+1);schedule()},5000)}
+function label(){pause.textContent=paused?'再生':'一時停止';pause.setAttribute('aria-label',paused?'自動切り替えを再開':'自動切り替えを一時停止')}
+dots.forEach((dot,i)=>dot.addEventListener('click',()=>{show(i);schedule()}));
+pause.addEventListener('click',()=>{paused=!paused;label();schedule()});
+card.addEventListener('mouseenter',()=>{hovered=true;schedule()});card.addEventListener('mouseleave',()=>{hovered=false;schedule()});
+card.addEventListener('focusin',schedule);card.addEventListener('focusout',()=>setTimeout(schedule,0));
+document.addEventListener('visibilitychange',schedule);
+motion.addEventListener('change',()=>{paused=motion.matches;label();schedule()});
+let touchX=null;card.querySelector('.topics-window').addEventListener('touchstart',e=>{touchX=e.touches[0].clientX;clearTimeout(timer)},{passive:true});card.querySelector('.topics-window').addEventListener('touchend',e=>{if(touchX!==null){const dx=e.changedTouches[0].clientX-touchX;if(Math.abs(dx)>45)show(index+(dx<0?1:-1));touchX=null;schedule()}},{passive:true});
+show(0);label();schedule();
+})();
+</script>
 </body></html>
