@@ -400,6 +400,21 @@
  .topic-progress{display:none}
 }
 
+
+/* A quieter hierarchy with a little more breathing room on desktop. */
+.section h2,.store-head h2{font-size:clamp(64px,4.2vw,72px);font-weight:300;letter-spacing:.06em}
+@media(min-width:901px){
+ .wrap{width:calc(100% - 2 * clamp(48px,3.333vw,64px))}
+ .team-photo{height:clamp(280px,29vw,400px)}
+}
+.store-visual::before{color:rgba(255,255,255,.025)}
+.store-visual:hover::before,.store-visual:focus-visible::before{color:rgba(255,255,255,.035)}
+.store-caption span{font-size:clamp(22px,2vw,32px);letter-spacing:.09em}
+@media(max-width:700px){
+ .section h2,.store-head h2{font-size:42px}
+ .store-caption span{font-size:20px}
+}
+
 </style>
 <link rel="icon" type="image/png" href="assets/hbk-gaming-logo.png">
 <link rel="apple-touch-icon" href="assets/hbk-gaming-logo.png">
