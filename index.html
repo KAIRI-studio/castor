@@ -428,6 +428,30 @@
 .motion-ready .reveal-heading.is-revealed::after{transform:scaleX(1)}
 @media(prefers-reduced-motion:reduce){.motion-ready .reveal-heading::after{transform:scaleX(1);transition:none}}
 
+/* Compact mobile topics leave the hero identity as the focal point. */
+@media(max-width:700px){
+ .hero{padding:88px 16px 24px;grid-template-rows:minmax(260px,1fr) auto auto;gap:16px}
+ .hero-updates{width:min(100%,460px);padding:12px 14px}
+ .topics-heading{margin-bottom:10px}
+ .topics-heading h2{font-size:10px}
+ .topic-count{font-size:10px}
+ .topic-link{display:grid;grid-template-columns:88px minmax(0,1fr);grid-template-rows:auto 1fr auto;column-gap:12px;min-height:88px}
+ .topic-art{grid-column:1;grid-row:1 / 4;width:88px;height:88px}
+ .topic-category{grid-column:2;grid-row:1;margin:0;font-size:8px;letter-spacing:.08em;line-height:1.5}
+ .topic-slide h3{grid-column:2;grid-row:2;align-self:center;font-size:14px;line-height:1.45;margin:5px 0;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+ .topic-slide p{display:none}
+ .topic-cta{grid-column:2;grid-row:3;margin:0;font-size:10px;line-height:1.5}
+ .topic-cactus .topic-cactus-logo{width:90%;left:5%;top:10%}
+ .topic-cast{left:5%;right:5%;bottom:6%}
+ .topic-cast img{height:38px}
+ .topic-play{width:30px;height:30px;font-size:12px}
+ .topic-progress{margin-top:10px}
+ .topics-controls{margin-top:2px;padding-top:0}
+ .topic-dots{gap:4px}
+ .topic-dot{width:34px;height:34px}
+ .topic-pause{font-size:10px}
+}
+
 </style>
 <link rel="icon" type="image/png" href="assets/hbk-gaming-logo.png">
 <link rel="apple-touch-icon" href="assets/hbk-gaming-logo.png">
