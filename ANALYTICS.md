@@ -1,6 +1,6 @@
 # CASTOR access analytics
 
-Status: prepared, disabled until a verified owner-controlled GA4 measurement ID is supplied.
+Status: enabled on 2026-10-06 with owner-confirmed web stream G-HZ8GPCWVS9. Private GA4 receipt must still be confirmed in Realtime reports.
 
 Set `measurement_id` in analytics-config.json to the ID for a web stream owned by CASTOR. All three sites read this same configuration. View private reports at https://analytics.google.com/. Configure custom dimension `castor_site` if per-site event reports are wanted; page paths also distinguish sites. Set property timezone to Asia/Tokyo.
 
