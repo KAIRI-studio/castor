@@ -1,170 +1,87 @@
 <!doctype html>
-<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>KAIRI_studio | CASTOR</title><meta name="description" content="KAIRI_studioの制作作品。漢字よみゲーム『CASTOR KANJI QUEST』と、算数で育てる放置ゲーム『サボテン工場』を公開しています。"><link rel="preload" as="image" href="assets/kairi-studio-logo.png"><link rel="preload" as="image" href="assets/kanji-quest-keyvisual-card.webp"><link rel="preload" as="image" href="assets/kanji-quest-play.webp"><link rel="preload" as="image" href="assets/kanji-quest-character.webp">
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>小学生向け無料学習ゲーム | KAIRI STUDIO（カイリスタジオ）</title>
+<meta name="description" content="KAIRI STUDIO（カイリスタジオ）は、小学生が遊びながら学べる無料の学習ゲームを制作しています。漢字の読みを練習する『漢字クエスト』、算数の計算で育てる『サボテン工場』。スマホ・タブレット・パソコンのブラウザですぐに遊べます。">
+<meta name="theme-color" content="#20344a">
+<link rel="canonical" href="https://kairi-studio.github.io/castor/kairi-studio.html">
+<link rel="sitemap" type="application/xml" href="sitemap.xml">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content="KAIRI STUDIO | CASTOR">
+<meta property="og:title" content="あそびながら、まなぼう。 | KAIRI STUDIO">
+<meta property="og:description" content="小学生のための無料学習ゲーム。漢字クエストとサボテン工場で、漢字の読みや算数の計算を楽しく練習。インストール不要。">
+<meta property="og:url" content="https://kairi-studio.github.io/castor/kairi-studio.html">
+<meta property="og:image" content="https://kairi-studio.github.io/castor/assets/kanji-quest-keyvisual-card.webp">
+<meta property="og:image:alt" content="漢字クエストの冒険の世界とキャラクターたち">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="assets/castor-official-icon-v2.png">
+<link rel="apple-touch-icon" href="assets/castor-official-icon-v2.png">
+<link rel="preload" as="image" href="assets/kanji-quest-keyvisual-card.webp">
 <style>
-:root{--bg:#263d60;--bg2:#172b49;--muted:rgba(255,255,255,.68);--line:rgba(255,255,255,.18);--accent:#b9d2f4}
-*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg2);color:#fff}body{font-family:Arial,"Helvetica Neue",sans-serif;overflow-x:hidden}a{text-decoration:none;color:inherit}.wrap{width:calc(100% - 140px);max-width:1500px;margin:auto}
-.header{position:fixed;top:0;left:0;right:0;z-index:50;height:86px;display:flex;align-items:center;background:rgba(19,37,62,.68);border-bottom:1px solid rgba(255,255,255,.08);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}.header-inner{display:flex;align-items:center;justify-content:space-between}.home-logo{display:block;width:150px}.home-logo img{display:block;width:100%;filter:brightness(0) invert(1)}.nav{display:flex;gap:42px;font-size:13px;letter-spacing:.14em;font-weight:700}.nav a{position:relative;padding:10px 0;color:rgba(255,255,255,.82)}.nav a:after{content:"";position:absolute;left:0;right:0;bottom:2px;height:1px;background:#fff;transform:scaleX(0);transform-origin:right;transition:.3s}.nav a:hover:after{transform:scaleX(1);transform-origin:left}
-.studio-hero{position:relative;isolation:isolate;-webkit-transform:translateZ(0);transform:translateZ(0);min-height:100svh;overflow:hidden;background:radial-gradient(circle at 76% 35%,rgba(184,208,244,.13),transparent 30%),linear-gradient(120deg,#1d3454 0%,#263d60 55%,#213858 100%)}
-.hero-mark{position:absolute;z-index:0;left:50%;top:50%;width:min(58vw,760px);height:min(58vw,760px);transform:translate(-42%,-48%);pointer-events:none;contain:paint}.hero-mark img{display:block;width:100%;height:100%;object-fit:contain;opacity:0;filter:brightness(0) invert(1);transform:scale(.94);animation:heroMarkImgReveal 1.8s cubic-bezier(.2,.7,.2,1) .15s forwards;will-change:opacity,transform;-webkit-backface-visibility:hidden;backface-visibility:hidden}@keyframes heroMarkImgReveal{from{opacity:0;transform:scale(.94)}to{opacity:.105;transform:scale(1)}}
-.shooting-star{position:absolute;width:clamp(110px,14vw,190px);height:1px;left:50%;top:39%;transform:translateX(-155px);opacity:0;filter:drop-shadow(0 0 4px rgba(255,255,255,.22));animation:starPass 2.4s ease-in-out 1s forwards;z-index:2;pointer-events:none}.shooting-star:before{content:"";position:absolute;right:-4px;top:50%;width:5px;height:5px;transform:translateY(-50%) rotate(45deg);background:rgba(255,255,255,.82);box-shadow:0 0 7px rgba(255,255,255,.42)}.shooting-star:after{content:"";position:absolute;left:0;top:0;width:100%;height:1px;background:linear-gradient(to left,rgba(255,255,255,.58),rgba(255,255,255,.22) 45%,transparent)}@keyframes starPass{0%{opacity:0;transform:translateX(-155px)}18%{opacity:.48}58%{opacity:.38;transform:translateX(45px)}100%{opacity:0;transform:translateX(85px)}}
-.content{position:relative;z-index:3;isolation:isolate;-webkit-transform:translateZ(0);transform:translateZ(0);min-height:100svh;display:grid;grid-template-columns:1.08fr .92fr;gap:5vw;align-items:center;padding-top:70px;padding-bottom:55px}.copy{align-self:center}.eyebrow{margin:0 0 18px;color:var(--accent);font-size:11px;letter-spacing:.28em;font-weight:700}h1{margin:0;font-size:clamp(58px,8vw,118px);line-height:.9;font-weight:300;letter-spacing:-.04em}.team{margin:28px 0 0;padding-top:18px;border-top:1px solid var(--line);color:rgba(255,255,255,.72);font-size:11px;letter-spacing:.22em}.intro{margin:28px 0 0;max-width:560px;color:var(--muted);font-size:14px;line-height:1.9}
-.logo-card{display:flex;align-items:center;justify-content:center;margin-top:28px;width:min(100%,420px);height:190px;padding:28px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.045);overflow:hidden;transition:none!important;transform:none!important}.logo-card img{display:block;width:230px;max-width:72%;height:auto;max-height:135px;object-fit:contain;margin:0 auto;flex:0 0 auto;opacity:1;visibility:visible}
-.project{align-self:center;justify-self:end;width:min(100%,610px);border:1px solid rgba(255,255,255,.18);background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.035));padding:18px;min-width:0;overflow:hidden;box-shadow:0 24px 65px rgba(5,16,30,.22)}.project-head{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:14px}.project-label{font-size:10px;letter-spacing:.22em;color:var(--accent)}.project-status{display:flex;align-items:center;gap:7px;color:rgba(255,255,255,.7);font-size:9px;letter-spacing:.14em;white-space:nowrap}.project-status:before{content:"";width:6px;height:6px;border-radius:50%;background:#86d9a5;box-shadow:0 0 10px rgba(134,217,165,.5)}.project-showcase{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(105px,.45fr);gap:9px;align-items:stretch}.project-key{position:relative;min-width:0;border:1px solid rgba(255,255,255,.14);background:#071522;overflow:hidden}.project-key img{display:block;width:100%;height:100%;min-height:265px;object-fit:cover;object-position:center}.project-key:after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 55px rgba(5,18,31,.24);pointer-events:none}.project-side{display:grid;grid-template-columns:1fr;grid-template-rows:1fr 1fr;gap:9px;min-width:0}.project-thumb{position:relative;border:1px solid rgba(255,255,255,.14);background:#071522;overflow:hidden;min-height:0;display:flex;align-items:flex-start;justify-content:center}.project-thumb img{display:block;width:100%;height:100%;object-fit:cover;object-position:top center}.project-thumb:after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 24px rgba(5,18,31,.18);pointer-events:none}.project-body{padding:3px 2px 0}.project h2{font-size:27px;font-weight:400;letter-spacing:.015em;margin:14px 0 8px}.project-lead{margin:0;color:var(--muted);font-size:12px;line-height:1.8}.project-features{display:flex;flex-wrap:wrap;gap:7px;margin:13px 0 0;padding:0;list-style:none}.project-features li{padding:6px 9px;border:1px solid rgba(185,210,244,.25);background:rgba(185,210,244,.07);color:rgba(255,255,255,.78);font-size:9px;letter-spacing:.07em}.project-actions{display:flex;align-items:center;gap:14px;margin-top:15px}.project-btn{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 18px;border:1px solid #d2e4fb;background:#d2e4fb;color:#172b49;font-size:10px;letter-spacing:.14em;font-weight:700;transition:background .25s,color .25s,transform .25s}.project-btn:hover{background:#fff;border-color:#fff;transform:translateY(-1px)}.project-note{color:rgba(255,255,255,.5);font-size:9px;line-height:1.55;letter-spacing:.04em}
-.bottom{position:absolute;left:0;right:0;bottom:20px;z-index:5}.bottom-inner{display:flex;justify-content:space-between;align-items:center;color:rgba(255,255,255,.48);font-size:10px;letter-spacing:.16em}.back:hover{color:#fff}
-@media(max-width:900px){.wrap{width:calc(100% - 40px)}.header{height:72px}.home-logo{width:118px}.nav{gap:20px;font-size:11px}.content{grid-template-columns:1fr;gap:28px;padding-top:95px;padding-bottom:75px}.copy{order:1}.project{order:2;justify-self:center;width:min(100%,680px)}.hero-mark{width:82vw;height:82vw}}
-@media(max-width:520px){
-  html,body{width:100%;min-height:100%;}
-  .studio-hero{min-height:100svh;height:auto;overflow:hidden;}
-  .content{display:flex;flex-direction:column;align-items:stretch;gap:28px;min-height:0;padding-top:94px;padding-bottom:82px;}
-  .copy,.project{width:100%;}
-  .copy{align-self:stretch;}
-  h1{font-size:62px;}
-  .logo-card{width:100%;height:190px;margin-top:24px;padding:28px;background:rgba(255,255,255,.045)!important;border:1px solid rgba(255,255,255,.18);overflow:hidden;transition:none!important;transform:none!important}.logo-card img{width:220px;max-width:72%;max-height:130px;object-fit:contain;display:block;opacity:1!important;visibility:visible!important}
-  .project{padding:16px;min-height:0;align-self:stretch;width:100%;background:rgba(255,255,255,.055);overflow:hidden}
-  .project-head{margin-bottom:12px}
-  .project-showcase{grid-template-columns:1fr;gap:8px}
-  .project-key img{height:auto;min-height:0;aspect-ratio:7/8;object-fit:cover}
-  .project-side{grid-template-columns:1fr 1fr;grid-template-rows:none;gap:8px}
-  .project-thumb{aspect-ratio:9/16;background:#071522}
-  .project-thumb img{width:100%;height:100%;object-fit:contain;object-position:center top}
-  .project h2{font-size:22px;margin-top:14px;}
-  .project-lead{font-size:11.5px;line-height:1.75;}
-  .project-features{gap:6px;margin-top:12px}
-  .project-features li{font-size:8.5px}
-  .project-actions{align-items:flex-start;flex-direction:column;gap:8px;margin-top:14px}
-  .project-btn{width:100%;min-height:46px;}
-  .project-note{width:100%;text-align:center}
-  .hero-mark{width:86vw;height:86vw;transform:translate(-42%,-48%) scale(.94);}
-  .shooting-star{top:38%;}
-}
-@media(max-width:380px){
-  .wrap{width:calc(100% - 28px);}
-  .header{height:64px;}
-  .home-logo{width:104px;}
-  .nav{gap:15px;font-size:10px;}
-  .content{padding-top:82px;}
-  h1{font-size:52px;}
-
-  .project{padding:14px;}
-}
-.logo-card img,.project-key img,.project-thumb img{background:transparent!important;} .logo-card{background-color:rgba(255,255,255,.045)!important;} @media (prefers-reduced-motion:reduce){.hero-mark img,.shooting-star{animation:none!important}.hero-mark img{opacity:.105!important;transform:scale(1)!important}.shooting-star{opacity:0!important}} 
-/* Shared CASTOR ambient ripple */
-.studio-hero::after{
-  content:"";
-  position:absolute;
-  left:68%;
-  top:48%;
-  width:18vw;
-  height:18vw;
-  max-width:300px;
-  max-height:300px;
-  border:1.5px solid rgba(190,216,248,.085);
-  border-radius:50%;
-  transform:translate(-50%,-50%) scale(.35);
-  opacity:0;
-  pointer-events:none;
-  animation:studioRipple 9s ease-out 2.6s infinite;
-  z-index:1;
-}
-@keyframes studioRipple{
-  0%{transform:translate(-50%,-50%) scale(.35);opacity:0}
-  12%{opacity:.8}
-  75%{opacity:.18}
-  100%{transform:translate(-50%,-50%) scale(3.2);opacity:0}
-}
-@media(max-width:700px){
-  .studio-hero::after{left:72%;top:42%;width:30vw;height:30vw}
-}
-
-/* CASTOR KAIRI_studio title motion: right -> left */
-h1{
-  opacity:0;
-  transform:translate3d(70px,0,0);
-  animation:studioTitleIn 1.15s cubic-bezier(.2,.7,.2,1) .65s forwards;
-}
-@keyframes studioTitleIn{
-  from{opacity:0;transform:translate3d(70px,0,0)}
-  to{opacity:1;transform:translate3d(0,0,0)}
-}
-@media(prefers-reduced-motion:reduce){
-  h1{opacity:1;transform:none;animation:none}
-}
-
-
-/* Two released games share the same project presentation. */
-.content{align-items:start;padding-top:135px;padding-bottom:95px}
-.copy{position:sticky;top:120px;align-self:start}
-h1{font-size:clamp(48px,5.8vw,88px)}
-.projects{display:grid;gap:30px;width:min(100%,610px);justify-self:end;min-width:0}
-.projects .project{width:100%;justify-self:stretch}
-.project-btn:focus-visible{outline:2px solid #fff;outline-offset:4px}
-.cactus-key{position:relative;min-height:290px;background:#466345 url('assets/cactus-factory-background.webp') center 57%/cover no-repeat;isolation:isolate}
-.cactus-key:before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,#173d2f33,transparent 50%,#173d2f22)}
-.cactus-key .cactus-logo{position:absolute;z-index:1;top:9%;left:9%;width:82%;height:auto;min-height:0;object-fit:contain}
-.cactus-cast{position:absolute;left:9%;right:9%;bottom:12%;display:flex;justify-content:center;align-items:flex-end;gap:3%;z-index:1}
-.cactus-key .cactus-cast img{display:block;min-height:0;width:31%;height:105px;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 5px 4px #163c3040)}
-.project-cactus .project-thumb img{object-fit:cover;object-position:center}
-@media(max-width:900px){.copy{position:static}.content{padding-top:105px}.projects{width:min(100%,680px);justify-self:center}}
-@media(max-width:520px){.content{padding-top:94px}.projects{width:100%;gap:26px}.cactus-key{min-height:0;aspect-ratio:7/8}.cactus-key .cactus-logo{top:12%}.cactus-key .cactus-cast img{height:125px}.project-cactus .project-thumb img{object-fit:contain}}
-@media(max-width:380px){.content{padding-top:82px}.cactus-key .cactus-cast img{height:110px}}
-
-/* A shared gallery keeps both releases visible together on desktop. */
-.content{display:block}
-.copy{position:static;display:grid;grid-template-columns:minmax(0,1fr) 340px;column-gap:45px;margin-bottom:44px}
-.copy .logo-card{grid-column:2;grid-row:1/6;width:100%;height:165px;margin:0;align-self:center}
-.copy .eyebrow,.copy h1,.copy .team,.copy .intro{grid-column:1}
-.projects{width:100%;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
-.projects .project{align-self:start}
-@media(max-width:900px){.copy{display:block}.copy .logo-card{margin-top:24px;width:min(100%,420px)}.projects{grid-template-columns:1fr;width:min(100%,680px);margin:0 auto}}
-@media(max-width:520px){.copy{margin-bottom:28px}.projects{width:100%}.copy .logo-card{width:100%;height:190px}}
-
-/* Match both key visuals to the Kanji Quest 7:8 frame. */
-.project-key,.cactus-key{aspect-ratio:7/8;min-height:0}
-#kanji-quest .project-key>img{position:absolute;inset:0;width:100%;height:100%;min-height:0;aspect-ratio:auto;object-fit:cover}
-.project-side{min-height:0}
-.project-thumb img{position:absolute;inset:0;width:100%;height:100%;min-height:0}
-
-/* Align the outside frames and actions across each desktop gallery row. */
-.projects .project{align-self:stretch;display:flex;flex-direction:column}
-.project-showcase{flex-shrink:0}
-.project-body{flex:1;display:flex;flex-direction:column}
-.project h2{line-height:1.25}
-.project-actions{margin-top:auto;padding-top:15px}
-
-/* Official CST identity, October 2026. */
-.home-logo,.header .logo{display:block;width:190px}.home-logo img,.header .logo img{height:auto}
-@media(max-width:900px){.home-logo,.header .logo{width:clamp(118px,36vw,144px)}}
-
-/* Match the homepage: a small gutter without a desktop width cap. */
-.wrap{width:calc(100% - 48px);max-width:none;margin-inline:auto}
-@media(max-width:700px){.wrap{width:calc(100% - 32px)}}
-
-/* Keep game cards compact on wide displays without narrowing the page. */
-.projects{max-width:1280px;margin-inline:auto}
-
-/* Explicit mobile key-visual height also works in Safari grid layout. */
-@media(max-width:520px){
-  .project-showcase{grid-template-rows:auto auto}
-  .project-key,.cactus-key{width:100%;height:calc((100vw - 68px) * 8 / 7);min-height:0;aspect-ratio:7/8}
-}
-</style><link rel="icon" type="image/png" href="assets/castor-official-icon-v2.png">
+:root{--paper:#f8f7f3;--ink:#20344a;--muted:#586575;--line:#dcdedc;--white:#fff;--pink:#fbe6e5;--blue:#e1eff7}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;line-height:1.7;-webkit-text-size-adjust:100%}a{color:inherit}button{font:inherit}img{display:block;max-width:100%}button,a{-webkit-tap-highlight-color:transparent}a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #507b9b;outline-offset:5px}.wrap{width:min(1040px,calc(100% - 64px));margin-inline:auto}.skip{position:absolute;left:16px;top:-100px;z-index:10;background:var(--ink);color:#fff;padding:12px}.skip:focus{top:12px}
+.header-inner{min-height:100px;display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:18px;min-width:0}.studio-name{font-family:Arial,sans-serif;font-weight:800;font-size:26px;line-height:1.2;letter-spacing:.015em;text-decoration:none;white-space:nowrap}.castor-link{display:flex;align-items:center;gap:7px;text-decoration:none;padding:8px 0}.castor-link span{font-size:13px;color:var(--muted)}.castor-link img{width:82px;height:auto;filter:brightness(0);opacity:.77}.parents-link{font-size:14px;text-decoration:none;white-space:nowrap}.parents-link:hover{text-decoration:underline}
+.intro{padding:64px 0 42px;text-align:center}.intro h1{font-size:clamp(28px,4.2vw,48px);letter-spacing:.02em;font-weight:750;line-height:1.5;margin:0 0 16px}.intro p{font-size:clamp(14px,2vw,20px);letter-spacing:.025em;margin:0;color:var(--muted)}.intro .intro-note{font-size:12px;margin-top:12px;letter-spacing:.04em}
+.filters{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin:0 0 26px}.filter{border:1px solid transparent;background:#eeefed;color:var(--ink);border-radius:8px;min-height:78px;padding:12px 8px;display:flex;align-items:center;justify-content:center;flex-direction:column;font-weight:700;font-size:19px;line-height:1.5;cursor:pointer}.filter[aria-pressed=true]{background:var(--ink);color:#fff}.filter:not(:disabled):hover{border-color:var(--ink)}.filter:disabled{color:#737d86;cursor:default}.filter small{font-size:11px;font-weight:400;letter-spacing:.02em}.filter-status{font-size:13px;color:var(--muted);margin:0 0 12px}.filter-status:empty{display:none}
+.games{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.game{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:16px;min-width:0;display:flex;flex-direction:column}.game[hidden]{display:none}.keyvisual{position:relative;aspect-ratio:7/8;overflow:hidden;border-radius:5px;background:#e9eee8}.keyvisual>img{width:100%;height:100%;object-fit:contain}.cactus-key{background:#466345 url('assets/cactus-factory-background.webp') center 57%/cover no-repeat}.cactus-key .cactus-logo{position:absolute;top:9%;left:9%;width:82%;height:auto;object-fit:contain}.cactus-cast{position:absolute;left:7%;right:7%;bottom:12%;height:33%;display:flex;justify-content:center;align-items:flex-end;gap:3%}.cactus-cast img{width:31%;height:100%;object-fit:contain;object-position:center bottom}
+.game-body{padding:18px 5px 5px;display:flex;flex-direction:column;flex:1}.subject-line{display:flex;align-items:center;gap:15px;margin:0 0 12px;font-size:14px}.subject{padding:3px 13px;border-radius:7px;font-weight:650;background:var(--pink)}.subject.math{background:var(--blue)}.learning-item{border-left:1px solid #c7cdd2;padding-left:15px;color:var(--muted)}.game h2{font-size:clamp(25px,3.1vw,36px);line-height:1.4;margin:0 0 12px;font-weight:750;letter-spacing:.01em}.game-description{font-size:16px;color:var(--muted);margin:0 0 12px}.game-note{font-size:12px;color:var(--muted);margin:0 0 20px}.play{margin-top:auto;min-height:56px;border-radius:6px;background:var(--ink);color:#fff;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:20px;font-size:20px;font-weight:650;transition:background .15s}.play:hover{background:#304c65}.play span[aria-hidden]{font-weight:400}
+.parent-info{scroll-margin-top:30px;margin-top:56px;border-top:1px solid var(--line);padding-top:30px}.parent-info h2{margin:0 0 12px;font-size:19px}.parent-intro{font-size:14px;color:var(--muted);margin:0 0 22px;max-width:780px}.parent-info details{border-top:1px solid var(--line);padding:15px 0}.parent-info summary{font-size:14px;cursor:pointer;font-weight:650}.parent-info details p{font-size:14px;color:var(--muted);max-width:800px;margin:12px 0 0}.parent-info details a{text-underline-offset:3px}.footer{margin-top:36px}.footer-inner{border-top:1px solid var(--line);padding:26px 0 34px;display:flex;justify-content:space-between;align-items:center;gap:20px}.footer-brand{font-family:Arial,sans-serif;font-size:15px;letter-spacing:.025em;font-weight:750}.footer-nav{display:flex;gap:24px;font-size:12px;color:var(--muted)}.footer-nav a{text-decoration:none}.footer-nav a:hover{text-decoration:underline}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+@media(max-width:700px){.wrap{width:calc(100% - 36px)}.header-inner{min-height:88px;gap:16px}.brand{flex-direction:column;align-items:flex-start;gap:0;padding:14px 0}.studio-name{font-size:20px}.castor-link{gap:5px;padding:3px 0}.castor-link span{font-size:10px}.castor-link img{width:65px}.parents-link{font-size:12px}.intro{padding:36px 0 28px}.intro h1{font-size:clamp(23px,5.5vw,36px);letter-spacing:0}.intro p{font-size:13px;letter-spacing:0}.intro .intro-note{font-size:11px}.filters{gap:6px;margin-bottom:20px}.filter{font-size:clamp(11px,3vw,13px);min-height:64px;padding:8px 2px;border-radius:6px}.filter small{font-size:9px}.games{gap:20px}.game{padding:12px}.game-body{padding:16px 3px 3px}.game h2{font-size:25px}.game-description{font-size:14px}.subject-line{font-size:12px;gap:10px}.learning-item{padding-left:10px}.subject{padding:3px 10px}.game-note{font-size:11px}.play{font-size:18px;min-height:52px}.parent-info{margin-top:38px}.footer-inner{align-items:flex-start;flex-direction:column;gap:14px}.footer-nav{gap:20px;flex-wrap:wrap}}
+@media(max-width:580px){.games{grid-template-columns:1fr}.keyvisual{aspect-ratio:7/8}.game h2{font-size:30px}.game-description{font-size:15px}.game-note{font-size:12px}.subject-line{font-size:14px}.play{font-size:20px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.play{transition:none}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://kairi-studio.github.io/castor/kairi-studio.html#studio","name":"KAIRI STUDIO","alternateName":["カイリスタジオ","KAIRI_studio"],"url":"https://kairi-studio.github.io/castor/kairi-studio.html","parentOrganization":{"@type":"Organization","name":"CASTOR","url":"https://kairi-studio.github.io/castor/"}},{"@type":"CollectionPage","@id":"https://kairi-studio.github.io/castor/kairi-studio.html#page","url":"https://kairi-studio.github.io/castor/kairi-studio.html","name":"小学生向け無料学習ゲーム | KAIRI STUDIO","description":"漢字の読みや算数の計算を遊びながら練習できる、小学生向け無料ブラウザゲーム。","inLanguage":"ja","publisher":{"@id":"https://kairi-studio.github.io/castor/kairi-studio.html#studio"},"mainEntity":{"@type":"ItemList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"VideoGame","name":"漢字クエスト","alternateName":"CASTOR KANJI QUEST","url":"https://kairi-studio.github.io/kanji-quest/","image":"https://kairi-studio.github.io/castor/assets/kanji-quest-keyvisual-card.webp","description":"小学校1〜6年生の漢字の読みを3択バトルで練習する無料ブラウザゲーム。","inLanguage":"ja","isAccessibleForFree":true,"genre":["学習ゲーム","漢字"]}},{"@type":"ListItem","position":2,"item":{"@type":"VideoGame","name":"サボテン工場","alternateName":"CACTUS FACTORY","url":"https://kairi-studio.github.io/cactus-factory/","image":"https://kairi-studio.github.io/castor/assets/cactus-factory-logo.webp","description":"算数の計算チャレンジでサボテンを育てて集める無料ブラウザゲーム。","inLanguage":"ja","isAccessibleForFree":true,"genre":["学習ゲーム","算数","育成ゲーム"]}}]}}]}
+</script>
 <script src="analytics.js?v=1" data-site="castor" defer></script>
 </head>
-<body><header class="header"><div class="wrap header-inner"><a class="home-logo" href="index.html#top"><img src="assets/castor-official-horizontal-white-v2.webp" alt="CASTOR"></a><nav class="nav"><a href="index.html#play">PLAY</a><a href="index.html#create">CREATE</a></nav></div></header>
-<main class="studio-hero"><div class="shooting-star" aria-hidden="true"></div><div class="hero-mark" aria-hidden="true"><img src="assets/castor-official-symbol-white-v2.webp" alt=""></div>
-<div class="wrap content"><div class="copy"><p class="eyebrow">CASTOR / CREATE</p><h1>KAIRI_studio</h1><p class="team">GAME / WEB / CREATE</p><p class="intro">ゲームやWebなど、「つくってみたい」を形にしていく小さなスタジオ。</p><div class="logo-card"><img src="assets/kairi-studio-logo.png" alt="KAIRI_studio"></div></div>
-<div class="projects"><article class="project" id="kanji-quest"><div class="project-head"><div class="project-label">PROJECT / GAME / LEARN</div><div class="project-status">RELEASED / v1.0</div></div><div class="project-showcase"><div class="project-key"><img src="assets/kanji-quest-keyvisual-card.webp" alt="CASTOR KANJI QUEST キービジュアル"></div><div class="project-side"><div class="project-thumb"><img src="assets/kanji-quest-play.webp" alt="CASTOR KANJI QUEST 戦闘画面"></div><div class="project-thumb"><img src="assets/kanji-quest-character.webp" alt="CASTOR KANJI QUEST キャラクター選択画面"></div></div></div><div class="project-body"><h2>CASTOR KANJI QUEST</h2><p class="project-lead">漢字を読んで、ぼうけんに出よう。小学校1〜6年生の漢字を、3択バトルで楽しく練習できるWebゲームです。</p><ul class="project-features" aria-label="ゲームの特徴"><li>小学1〜6年生</li><li>全216問</li><li>月間ランキング</li><li>スマホ・PC対応</li></ul><div class="project-actions"><a class="project-btn" href="https://kairi-studio.github.io/kanji-quest/" target="_blank" rel="noopener noreferrer">無料であそぶ →</a><span class="project-note">ブラウザですぐ遊べます<br>インストール不要</span></div></div></article>
-<article class="project project-cactus" id="cactus-factory">
-  <div class="project-head"><div class="project-label">PROJECT / GAME / GROW</div><div class="project-status">RELEASED</div></div>
-  <div class="project-showcase">
-    <div class="project-key cactus-key" role="img" aria-label="明るい温室に並ぶ、みどり・パンク・つきサボテン。サボテン工場 CACTUS FACTORY">
-      <img class="cactus-logo" src="assets/cactus-factory-logo.webp" alt="" loading="lazy">
-      <div class="cactus-cast" aria-hidden="true"><img src="assets/cactus-factory-punk.png" alt="" loading="lazy"><img src="assets/cactus-factory-normal.png" alt="" loading="lazy"><img src="assets/cactus-factory-moon.png" alt="" loading="lazy"></div>
-    </div>
-    <div class="project-side"><div class="project-thumb"><img src="assets/cactus-factory-play.jpg" alt="サボテン工場の育成・収穫画面" loading="lazy" width="390" height="844"></div><div class="project-thumb"><img src="assets/cactus-factory-zukan.jpg" alt="集めたサボテンを見る図鑑画面" loading="lazy" width="390" height="844"></div></div>
-  </div>
-  <div class="project-body"><h2>サボテン工場</h2><p class="project-lead">のんびり育てて、気持ちよく収穫。計算チャレンジで成長を早めながら、40種類のサボテンを集める放置育成ゲームです。</p><ul class="project-features" aria-label="サボテン工場の特徴"><li>放置育成 × 算数</li><li>40種類のサボテン</li><li>設備をレベルアップ</li><li>スマホ・PC対応</li></ul><div class="project-actions"><a class="project-btn" href="https://kairi-studio.github.io/cactus-factory/" target="_blank" rel="noopener noreferrer">無料であそぶ →</a><span class="project-note">ブラウザですぐ遊べます<br>インストール不要</span></div></div>
+<body>
+<a class="skip" href="#games">ゲームを えらぶ</a>
+<header><div class="wrap header-inner"><div class="brand"><a class="studio-name" href="kairi-studio.html" aria-label="カイリスタジオ ホーム">KAIRI STUDIO</a><a class="castor-link" href="index.html" aria-label="CASTORのホームページへ"><span>by</span><img src="assets/castor-official-horizontal-white-v2.webp" alt="CASTOR" width="2048" height="505"></a></div><a class="parents-link" href="#parents">保護者の方へ</a></div></header>
+<main class="wrap">
+<section class="intro" aria-labelledby="intro-title"><h1 id="intro-title">あそびながら、まなぼう。</h1><p>しょうがくせいのための がくしゅうゲーム</p><p class="intro-note">むりょう・インストールいらず</p></section>
+<section id="games" aria-label="がくしゅうゲームを えらぶ">
+<div class="filters" role="group" aria-label="きょうかで えらぶ">
+<button class="filter" type="button" data-subject="all" aria-pressed="true" aria-controls="game-list">すべて</button>
+<button class="filter" type="button" data-subject="japanese" aria-pressed="false" aria-controls="game-list">こくご</button>
+<button class="filter" type="button" data-subject="math" aria-pressed="false" aria-controls="game-list">さんすう</button>
+<button class="filter" type="button" disabled>しゃかい<small>これから</small></button>
+<button class="filter" type="button" disabled>りか<small>これから</small></button>
+</div>
+<p class="filter-status" id="filter-status" role="status" aria-live="polite"></p>
+<div class="games" id="game-list">
+<article class="game" id="kanji-quest" data-subject="japanese">
+<div class="keyvisual"><img src="assets/kanji-quest-keyvisual-card.webp" alt="漢字クエスト：SOTAたちがドラゴンと戦う冒険のキービジュアル" width="1173" height="1341" fetchpriority="high"></div>
+<div class="game-body"><p class="subject-line"><span class="subject">こくご</span><span class="learning-item">かんじのよみ</span></p><h2>漢字クエスト</h2><p class="game-description">かんじを よんで、ぼうけんへ。</p><p class="game-note">しょうがく 1〜6ねんせいの かんじ</p><a class="play" href="https://kairi-studio.github.io/kanji-quest/" aria-label="漢字クエストを無料であそぶ">あそぶ<span aria-hidden="true">→</span></a></div>
 </article>
-</div></div>
-<div class="bottom"><div class="wrap bottom-inner"><a class="back" href="index.html#create">← BACK TO CREATE</a><span>KAIRI_STUDIO / CASTOR</span></div></div></main></body></html>
+<article class="game" id="cactus-factory" data-subject="math">
+<div class="keyvisual cactus-key" role="img" aria-label="サボテン工場：温室に並ぶ、パンク・みどり・つきサボテンのキービジュアル"><img class="cactus-logo" src="assets/cactus-factory-logo.webp" alt="" width="1619" height="971"><div class="cactus-cast" aria-hidden="true"><img src="assets/cactus-factory-punk.png" alt="" width="1187" height="1325"><img src="assets/cactus-factory-normal.png" alt="" width="1150" height="1284"><img src="assets/cactus-factory-moon.png" alt="" width="1187" height="1325"></div></div>
+<div class="game-body"><p class="subject-line"><span class="subject math">さんすう</span><span class="learning-item">けいさん</span></p><h2>サボテン工場</h2><p class="game-description">けいさんしながら、<wbr>サボテンを そだてよう。</p><p class="game-note">そだてて、あつめる。のんびり あそべる。</p><a class="play" href="https://kairi-studio.github.io/cactus-factory/" aria-label="サボテン工場を無料であそぶ">あそぶ<span aria-hidden="true">→</span></a></div>
+</article>
+</div>
+</section>
+<section class="parent-info" id="parents" aria-labelledby="parents-title"><h2 id="parents-title">保護者の方へ</h2><p class="parent-intro">KAIRI STUDIO（カイリスタジオ）は、CASTORの学習ゲーム制作スタジオです。小学生が遊びながら漢字の読みや算数の計算を練習できる、無料のブラウザゲームを公開しています。スマートフォン・タブレット・パソコンから、インストールせずに遊べます。</p>
+<details><summary>ゲームで学べること</summary><p><strong>国語・漢字：</strong>「漢字クエスト」は、小学校1〜6年生の漢字の読みを3択バトルで練習するゲームです。</p><p><strong>算数・計算：</strong>「サボテン工場」は、サボテンを育てて集める育成ゲームです。計算チャレンジで成長を早めながら、算数の計算を練習できます。</p></details>
+<details><summary>記録・プライバシーについて</summary><p>漢字クエストのランキングには、入力したニックネームとスコアなどが表示されます。本名や学校名など、個人が分かる情報は入力しないでください。サボテン工場の収集・進行状況は、遊んでいるブラウザに保存されます。</p><p>アクセス解析などの情報の取り扱いは、<a href="privacy.html">プライバシー方針</a>をご確認ください。</p></details>
+</section>
+</main>
+<footer class="footer"><div class="wrap footer-inner"><span class="footer-brand">KAIRI STUDIO / CASTOR</span><nav class="footer-nav" aria-label="サイト情報"><a href="index.html">CASTOR ホーム</a><a href="privacy.html">プライバシー・お問い合わせ</a></nav></div></footer>
+<script>
+(function(){
+  'use strict';
+  const filters=Array.from(document.querySelectorAll('.filter[data-subject]'));
+  const games=Array.from(document.querySelectorAll('.game[data-subject]'));
+  const status=document.getElementById('filter-status');
+  filters.forEach(function(button){button.addEventListener('click',function(){
+    const subject=button.dataset.subject;
+    filters.forEach(function(filter){filter.setAttribute('aria-pressed',String(filter===button));});
+    games.forEach(function(game){game.hidden=subject!=='all'&&game.dataset.subject!==subject;});
+    status.textContent=subject==='all'?'すべての ゲームを ひょうじしています。':button.textContent+'の ゲームを ひょうじしています。';
+  });});
+})();
+</script>
+</body>
+</html>
