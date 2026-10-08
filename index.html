@@ -481,7 +481,7 @@
 }
 
 /* CASTOR premium hero intro — short cinematic identity reveal */
-.intro-wordmark{width:min(74vw,340px)}}
+.intro-wordmark{width:min(74vw,340px)}
 
 
 /* Show the complete team artwork and keep the event date visible on mobile. */
@@ -493,6 +493,15 @@
  .topic-event .topic-link{grid-template-columns:112px minmax(0,1fr)}
  .topic-event .topic-art{width:112px;height:88px}
  .topic-event .topic-date{font-size:14px;line-height:1.5}
+}
+
+/* Keep the mobile hero grid within the viewport, regardless of slide content. */
+@media(max-width:900px){
+ .hero{grid-template-columns:minmax(0,1fr)}
+ .hero-logo,.hero-updates,.hero-description{grid-column:1;min-width:0;justify-self:center}
+ .hero-updates{max-width:100%}
+ .topics-window,.topics-track,.topic-link{min-width:0}
+ .topic-cup .topic-media>img{max-width:100%}
 }
 </style>
 <link rel="icon" type="image/png" sizes="512x512" href="assets/castor-home-icon-v3.png">
