@@ -306,7 +306,7 @@
   .section,.store-section{scroll-margin-top:72px}
 }
 @media(max-width:360px){.home-logo{width:112px}.nav{font-size:10px;gap:10px}}
-/* Three visual topics, one readable card at a time. */
+/* Visual topics, one readable card at a time. */
 .hero-updates{position:absolute;z-index:4;width:460px;padding:22px;right:32px;bottom:32px;background:rgba(16,32,55,.82);border:1px solid rgba(225,237,255,.30);border-radius:3px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
 .hero-updates a:focus-visible{outline:2px solid #d5e6ff;outline-offset:-2px}
 .hero-updates a:hover{color:#d5e6ff}
@@ -483,6 +483,17 @@
 /* CASTOR premium hero intro — short cinematic identity reveal */
 .intro-wordmark{width:min(74vw,340px)}}
 
+
+/* Show the complete team artwork and keep the event date visible on mobile. */
+.topic-cup{background:#000}
+.topic-cup .topic-media>img{object-fit:contain}
+.topic-slide.is-active .topic-cup .topic-media{animation:none}
+.topic-date{font-size:14px;font-weight:500;color:#fff;letter-spacing:0}
+@media(max-width:900px){
+ .topic-event .topic-link{grid-template-columns:112px minmax(0,1fr)}
+ .topic-event .topic-art{width:112px;height:88px}
+ .topic-event .topic-date{font-size:14px;line-height:1.5}
+}
 </style>
 <link rel="icon" type="image/png" sizes="512x512" href="assets/castor-home-icon-v3.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/castor-apple-touch-icon-v3.png">
@@ -494,23 +505,28 @@
 <main id="top">
 <section class="hero" aria-label="CASTOR hero"><h1 class="visually-hidden">CASTOR</h1><div class="shooting-star" aria-hidden="true"></div><img class="hero-mark" src="assets/castor-official-symbol-white-v2.webp" alt=""><img class="hero-message" src="assets/castor-hero-message.png" alt=""><img class="hero-logo" src="assets/castor-official-vertical-white-v2.webp" alt="CASTOR"><p class="hero-description">PLAY / CREATE / STORE — 由比ヶ浜から、遊びと創作を。</p>
   <aside class="hero-updates" aria-label="CASTORのトピック" aria-roledescription="カルーセル">
-<div class="topics-heading"><h2>TOPICS</h2><span class="topic-count" aria-hidden="true">01 / 03</span></div>
+<div class="topics-heading"><h2>TOPICS</h2><span class="topic-count" aria-hidden="true">01 / 04</span></div>
 <div class="topics-window"><div class="topics-track">
-<article class="topic-slide" role="group" aria-roledescription="スライド" aria-label="1 / 3">
+<article class="topic-slide topic-event" role="group" aria-roledescription="スライド" aria-label="1 / 4">
+<a class="topic-link" href="assets/harutsuba-cup-team6-20261010.webp" target="_blank" rel="noopener noreferrer" aria-label="はるつばCUP参戦：10月10日21時から。チームイラストを拡大する">
+<div class="topic-art topic-cup"><div class="topic-media"><img src="assets/harutsuba-cup-team6-20261010.webp" width="1280" height="720" alt="はるつばCUP TEAM 6 進撃の家族：sota・kairi・kappaのチームイラスト"></div></div>
+<span class="topic-category">PLAY / HBK GAMING</span><h3>はるつばCUP参戦</h3><p>チーム「進撃の家族」で、家族3人が参戦。</p><time class="topic-cta topic-date" datetime="2026-10-10T21:00:00+09:00">10月10日（土）21時から</time></a></article>
+
+<article class="topic-slide" role="group" aria-roledescription="スライド" aria-label="2 / 4" aria-hidden="true" inert>
 <a class="topic-link" href="https://kairi-studio.github.io/cactus-factory/" target="_blank" rel="noopener noreferrer">
 <div class="topic-art topic-cactus" role="img" aria-label="サボテン工場のキービジュアル"><div class="topic-media"><img class="topic-cactus-logo" src="assets/cactus-factory-logo.webp" alt=""><div class="topic-cast" aria-hidden="true"><img src="assets/cactus-factory-punk.png" alt=""><img src="assets/cactus-factory-normal.png" alt=""><img src="assets/cactus-factory-moon.png" alt=""></div></div></div>
 <span class="topic-category">CREATE / GAME RELEASE</span><h3>サボテン工場 リリース</h3><p>のんびり育てて、気持ちよく収穫。<br>40種類のサボテンを集める放置育成ゲーム。</p><span class="topic-cta">無料であそぶ ↗</span></a></article>
-<article class="topic-slide" role="group" aria-roledescription="スライド" aria-label="2 / 3" aria-hidden="true" inert>
+<article class="topic-slide" role="group" aria-roledescription="スライド" aria-label="3 / 4" aria-hidden="true" inert>
 <a class="topic-link" href="https://www.youtube.com/shorts/u7LuHC_wmCA" target="_blank" rel="noopener noreferrer">
 <div class="topic-art topic-video"><div class="topic-media"><img src="https://i.ytimg.com/vi/u7LuHC_wmCA/hqdefault.jpg" alt="HBKチャンネル「父も がんばってます。」のサムネイル" referrerpolicy="no-referrer"><span class="topic-play" aria-hidden="true">▶</span></div></div>
 <span class="topic-category">PLAY / HBK CHANNEL</span><h3>父も がんばってます。</h3><p>HBKチャンネルの最新ショート。<br>親子で楽しむ Apex Legends のプレイ記録。</p><span class="topic-cta">YouTubeで見る ↗</span></a></article>
-<article class="topic-slide" role="group" aria-roledescription="スライド" aria-label="3 / 3" aria-hidden="true" inert>
+<article class="topic-slide" role="group" aria-roledescription="スライド" aria-label="4 / 4" aria-hidden="true" inert>
 <a class="topic-link" href="https://73matibeaver.base.shop/items/160650396" target="_blank" rel="noopener noreferrer">
 <div class="topic-art topic-cap"><div class="topic-media"><img src="https://baseec-img-mng.akamaized.net/images/item/origin/9cc8aa6cb570fce4705a0f351cdb049f.jpg?imformat=generic&amp;q=90&amp;im=Resize,width=1280,type=normal" alt="白いCSTロゴを刺繍したカーキのCASTORベースボールキャップ"></div></div>
 <span class="topic-category">STORE / PICK UP</span><h3>CASTOR ベースボールキャップ</h3><p>カーキに、白いCSTロゴの刺繍。<br>街でも海辺でも、いつものスタイルに。</p><span class="topic-cta">ストアで見る ↗</span></a></article>
 </div></div>
 <div class="topic-progress" aria-hidden="true"><span></span></div>
-<div class="topics-controls"><div class="topic-dots" role="group" aria-label="表示するトピック"><button class="topic-dot" type="button" aria-label="サボテン工場を表示" aria-current="true"></button><button class="topic-dot" type="button" aria-label="HBKの最新動画を表示" aria-current="false"></button><button class="topic-dot" type="button" aria-label="ベースボールキャップを表示" aria-current="false"></button></div><button class="topic-pause" type="button" aria-label="自動切り替えを一時停止">一時停止</button></div>
+<div class="topics-controls"><div class="topic-dots" role="group" aria-label="表示するトピック"><button class="topic-dot" type="button" aria-label="はるつばCUPの参戦告知を表示" aria-current="true"></button><button class="topic-dot" type="button" aria-label="サボテン工場を表示" aria-current="false"></button><button class="topic-dot" type="button" aria-label="HBKの最新動画を表示" aria-current="false"></button><button class="topic-dot" type="button" aria-label="ベースボールキャップを表示" aria-current="false"></button></div><button class="topic-pause" type="button" aria-label="自動切り替えを一時停止">一時停止</button></div>
 </aside>
 </section>
 <section class="section play" id="play"><div class="wrap section-inner"><div class="play-head"><div><div class="section-label">01 / PLAY</div><h2>PLAY</h2><p class="play-intro">CASTORのPLAY。<br>ゲームを中心に、遊ぶことから生まれるものを。</p></div><img class="hbk-logo" src="assets/hbk-gaming-logo.png" alt="HBK GAMING"></div><div class="team-grid"><article class="team-card"><a class="team-card-link" href="kairi.html" aria-label="kairiのページを見る"><span class="card-trace" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><rect x=".5" y=".5" width="99" height="99" pathLength="100"/></svg></span><div class="team-photo"><img src="assets/hbk-kairi.webp" alt="kairi"></div><div class="team-meta"><span>HBK GAMING</span><strong>kairi</strong></div></a></article><article class="team-card"><a class="team-card-link" href="kappa.html" aria-label="kappaのページを見る"><span class="card-trace" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><rect x=".5" y=".5" width="99" height="99" pathLength="100"/></svg></span><div class="team-photo"><img src="assets/hbk-kappa.webp" alt="kappa"></div><div class="team-meta"><span>HBK GAMING</span><strong>kappa</strong></div></a></article><article class="team-card"><a class="team-card-link" href="sota.html" aria-label="sotaのページを見る"><span class="card-trace" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><rect x=".5" y=".5" width="99" height="99" pathLength="100"/></svg></span><div class="team-photo"><img src="assets/hbk-sota.webp" alt="sota"></div><div class="team-meta"><span>HBK GAMING</span><strong>sota</strong></div></a></article></div><div class="play-footer"><span>HBK GAMING</span><span>PLAY / GAMING</span></div></div></section>
@@ -573,7 +589,7 @@ function show(next){
  slides.forEach((slide,i)=>{slide.classList.remove('is-active');slide.inert=i!==index;slide.setAttribute('aria-hidden',String(i!==index));dots[i].setAttribute('aria-current',String(i===index))});
  // Flush the previous animation state before starting the next entrance.
  void slides[index].offsetWidth;slides[index].classList.add('is-active');
- card.querySelector('.topic-count').textContent='0'+(index+1)+' / 03';
+ card.querySelector('.topic-count').textContent=String(index+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0');
 }
 function tick(now){
  frame=null;if(stopped())return;
