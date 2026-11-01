@@ -627,4 +627,108 @@ windowEl.addEventListener('touchcancel',()=>{touchX=null;touching=false;sync()},
 show(0);label();sync();
 })();
 </script>
+<script>
+/* CASTOR background contour light and particles */
+/* CASTOR contour light. Add this script before </body>; no dependencies. */
+(() => {
+  const hero = document.querySelector('.hero');
+  const mark = hero?.querySelector('.hero-mark');
+  if (!mark) return;
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const canvas = document.createElement('canvas');
+  canvas.setAttribute('aria-hidden', 'true');
+  canvas.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1';
+  hero.append(canvas);
+  const ctx = canvas.getContext('2d');
+  let paths = [], particles = [], raf = 0, last = 0, elapsed = 0, visible = true;
+  let width = 0, height = 0;
+  // Trace the actual asset's alpha channel, including its internal cutouts.
+  function trace() {
+    const off = document.createElement('canvas');
+    const w = 560, h = Math.round(w * mark.naturalHeight / mark.naturalWidth);
+    off.width = w; off.height = h;
+    const c = off.getContext('2d', {willReadFrequently:true});
+    c.drawImage(mark,0,0,w,h);
+    const data = c.getImageData(0,0,w,h).data;
+    const on = (x,y) => x>=0 && y>=0 && x<w && y<h && data[(y*w+x)*4+3]>120;
+    const edges = new Map();
+    const add = (x,y,a,b) => edges.set(x+','+y,[a,b]);
+    for(let y=0;y<h;y++) for(let x=0;x<w;x++) if(on(x,y)) {
+      if(!on(x,y-1)) add(x,y,x+1,y);
+      if(!on(x+1,y)) add(x+1,y,x+1,y+1);
+      if(!on(x,y+1)) add(x+1,y+1,x,y+1);
+      if(!on(x-1,y)) add(x,y+1,x,y);
+    }
+    while(edges.size) {
+      const start = edges.keys().next().value;
+      let key=start, points=[];
+      do {
+        const p=key.split(',').map(Number), next=edges.get(key);
+        if(!next) break;
+        points.push({x:p[0]/w,y:p[1]/h}); edges.delete(key);
+        key=next.join(',');
+      } while(key!==start);
+      if(points.length>120) paths.push(points);
+    }
+    paths.sort((a,b)=>b.length-a.length);
+    paths=paths.slice(0,5);
+    canvas.dataset.contours=paths.length;
+    resize(); sync();
+  }
+  function resize(){
+    width=hero.clientWidth; height=hero.clientHeight;
+    const dpr=Math.min(devicePixelRatio||1,2);
+    canvas.width=width*dpr; canvas.height=height*dpr;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+  }
+  function sync(){
+    cancelAnimationFrame(raf); raf=0; last=0;
+    if(!reduced.matches && visible && !document.hidden && paths.length) raf=requestAnimationFrame(frame);
+    else ctx.clearRect(0,0,width,height);
+  }
+  function frame(now){
+    const dt=last?Math.min((now-last)/1000,.05):0; last=now; elapsed+=dt;
+    ctx.clearRect(0,0,width,height);
+    const r=mark.getBoundingClientRect(), hr=hero.getBoundingClientRect();
+    const point=(path,i)=>{
+      const p=path[((Math.floor(i)%path.length)+path.length)%path.length];
+      return {x:r.left-hr.left+p.x*r.width,y:r.top-hr.top+p.y*r.height};
+    };
+    ctx.globalCompositeOperation='lighter';
+    paths.forEach((path,k)=>{
+      // One soft sweep per contour, followed by a quiet interval.
+      const phase=(elapsed-k*.7+12)%12;
+      if(phase>8) return;
+      const fade=Math.min(1,phase/.7,(8-phase)/.9);
+      const head=phase/8*path.length;
+      const tail=Math.min(path.length*.13,160);
+      for(let j=0;j<36;j++){
+        const a=point(path,head-tail*(1-j/36));
+        const b=point(path,head-tail*(1-(j+1)/36));
+        ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);
+        ctx.strokeStyle=`rgba(167,216,255,${fade*Math.pow(j/36,2)*.65})`;
+        ctx.lineWidth=1.2;ctx.shadowBlur=12;ctx.shadowColor='#87caff';ctx.stroke();
+      }
+      const p=point(path,head);
+      ctx.fillStyle=`rgba(228,246,255,${fade*.9})`;
+      ctx.shadowBlur=16;ctx.beginPath();ctx.arc(p.x,p.y,1.7,0,Math.PI*2);ctx.fill();
+      if(Math.random()<dt*14 && particles.length<65) particles.push({x:p.x,y:p.y,vx:(Math.random()-.5)*15,vy:-5-Math.random()*12,life:0,max:1+Math.random()*1.1,size:.5+Math.random()*.9});
+    });
+    particles=particles.filter(p=>p.life<p.max);
+    for(const p of particles){
+      p.life+=dt; p.x+=p.vx*dt;p.y+=p.vy*dt;
+      const alpha=Math.sin(Math.PI*Math.min(p.life/p.max,1))*.65;
+      ctx.fillStyle=`rgba(184,225,255,${alpha})`;ctx.shadowBlur=7;ctx.shadowColor='#a3d7ff';
+      ctx.beginPath();ctx.arc(p.x,p.y,p.size,0,Math.PI*2);ctx.fill();
+    }
+    ctx.shadowBlur=0;ctx.globalCompositeOperation='source-over';
+    raf=requestAnimationFrame(frame);
+  }
+  new ResizeObserver(resize).observe(hero);
+  new IntersectionObserver(([e])=>{visible=e.isIntersecting;sync();}).observe(hero);
+  document.addEventListener('visibilitychange',sync);
+  reduced.addEventListener('change',sync);
+  if(mark.complete && mark.naturalWidth) trace(); else mark.addEventListener('load',trace,{once:true});
+})();
+</script>
 </body></html>
