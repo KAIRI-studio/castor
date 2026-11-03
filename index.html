@@ -686,7 +686,9 @@ show(0);label();sync();
     if(!reduced.matches && visible && !document.hidden && paths.length) raf=requestAnimationFrame(frame);
     else ctx.clearRect(0,0,width,height);
   }
+  const compact = matchMedia('(max-width: 700px)');
   function frame(now){
+    const lightScale = compact.matches ? 0.6 : 1;
     const dt=last?Math.min((now-last)/1000,.05):0; last=now; elapsed+=dt;
     ctx.clearRect(0,0,width,height);
     const r=mark.getBoundingClientRect(), hr=hero.getBoundingClientRect();
@@ -707,19 +709,19 @@ show(0);label();sync();
         const b=point(path,head-tail*(1-(j+1)/36));
         ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);
         ctx.strokeStyle=`rgba(167,216,255,${fade*Math.pow(j/36,2)*.65})`;
-        ctx.lineWidth=1.2;ctx.shadowBlur=12;ctx.shadowColor='#87caff';ctx.stroke();
+        ctx.lineWidth=1.2 * lightScale;ctx.shadowBlur=12 * lightScale;ctx.shadowColor='#87caff';ctx.stroke();
       }
       const p=point(path,head);
       ctx.fillStyle=`rgba(228,246,255,${fade*.9})`;
-      ctx.shadowBlur=16;ctx.beginPath();ctx.arc(p.x,p.y,1.7,0,Math.PI*2);ctx.fill();
+      ctx.shadowBlur=16 * lightScale;ctx.beginPath();ctx.arc(p.x,p.y,1.7 * lightScale,0,Math.PI*2);ctx.fill();
       if(Math.random()<dt*14 && particles.length<65) particles.push({x:p.x,y:p.y,vx:(Math.random()-.5)*15,vy:-5-Math.random()*12,life:0,max:1+Math.random()*1.1,size:.5+Math.random()*.9});
     });
     particles=particles.filter(p=>p.life<p.max);
     for(const p of particles){
       p.life+=dt; p.x+=p.vx*dt;p.y+=p.vy*dt;
       const alpha=Math.sin(Math.PI*Math.min(p.life/p.max,1))*.65;
-      ctx.fillStyle=`rgba(184,225,255,${alpha})`;ctx.shadowBlur=7;ctx.shadowColor='#a3d7ff';
-      ctx.beginPath();ctx.arc(p.x,p.y,p.size,0,Math.PI*2);ctx.fill();
+      ctx.fillStyle=`rgba(184,225,255,${alpha})`;ctx.shadowBlur=7 * lightScale;ctx.shadowColor='#a3d7ff';
+      ctx.beginPath();ctx.arc(p.x,p.y,p.size * lightScale,0,Math.PI*2);ctx.fill();
     }
     ctx.shadowBlur=0;ctx.globalCompositeOperation='source-over';
     raf=requestAnimationFrame(frame);
