@@ -513,6 +513,22 @@
 <link rel="apple-touch-icon" sizes="180x180" href="assets/castor-apple-touch-icon-v3.png">
 <link rel="manifest" href="manifest.webmanifest?v=3">
 <script src="analytics.js?v=3" data-site="castor" defer></script>
+<style>
+.topic-kuku .topic-media {
+  background: radial-gradient(ellipse at center, #fff4dc 15%, #e9b97f 100%);
+}
+.topic-kuku .topic-media::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("assets/kuku-illustrated-cover.svg") center / cover no-repeat;
+  opacity: .42;
+  filter: blur(14px);
+}
+.topic-kuku .topic-media > img { position: relative; }
+.topic-slide.is-active .topic-kuku .topic-media { animation: none; }
+.footer-meta { flex-wrap: wrap; }
+</style>
 </head>
 <body>
 <header class="header"><div class="wrap header-inner"><a class="home-logo" href="#top" aria-label="CASTOR Home"><img src="assets/castor-official-horizontal-white-v2.webp" alt="CASTOR"></a><nav class="nav" aria-label="Main navigation"><a href="#play">PLAY</a><a href="#create">CREATE</a><a href="#store">STORE</a></nav></div></header>
@@ -535,7 +551,7 @@
 <span class="topic-category">STORE / PICK UP</span><h3>CASTOR ベースボールキャップ</h3><p>カーキに、白いCSTロゴの刺繍。<br>街でも海辺でも、いつものスタイルに。</p><span class="topic-cta">ストアで見る ↗</span></a></article>
 </div></div>
 <div class="topic-progress" aria-hidden="true"><span></span></div>
-<div class="topics-controls"><div class="topic-dots" role="group" aria-label="表示するトピック"><button class="topic-dot" type="button" aria-label="せんごく ようかい 合戦を表示" aria-current="true"></button><button class="topic-dot" type="button" aria-label="HBKの最新動画を表示" aria-current="false"></button><button class="topic-dot" type="button" aria-label="ベースボールキャップを表示" aria-current="false"></button></div><button class="topic-pause" type="button" aria-label="自動切り替えを一時停止">一時停止</button></div>
+<div class="topics-controls"><div class="topic-dots" role="group" aria-label="表示するトピック"><button class="topic-dot" type="button" aria-label="九九コレクトを表示" aria-current="true"></button><button class="topic-dot" type="button" aria-label="HBKの最新動画を表示" aria-current="false"></button><button class="topic-dot" type="button" aria-label="ベースボールキャップを表示" aria-current="false"></button></div><button class="topic-pause" type="button" aria-label="自動切り替えを一時停止">一時停止</button></div>
 </aside>
 </section>
 <section class="section play" id="play"><div class="wrap section-inner"><div class="play-head"><div><div class="section-label">01 / PLAY</div><h2>PLAY</h2><p class="play-intro">家族3人でApex Legendsを楽しむ、HBK_GAMING。</p></div><img class="hbk-logo" src="assets/hbk-gaming-logo.png" alt="HBK_GAMING"></div><div class="team-grid"><article class="team-card"><a class="team-card-link" href="kairi.html" aria-label="kairiのページを見る"><span class="card-trace" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><rect x=".5" y=".5" width="99" height="99" pathLength="100"/></svg></span><div class="team-photo"><img src="assets/hbk-kairi.webp" alt="kairi"></div><div class="team-meta"><span>HBK_GAMING</span><strong>kairi</strong><small class="team-role">父 / FATHER</small></div></a></article><article class="team-card"><a class="team-card-link" href="kappa.html" aria-label="kappaのページを見る"><span class="card-trace" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><rect x=".5" y=".5" width="99" height="99" pathLength="100"/></svg></span><div class="team-photo"><img src="assets/hbk-kappa.webp" alt="kappa"></div><div class="team-meta"><span>HBK_GAMING</span><strong>kappa</strong><small class="team-role">母 / MOTHER</small></div></a></article><article class="team-card"><a class="team-card-link" href="sota.html" aria-label="sotaのページを見る"><span class="card-trace" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><rect x=".5" y=".5" width="99" height="99" pathLength="100"/></svg></span><div class="team-photo"><img src="assets/hbk-sota.webp" alt="sota"></div><div class="team-meta"><span>HBK_GAMING</span><strong>sota</strong><small class="team-role">息子 / SON</small></div></a></article></div><div class="play-footer"><span>HBK_GAMING</span><a class="play-channel" href="https://www.youtube.com/@hbk-gaming-jp" target="_blank" rel="noopener noreferrer" aria-label="HBK_GAMINGの動画をYouTubeで見る">YOUTUBE ↗</a></div></div></section>
@@ -563,7 +579,7 @@
 </section>
 
 </main>
-<footer class="footer"><div class="wrap footer-inner"><a class="footer-logo" href="#top" aria-label="CASTOR トップへ戻る"><img src="assets/castor-official-horizontal-white-v2.webp" alt="CASTOR"></a><div class="footer-meta"><a href="privacy.html">PRIVACY / CONTACT</a><span>© CASTOR</span></div></div></footer>
+<footer class="footer"><div class="wrap footer-inner"><a class="footer-logo" href="#top" aria-label="CASTOR トップへ戻る"><img src="assets/castor-official-horizontal-white-v2.webp" alt="CASTOR"></a><div class="footer-meta"><a href="privacy.html">プライバシー</a><a href="privacy.html#contact">お問い合わせ</a><span>© CASTOR</span></div></div></footer>
 <script>
 (function(){
 const header=document.querySelector('.header');
