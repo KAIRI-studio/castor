@@ -6,6 +6,14 @@
   const site = script && script.dataset.site;
   const excludedKey = 'castor_analytics_excluded_v1';
   const query = new URLSearchParams(location.search);
+  // Embedded showcases and review URLs are not real visits or game starts.
+  const preview = window.self !== window.top || Array.from(query.keys()).some(function (key) {
+    return key.startsWith('preview-') || key === 'screen-review';
+  });
+  if (preview) {
+    window.castorAnalytics = {event: function () {}};
+    return;
+  }
   let excluded = false;
   try {
     if (query.get('analytics-exclude') === '1') localStorage.setItem(excludedKey, '1');
