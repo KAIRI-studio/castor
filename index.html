@@ -529,6 +529,22 @@
 .topic-slide.is-active .topic-kuku .topic-media { animation: none; }
 .footer-meta { flex-wrap: wrap; }
 </style>
+<style>
+.castor-about{padding:76px 0 66px;background:#172b49;border-top:1px solid var(--line)}
+.castor-about-label{margin:0 0 22px;color:var(--accent);font-size:10px;letter-spacing:.24em}
+.castor-about h2{margin:0 0 24px;font-size:clamp(23px,3vw,36px);font-weight:400;line-height:1.65;letter-spacing:.06em}
+.castor-about-intro,.castor-about-brands p,.castor-about-note{color:rgba(255,255,255,.68);font-size:13px;line-height:2}
+.castor-about-intro{max-width:700px;margin:0}
+.castor-about-brands{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px;max-width:880px;margin:32px 0}
+.castor-about-brands>div{border-top:1px solid var(--line);padding-top:22px}
+.castor-about h3{margin:0 0 8px;font-size:16px;font-weight:500;letter-spacing:.06em}
+.castor-about h3 a{display:inline-block;padding:4px 0}
+.castor-about h3 a:hover{color:var(--accent)}
+.castor-about h3 span{margin-left:10px;color:var(--accent);font-size:12px}
+.castor-about-brands p{margin:0}
+.castor-about-note{margin:0;font-size:12px}
+@media(max-width:700px){.castor-about{padding:54px 0 48px}.castor-about-brands{grid-template-columns:1fr;gap:22px;margin:28px 0}.castor-about-note br{display:none}}
+</style>
 </head>
 <body>
 <header class="header"><div class="wrap header-inner"><a class="home-logo" href="#top" aria-label="CASTOR Home"><img src="assets/castor-official-horizontal-white-v2.webp" alt="CASTOR"></a><nav class="nav" aria-label="Main navigation"><a href="#play">PLAY</a><a href="#create">CREATE</a><a href="#store">STORE</a></nav></div></header>
@@ -575,6 +591,19 @@
         <i></i>
       </div>
     </a>
+  </div>
+</section>
+
+<section class="castor-about" aria-labelledby="castor-about-title">
+  <div class="wrap">
+    <p class="castor-about-label">ABOUT CASTOR</p>
+    <h2 id="castor-about-title">遊びと創作をつなぐ、<br>クリエイティブレーベル。</h2>
+    <p class="castor-about-intro">CASTOR（キャスター）は、ゲームやものづくりなど、好きなことから生まれる活動をまとめるクリエイティブレーベルです。</p>
+    <div class="castor-about-brands">
+      <div><h3><a href="kairi-studio.html">KAIRI_studio <span aria-hidden="true">↗</span></a></h3><p>ゲームやアプリなどの作品をつくる、制作ブランド。</p></div>
+      <div><h3><a href="#play">HBK_GAMING <span aria-hidden="true">↑</span></a></h3><p>親子でゲームを楽しみ、動画やプレイの記録を届ける、ゲーミングブランド。</p></div>
+    </div>
+    <p class="castor-about-note">ふたつのブランドから生まれる、一つひとつの作品や企画がプロジェクト。<br>CASTORというひとつのレーベルのもとで、それぞれの「好き」を形にしていきます。</p>
   </div>
 </section>
 
