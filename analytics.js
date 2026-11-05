@@ -13,13 +13,31 @@
     excluded = localStorage.getItem(excludedKey) === '1';
   } catch (_) { excluded = query.get('analytics-exclude') === '1'; }
   let id = '', ready = false, queue = [];
-  const allowed = new Set(['game_start', 'game_open']);
-  function event(name) {
+  const allowed = new Set(['game_start', 'game_open', 'select_game', 'view_game_guide']);
+  const gameIds = new Set(['kuku-collect', 'kanji-quest', 'cactus-factory', 'sengoku-yokai']);
+  function event(name, details) {
+    const gameId = details && gameIds.has(details.game_id) ? details.game_id : null;
     if (excluded || !allowed.has(name)) return;
-    if (!ready) { if (queue.length < 20) queue.push(name); return; }
-    if (id) window.gtag('event', name, {send_to: id, castor_site: site});
+    if (!ready) { if (queue.length < 20) queue.push({name: name, game_id: gameId}); return; }
+    if (id) {
+      const params = {send_to: id, castor_site: site, transport_type: 'beacon'};
+      if (gameId) params.game_id = gameId;
+      window.gtag('event', name, params);
+    }
   }
   window.castorAnalytics = {event: event};
+  // Record only known game destinations, never link text, queries or player data.
+  if (site === 'castor') document.addEventListener('click', function (e) {
+    const link = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+    if (!link) return;
+    let url;
+    try { url = new URL(link.href, location.href); } catch (_) { return; }
+    if (url.origin !== 'https://kairi-studio.github.io') return;
+    const game = url.pathname.match(/^\/(kuku-collect|kanji-quest|cactus-factory|sengoku-yokai)\/(?:index\.html)?$/);
+    const guide = url.pathname.match(/^\/castor\/(kuku-collect|kanji-quest|cactus-factory|sengoku-yokai)\.html$/);
+    if (game) event('select_game', {game_id: game[1]});
+    else if (guide) event('view_game_guide', {game_id: guide[1]});
+  });
 
   if (excluded || !site || navigator.globalPrivacyControl || navigator.doNotTrack === '1') return;
   const controller = new AbortController();
@@ -50,7 +68,7 @@
       tag.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(id);
       document.head.appendChild(tag);
       ready = true;
-      queue.splice(0).forEach(event);
+      queue.splice(0).forEach(function (item) { event(item.name, item); });
       if (site !== 'castor') event('game_open');
     }).catch(function () {}).finally(function () { clearTimeout(timeout); queue = []; ready = true; });
 })();
