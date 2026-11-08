@@ -15,10 +15,13 @@
     return;
   }
   let excluded = false;
+  let family = '';
   try {
     if (query.get('analytics-exclude') === '1') localStorage.setItem(excludedKey, '1');
     if (query.get('analytics-exclude') === '0') localStorage.removeItem(excludedKey);
     excluded = localStorage.getItem(excludedKey) === '1';
+    const slot = localStorage.getItem('castor_analytics_family_v1');
+    if (['owner_pc', 'owner_iphone', 'son_iphone'].includes(slot)) family = slot;
   } catch (_) { excluded = query.get('analytics-exclude') === '1'; }
   let id = '', ready = false, queue = [];
   const allowed = new Set(['game_start', 'game_open', 'select_game', 'view_game_guide']);
@@ -30,6 +33,7 @@
     if (id) {
       const params = {send_to: id, castor_site: site, transport_type: 'beacon'};
       if (gameId) params.game_id = gameId;
+      if (family) params.castor_family_slot = family;
       window.gtag('event', name, params);
     }
   }
@@ -66,10 +70,11 @@
       });
       // Never transmit query parameters, fragment identifiers or player data.
       let referrer = '';
-      try { const r = new URL(document.referrer); referrer = r.origin + r.pathname; } catch (_) {}
+      try { const r = new URL(document.referrer); referrer = r.origin; } catch (_) {}
       window.gtag('event', 'page_view', {
         send_to: id, page_location: location.origin + location.pathname,
-        page_referrer: referrer, page_title: document.title, castor_site: site
+        page_referrer: referrer, page_title: document.title, castor_site: site,
+        ...(family ? {castor_family_slot: family} : {})
       });
       const tag = document.createElement('script');
       tag.async = true;
