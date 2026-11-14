@@ -507,24 +507,22 @@
   .hero-description{grid-row:4}
 }
 
-.create-gallery{width:100%;max-width:640px;margin-inline:auto}
-.create-games{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(10px,1.4vw,20px)}
-.create-game{display:flex;flex-direction:column;min-width:0;border:1px solid var(--line);border-radius:5px;overflow:hidden;background:rgba(12,26,46,.42);transition:border-color .25s ease,background-color .25s ease}
-.create-art{position:relative;display:block;overflow:hidden;aspect-ratio:7/8;background:#172b49}
-.create-art>img{display:block;width:100%;height:100%;object-fit:cover}
+.create-gallery{display:block;width:100%;max-width:530px;margin-inline:auto;padding:clamp(12px,2vw,26px);border:1px solid var(--line);border-radius:6px;background:rgba(12,26,46,.42);transition:border-color .25s ease,background-color .25s ease}
+.create-gallery-logo{display:block;width:min(68%,230px);max-height:66px;object-fit:contain;object-position:left center;margin-bottom:clamp(14px,2vw,24px);filter:brightness(0) invert(1)}
+.create-games{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(7px,1vw,13px)}
+.create-art{position:relative;display:block;overflow:hidden;aspect-ratio:7/8;border-radius:3px;background:#172b49}
+.create-art>img{display:block;width:100%;height:100%;object-fit:contain}
 .create-art.cactus-art{background:#466345 url("assets/cactus-factory-background.webp") center 57%/cover no-repeat}
 .create-art .cactus-logo{position:absolute;top:9%;left:9%;width:82%;height:auto}
 .create-cactus-cast{position:absolute;inset:auto 7% 12%;height:33%;display:flex;justify-content:center;gap:3%}
 .create-cactus-cast img{width:31%;height:100%;object-fit:contain;object-position:center bottom}
-.create-game-name{display:flex;flex:1;align-items:center;justify-content:space-between;gap:6px;padding:11px clamp(8px,1.15vw,16px);font-size:clamp(12px,1.2vw,15px);font-weight:600;line-height:1.45}
-.create-game-name span{color:var(--accent)}
-.create-list{display:table;margin:18px 0 0 auto;padding:8px 0;border-bottom:1px solid var(--line);font-size:13px;color:var(--accent)}
-.create-game:focus-visible,.create-list:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.create-gallery-label{display:flex;justify-content:flex-end;gap:8px;margin-top:clamp(12px,1.5vw,19px);font-size:13px;color:var(--accent)}
+.create-gallery:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 @media(hover:hover) and (pointer:fine){
- .create-game:hover{border-color:var(--accent);background-color:rgba(185,210,244,.11)}
- .create-list:hover{border-bottom-color:var(--accent);color:#fff}
+ .create-gallery:hover{border-color:var(--accent);background-color:rgba(185,210,244,.11)}
+ .create-gallery:hover .create-gallery-label{color:#fff}
 }
-@media(prefers-reduced-motion:reduce){.create-game{transition:none}}
+@media(prefers-reduced-motion:reduce){.create-gallery{transition:none}}
 </style>
 <link rel="icon" type="image/png" sizes="512x512" href="assets/castor-home-icon-v3.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/castor-apple-touch-icon-v3.png">
@@ -589,13 +587,10 @@
 </aside>
 </section>
 <section class="section play" id="play"><div class="wrap section-inner"><div class="play-head"><div><div class="section-label">01 / PLAY</div><h2>PLAY</h2><p class="play-intro">家族3人でApex Legendsを楽しむ、HBK_GAMING。</p></div><img class="hbk-logo" src="assets/hbk-gaming-logo.png" alt="HBK_GAMING"></div><div class="team-grid"><article class="team-card"><a class="team-card-link" href="kairi.html" aria-label="kairiのページを見る"><span class="card-trace" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><rect x=".5" y=".5" width="99" height="99" pathLength="100"/></svg></span><div class="team-photo"><img src="assets/hbk-kairi.webp" alt="kairi"></div><div class="team-meta"><span>HBK_GAMING</span><strong>kairi</strong><small class="team-role">父 / FATHER</small></div></a></article><article class="team-card"><a class="team-card-link" href="kappa.html" aria-label="kappaのページを見る"><span class="card-trace" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><rect x=".5" y=".5" width="99" height="99" pathLength="100"/></svg></span><div class="team-photo"><img src="assets/hbk-kappa.webp" alt="kappa"></div><div class="team-meta"><span>HBK_GAMING</span><strong>kappa</strong><small class="team-role">母 / MOTHER</small></div></a></article><article class="team-card"><a class="team-card-link" href="sota.html" aria-label="sotaのページを見る"><span class="card-trace" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><rect x=".5" y=".5" width="99" height="99" pathLength="100"/></svg></span><div class="team-photo"><img src="assets/hbk-sota.webp" alt="sota"></div><div class="team-meta"><span>HBK_GAMING</span><strong>sota</strong><small class="team-role">息子 / SON</small></div></a></article></div><div class="play-footer"><span>HBK_GAMING</span><a class="play-channel" href="https://www.youtube.com/@hbk-gaming-jp" target="_blank" rel="noopener noreferrer" aria-label="HBK_GAMINGの動画をYouTubeで見る">YOUTUBE ↗</a></div></div></section>
-<section class="section create" id="create"><div class="wrap section-inner"><div class="create-content"><div class="create-copy"><div class="section-label">02 / CREATE</div><h2>CREATE</h2><p>CASTORの「CREATE」。<br>小学生向けの無料学習ゲームをつくる KAIRI STUDIO。<br>漢字の読み・九九・算数の計算・社会の知識を、遊びながら学べます。</p></div><div class="create-gallery">
-  <nav class="create-games" aria-label="KAIRI STUDIOの作品">
-    <a class="create-game" href="kanji-quest.html">
+<section class="section create" id="create"><div class="wrap section-inner"><div class="create-content"><div class="create-copy"><div class="section-label">02 / CREATE</div><h2>CREATE</h2><p>CASTORの「CREATE」。<br>小学生向けの無料学習ゲームをつくる KAIRI STUDIO。<br>漢字の読み・九九・算数の計算・社会の知識を、遊びながら学べます。</p></div><a class="create-gallery" href="kairi-studio.html" aria-label="KAIRI STUDIOのトップページへ">
+  <img class="create-gallery-logo" src="assets/kairi-studio-logo.png" alt="" loading="lazy" decoding="async">
+  <div class="create-games" aria-hidden="true">
       <div class="create-art"><img src="assets/kanji-quest-keyvisual-card.webp" alt="" width="1173" height="1341" loading="lazy" decoding="async"></div>
-      <span class="create-game-name">KANJI QUEST<span aria-hidden="true">→</span></span>
-    </a>
-    <a class="create-game" href="cactus-factory.html">
       <div class="create-art cactus-art" aria-hidden="true">
         <img class="cactus-logo" src="assets/cactus-factory-logo.webp" alt="" width="1619" height="971" loading="lazy" decoding="async">
         <div class="create-cactus-cast">
@@ -604,19 +599,11 @@
           <img src="assets/cactus-factory-moon.png" alt="" width="1187" height="1325" loading="lazy" decoding="async">
         </div>
       </div>
-      <span class="create-game-name">サボテン工場<span aria-hidden="true">→</span></span>
-    </a>
-    <a class="create-game" href="sengoku-yokai.html">
       <div class="create-art"><img src="assets/sengoku-illustrated-cover.webp" alt="" width="600" height="680" loading="lazy" decoding="async"></div>
-      <span class="create-game-name">せんごく ようかい 合戦<span aria-hidden="true">→</span></span>
-    </a>
-    <a class="create-game" href="kuku-collect.html">
       <div class="create-art"><img src="assets/kuku-illustrated-cover.webp" alt="" width="600" height="680" loading="lazy" decoding="async"></div>
-      <span class="create-game-name">九九コレクト<span aria-hidden="true">→</span></span>
-    </a>
-  </nav>
-  <a class="create-list" href="kairi-studio.html">ゲーム一覧へ <span aria-hidden="true">→</span></a>
-</div></div></div></section>
+  </div>
+  <span class="create-gallery-label">KAIRI STUDIOへ <span aria-hidden="true">→</span></span>
+</a></div></div></section>
 
 <section class="store-section" id="store" aria-label="CASTOR Official Store">
   <div class="wrap store-section-inner">
