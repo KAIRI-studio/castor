@@ -1,12 +1,5 @@
-CASTOR integrated STORE update
+CASTOR official site
 
-This update keeps STORE inside the main CASTOR homepage as section 03 / STORE.
-It does not use a separate store.html page.
-
-Files:
-- index.html — completed homepage with integrated STORE section and HERO message animation
-- assets/official-store.png — supplied store photo, unchanged
-- assets/castor-hero-message.png — supplied HERO logo/message image, unchanged
-
-Upload/replace index.html and add both assets under the existing assets/ folder.
-No generated illustrations are included.
+- index.html contains the main CASTOR site, including the STORE section.
+- store.html redirects existing links to the STORE section on the homepage.
+- sitemap.xml lists the current public pages for search engines.
