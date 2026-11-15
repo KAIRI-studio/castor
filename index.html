@@ -390,7 +390,7 @@
  .store-head h2{font-size:54px}.store-label{font-size:11px}
  .footer-meta{font-size:12px}
 }
-@media(max-width:380px){.home-logo{width:132px}.nav{font-size:12px;gap:11px}.play-footer{font-size:10px}}
+@media(max-width:380px){.home-logo{width:108px;flex-shrink:0}.nav{font-size:11px;gap:10px}.header-inner{column-gap:12px}.play-footer{font-size:10px}}
 @media(prefers-reduced-motion:reduce){
  html{scroll-behavior:auto}
  .topics-track{transition:none}
@@ -448,7 +448,9 @@
  .topics-controls{margin-top:2px;padding-top:0}
  .topic-dots{gap:4px}
  .topic-dot{width:34px;height:34px}
- .topic-pause{font-size:10px}
+ .topic-pause{min-height:44px;font-size:12px;color:#e0edff}
+ .topic-dot{height:44px}
+ .topic-dot:after{top:19px}
 }
 
 /* Compact topic card */
@@ -523,6 +525,15 @@
  .create-gallery:hover .create-gallery-label{color:#fff}
 }
 @media(prefers-reduced-motion:reduce){.create-gallery{transition:none}}
+/* Readable controls and keyboard navigation within the existing layout. */
+.skip-link{position:absolute;top:8px;left:16px;z-index:1;padding:12px 16px;background:#152640;color:#fff;transform:translateY(-150%)}
+.skip-link:focus{transform:translateY(0)}
+.header a:focus-visible,.hero-updates :focus-visible{outline:2px solid #e0edff;outline-offset:3px}
+.play-channel{display:inline-flex;align-items:center;min-height:44px;margin-top:8px;text-decoration:underline;text-underline-offset:.25em}
+@media(max-width:700px){
+  .hero-description{color:#f0f5ff;font-size:11px;letter-spacing:.08em}
+  .hero-about{font-size:11px}
+}
 </style>
 <link rel="icon" type="image/png" sizes="512x512" href="assets/castor-home-icon-v3.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/castor-apple-touch-icon-v3.png">
@@ -562,9 +573,9 @@
 </style>
 </head>
 <body>
-<header class="header"><div class="wrap header-inner"><a class="home-logo" href="#top" aria-label="CASTOR Home"><img src="assets/castor-official-horizontal-white-v2.webp" alt="CASTOR"></a><nav class="nav" aria-label="Main navigation"><a href="#play">PLAY</a><a href="#create">CREATE</a><a href="#store">STORE</a></nav></div></header>
-<main id="top">
-<section class="hero" aria-label="CASTOR hero"><h1 class="visually-hidden">CASTOR</h1><div class="shooting-star" aria-hidden="true"></div><img class="hero-mark" src="assets/castor-official-symbol-white-v2.webp" alt=""><img class="hero-message" src="assets/castor-hero-message.png" alt=""><img class="hero-logo" src="assets/castor-official-vertical-white-v2.webp" alt="CASTOR"><p class="hero-description">PLAY / CREATE / STORE — 由比ヶ浜から、遊びと創作を。<span class="hero-about">好きな遊びを、作品にするクリエイティブレーベル。</span></p>
+<header class="header"><a class="skip-link" href="#top">本文へ移動</a><div class="wrap header-inner"><a class="home-logo" href="#top" aria-label="CASTOR Home"><img src="assets/castor-official-horizontal-white-v2.webp" alt="CASTOR"></a><nav class="nav" aria-label="Main navigation"><a href="#play">PLAY</a><a href="#create">CREATE</a><a href="#store">STORE</a></nav></div></header>
+<main id="top" tabindex="-1">
+<section class="hero" aria-label="CASTOR hero"><h1 class="visually-hidden">CASTOR</h1><div class="shooting-star" aria-hidden="true"></div><img class="hero-mark" src="assets/castor-official-symbol-white-v2.webp" alt=""><img class="hero-message" src="assets/castor-hero-message.webp" alt=""><img class="hero-logo" src="assets/castor-official-vertical-white-v2.webp" alt="CASTOR"><p class="hero-description">PLAY / CREATE / STORE — 由比ヶ浜から、遊びと創作を。<span class="hero-about">好きな遊びを、作品にするクリエイティブレーベル。</span></p>
   <a class="hero-game-link" href="kairi-studio.html">小学生向け無料ゲーム →</a>
   <aside class="hero-updates" aria-label="CASTORのトピック" aria-roledescription="カルーセル">
 <div class="topics-heading"><h2>TOPICS</h2><span class="topic-count" aria-hidden="true">01 / 03</span></div>
@@ -576,18 +587,18 @@
 <article class="topic-slide" role="group" aria-roledescription="スライド" aria-label="2 / 3" aria-hidden="true" inert>
 <a class="topic-link" href="https://www.youtube.com/shorts/wT3x33tB3xw" target="_blank" rel="noopener noreferrer">
 <div class="topic-art topic-video"><div class="topic-media"><img src="https://i.ytimg.com/vi/wT3x33tB3xw/hqdefault.jpg" alt="HBKチャンネル「たまたま親子対決!!」のサムネイル" referrerpolicy="no-referrer"><span class="topic-play" aria-hidden="true">▶</span></div></div>
-<span class="topic-category">PLAY / HBK CHANNEL</span><h3>たまたま親子対決!!</h3><p>HBKチャンネルの最新ショート。<br>親子で楽しむ Apex Legends のプレイ記録。</p><span class="topic-cta">YouTubeで見る ↗</span></a></article>
+<span class="topic-category">PLAY / HBK CHANNEL</span><h3>たまたま親子対決!!</h3><p>HBKチャンネルのショート動画。<br>親子で楽しむ Apex Legends のプレイ記録。</p><span class="topic-cta">YouTubeで見る ↗</span></a></article>
 <article class="topic-slide" role="group" aria-roledescription="スライド" aria-label="3 / 3" aria-hidden="true" inert>
 <a class="topic-link" href="https://73matibeaver.base.shop/items/160650396" target="_blank" rel="noopener noreferrer">
 <div class="topic-art topic-cap"><div class="topic-media"><img src="https://baseec-img-mng.akamaized.net/images/item/origin/9cc8aa6cb570fce4705a0f351cdb049f.jpg?imformat=generic&amp;q=90&amp;im=Resize,width=1280,type=normal" alt="白いCSTロゴを刺繍したカーキのCASTORベースボールキャップ"></div></div>
 <span class="topic-category">STORE / PICK UP</span><h3>CASTOR ベースボールキャップ</h3><p>カーキに、白いCSTロゴの刺繍。<br>街でも海辺でも、いつものスタイルに。</p><span class="topic-cta">ストアで見る ↗</span></a></article>
 </div></div>
 <div class="topic-progress" aria-hidden="true"><span></span></div>
-<div class="topics-controls"><div class="topic-dots" role="group" aria-label="表示するトピック"><button class="topic-dot" type="button" aria-label="九九コレクトを表示" aria-current="true"></button><button class="topic-dot" type="button" aria-label="HBKの最新動画を表示" aria-current="false"></button><button class="topic-dot" type="button" aria-label="ベースボールキャップを表示" aria-current="false"></button></div><button class="topic-pause" type="button" aria-label="自動切り替えを一時停止">一時停止</button></div>
+<div class="topics-controls"><div class="topic-dots" role="group" aria-label="表示するトピック"><button class="topic-dot" type="button" aria-label="九九コレクトを表示" aria-current="true"></button><button class="topic-dot" type="button" aria-label="HBKのピックアップ動画を表示" aria-current="false"></button><button class="topic-dot" type="button" aria-label="ベースボールキャップを表示" aria-current="false"></button></div><button class="topic-pause" type="button" aria-label="自動切り替えを一時停止">一時停止</button></div>
 </aside>
 </section>
-<section class="section play" id="play"><div class="wrap section-inner"><div class="play-head"><div><div class="section-label">01 / PLAY</div><h2>PLAY</h2><p class="play-intro">家族3人でApex Legendsを楽しむ、HBK_GAMING。</p></div><img class="hbk-logo" src="assets/hbk-gaming-logo.png" alt="HBK_GAMING"></div><div class="team-grid"><article class="team-card"><a class="team-card-link" href="kairi.html" aria-label="kairiのページを見る"><span class="card-trace" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><rect x=".5" y=".5" width="99" height="99" pathLength="100"/></svg></span><div class="team-photo"><img src="assets/hbk-kairi.webp" alt="kairi"></div><div class="team-meta"><span>HBK_GAMING</span><strong>kairi</strong><small class="team-role">父 / FATHER</small></div></a></article><article class="team-card"><a class="team-card-link" href="kappa.html" aria-label="kappaのページを見る"><span class="card-trace" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><rect x=".5" y=".5" width="99" height="99" pathLength="100"/></svg></span><div class="team-photo"><img src="assets/hbk-kappa.webp" alt="kappa"></div><div class="team-meta"><span>HBK_GAMING</span><strong>kappa</strong><small class="team-role">母 / MOTHER</small></div></a></article><article class="team-card"><a class="team-card-link" href="sota.html" aria-label="sotaのページを見る"><span class="card-trace" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><rect x=".5" y=".5" width="99" height="99" pathLength="100"/></svg></span><div class="team-photo"><img src="assets/hbk-sota.webp" alt="sota"></div><div class="team-meta"><span>HBK_GAMING</span><strong>sota</strong><small class="team-role">息子 / SON</small></div></a></article></div><div class="play-footer"><span>HBK_GAMING</span><a class="play-channel" href="https://www.youtube.com/@hbk-gaming-jp" target="_blank" rel="noopener noreferrer" aria-label="HBK_GAMINGの動画をYouTubeで見る">YOUTUBE ↗</a></div></div></section>
-<section class="section create" id="create"><div class="wrap section-inner"><div class="create-content"><div class="create-copy"><div class="section-label">02 / CREATE</div><h2>CREATE</h2><p>CASTORの「CREATE」。<br>小学生向けの無料学習ゲームをつくる KAIRI STUDIO。<br>漢字の読み・九九・算数の計算・社会の知識を、遊びながら学べます。</p></div><a class="create-gallery" href="kairi-studio.html" aria-label="KAIRI STUDIOのトップページへ">
+<section class="section play" id="play"><div class="wrap section-inner"><div class="play-head"><div><div class="section-label">01 / PLAY</div><h2>PLAY</h2><p class="play-intro">家族3人でApex Legendsを楽しむ、HBK_GAMING。</p><a class="play-channel" href="https://www.youtube.com/@hbk-gaming-jp" target="_blank" rel="noopener noreferrer">HBKの動画をYouTubeで見る ↗</a></div><img class="hbk-logo" src="assets/hbk-gaming-logo.webp" width="510" height="510" loading="lazy" decoding="async" alt=""></div><div class="team-grid"><article class="team-card"><a class="team-card-link" href="kairi.html" aria-label="kairiのページを見る"><span class="card-trace" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><rect x=".5" y=".5" width="99" height="99" pathLength="100"/></svg></span><div class="team-photo"><img src="assets/hbk-kairi.webp" loading="lazy" decoding="async" alt="kairi"></div><div class="team-meta"><span>HBK_GAMING</span><strong>kairi</strong><small class="team-role">父 / FATHER</small></div></a></article><article class="team-card"><a class="team-card-link" href="kappa.html" aria-label="kappaのページを見る"><span class="card-trace" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><rect x=".5" y=".5" width="99" height="99" pathLength="100"/></svg></span><div class="team-photo"><img src="assets/hbk-kappa.webp" loading="lazy" decoding="async" alt="kappa"></div><div class="team-meta"><span>HBK_GAMING</span><strong>kappa</strong><small class="team-role">母 / MOTHER</small></div></a></article><article class="team-card"><a class="team-card-link" href="sota.html" aria-label="sotaのページを見る"><span class="card-trace" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><rect x=".5" y=".5" width="99" height="99" pathLength="100"/></svg></span><div class="team-photo"><img src="assets/hbk-sota.webp" loading="lazy" decoding="async" alt="sota"></div><div class="team-meta"><span>HBK_GAMING</span><strong>sota</strong><small class="team-role">息子 / SON</small></div></a></article></div></div></section>
+<section class="section create" id="create"><div class="wrap section-inner"><div class="create-content"><div class="create-copy"><div class="section-label">02 / CREATE</div><h2>CREATE</h2><p>小学生向けの無料学習ゲームをつくる KAIRI STUDIO。<br>漢字の読み・九九・算数の計算・社会の知識を、遊びながら学べます。</p></div><a class="create-gallery" href="kairi-studio.html" aria-label="KAIRI STUDIOの学習ゲーム一覧へ">
   <img class="create-gallery-logo" src="assets/kairi-studio-logo.png" alt="" loading="lazy" decoding="async">
   <div class="create-games" aria-hidden="true">
       <div class="create-art"><img src="assets/kanji-quest-keyvisual-card.webp" alt="" width="1173" height="1341" loading="lazy" decoding="async"></div>
@@ -602,7 +613,7 @@
       <div class="create-art"><img src="assets/sengoku-illustrated-cover.webp" alt="" width="600" height="680" loading="lazy" decoding="async"></div>
       <div class="create-art"><img src="assets/kuku-illustrated-cover.webp" alt="" width="600" height="680" loading="lazy" decoding="async"></div>
   </div>
-  <span class="create-gallery-label">KAIRI STUDIOへ <span aria-hidden="true">→</span></span>
+  <span class="create-gallery-label">学習ゲーム一覧へ <span aria-hidden="true">→</span></span>
 </a></div></div></section>
 
 <section class="store-section" id="store" aria-label="CASTOR Official Store">
@@ -612,7 +623,7 @@
         <div class="section-label">03 / STORE</div>
         <h2>STORE</h2>
       </div>
-      <p class="store-intro">CASTORのOFFICIAL STORE。<br>ここから、CASTORのアイテムへ。</p>
+      <p class="store-intro">CASTORのオリジナルアイテムをBASEで販売しています。</p>
     </div>
 
     <a class="store-visual" href="https://73matibeaver.base.shop/" aria-label="CASTOR Official Storeを開く">
@@ -632,7 +643,7 @@
     <h2 id="castor-about-title">遊びと創作をつなぐ、<br>クリエイティブレーベル。</h2>
     <p class="castor-about-intro">CASTOR（キャスター）は、ゲームやものづくりなど、好きなことから生まれる活動をまとめるクリエイティブレーベルです。</p>
     <div class="castor-about-brands">
-      <div><h3><a href="kairi-studio.html">KAIRI_studio <span aria-hidden="true">→</span></a></h3><p>ゲームやアプリなどの作品をつくる、制作ブランド。</p></div>
+      <div><h3><a href="kairi-studio.html">KAIRI STUDIO <span aria-hidden="true">→</span></a></h3><p>ゲームやアプリなどの作品をつくる、制作ブランド。</p></div>
       <div><h3><a href="#play">HBK_GAMING <span aria-hidden="true">→</span></a></h3><p>親子でゲームを楽しみ、動画やプレイの記録を届ける、ゲーミングブランド。</p></div>
     </div>
     <p class="castor-about-note">ふたつのブランドから生まれる、一つひとつの作品や企画がプロジェクト。<br>CASTORというひとつのレーベルのもとで、それぞれの「好き」を形にしていきます。</p>
