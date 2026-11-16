@@ -11,12 +11,15 @@ main {max-width:34rem; margin:auto; padding:clamp(1rem,5vw,2.5rem);}
 form {background:white; padding:1.25rem; border-radius:1rem;}
 select,button {font:inherit; min-height:44px; max-width:100%; margin:.35rem 0;}
 label {display:block;}
+.exclusion {margin:1rem 0;}
+.exclusion input {margin-right:.5rem;}
+#status {padding:.75rem; background:#edf4ff; border-radius:.5rem;}
 </style>
-<script src="family-device.js" defer></script>
+<script src="family-device.js?v=2" defer></script>
 </head>
 <body><main>
 <h1>家族端末の登録</h1>
-<p>普段CASTORを開くブラウザーで設定してください。登録すると、今後のアクセス計測に選んだ区分が付きます。集計から除外中の場合は除外を優先します。</p>
+<p>自分たちのアクセスを集計から外したい場合は、端末を選び、「このブラウザーのアクセスを数えない」にチェックして保存してください。</p>
 <form id="family">
 <label for="slot">このブラウザーの登録先</label>
 <select id="slot">
@@ -25,9 +28,10 @@ label {display:block;}
 <option value="owner_iphone">自分のiPhone</option>
 <option value="son_iphone">息子のiPhone</option>
 </select>
-<button>保存</button>
+<label class="exclusion"><input type="checkbox" id="exclude">このブラウザーのアクセスを数えない</label>
+<button type="submit">設定を保存</button>
 <p id="status" role="status"></p>
 </form>
-<p>同じブラウザーのCASTORと4ゲームに適用されます。ホーム画面に追加したゲームは別の保存領域を使う場合があります。</p>
-<p><a href="privacy.html">アクセス計測の設定に戻る</a></p>
+<p>設定は今後のアクセスに適用されます。同じブラウザーで開くCASTORと4ゲームが対象です。ホーム画面から起動したゲームは、別の保存領域を使う場合があります。</p>
+<p><a href="privacy.html">プライバシーポリシー</a></p>
 </main></body></html>
