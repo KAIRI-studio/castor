@@ -1,17 +1,18 @@
 {
   "name": "CASTOR",
   "short_name": "CASTOR",
-  "start_url": "./",
-  "scope": "./",
+  "start_url": "/",
+  "scope": "/",
   "display": "browser",
   "background_color": "#172b49",
   "theme_color": "#172b49",
   "icons": [
     {
-      "src": "assets/castor-home-icon-v3.png",
+      "src": "/castor/assets/castor-home-icon-v3.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     }
-  ]
+  ],
+  "id": "/castor/"
 }

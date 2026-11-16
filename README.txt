@@ -1,5 +1,4 @@
 CASTOR official site
 
-- index.html contains the main CASTOR site, including the STORE section.
-- store.html redirects existing links to the STORE section on the homepage.
-- sitemap.xml lists the current public pages for search engines.
+The homepage is published at https://kairi-studio.github.io/ from KAIRI-studio/kairi-studio.github.io.
+This repository publishes the game guides, profiles, privacy information, and shared assets under /castor/.
