@@ -3,3 +3,34 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
 .related-games{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.related-games a{display:block;padding:18px;border:1px solid var(--line);border-radius:8px;background:white;text-decoration:none}.related-games a:hover{background:var(--paper)}.related-games strong{display:block;font-size:15px}.related-games span{display:block;margin-top:5px;font-size:12px;color:var(--muted)}.learning-table caption{text-align:left;font-size:13px;color:var(--muted);margin-bottom:8px}@media(max-width:700px){.related-games{grid-template-columns:1fr}}
+
+.practice-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+  gap: 14px;
+}
+.practice-card .practice-prompt {
+  color: var(--ink);
+  font-size: 36px;
+  font-weight: 700;
+}
+.practice-card .practice-options { margin: 4px 0 12px; }
+.practice-card details { padding: 12px 0; }
+.practice-card details:last-child { padding-bottom: 0; }
+.practice-card summary { min-height: 28px; }
+.practice-card summary:focus-visible,
+.practice-listen:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.practice-recitation { padding: 0; margin: 0 0 16px; list-style: none; }
+.practice-recitation li { display: flex; flex-wrap: wrap; gap: 4px 16px; padding: 7px 0; }
+.practice-recitation span { color: var(--muted); }
+.practice-listen {
+  min-height: 44px;
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--ink);
+  color: white;
+  font: inherit;
+  cursor: pointer;
+}
+#practice-audio-status:not(:empty) { margin-top: 8px; }
